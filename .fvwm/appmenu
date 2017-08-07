@@ -1,0 +1,89 @@
+AddToMenu "Accessories"  	"Accessories"                           	Title
++				"Galculator"                            	Exec galculator
++				"Gnote"                                 	Exec gnote
++				"GVim"                                  	Exec gvim -f
++				"HP Device Manager"                     	Exec hp-toolbox
++				"nitrogen"                              	Exec nitrogen
++				"Xarchiver"                             	Exec xarchiver
+
+AddToMenu "Chromium Apps"	"Chromium Apps"                         	Title
++				"Google Play Music"                     	Exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi
+
+AddToMenu "Development"  	"Development"                           	Title
++				"Qt4 Assistant"                         	Exec assistant-qt4
++				"Qt4 Designer"                          	Exec designer-qt4
++				"Qt4 Linguist"                          	Exec linguist-qt4
++				"Qt4 QDbusViewer"                       	Exec qdbusviewer-qt4
+
+AddToMenu "Education"    	"Education"                             	Title
++				"LibreOffice Math"                      	Exec libreoffice --math
+
+AddToMenu "Graphics"     	"Graphics"                              	Title
++				"Geeqie"                                	Exec geeqie -r
++				"GNU Image Manipulation Program"        	Exec gimp-2.8
++				"LibreOffice Draw"                      	Exec libreoffice --draw
+
+AddToMenu "Internet"     	"Internet"                              	Title
++				"Avahi SSH Server Browser"              	Exec /usr/bin/bssh
++				"Avahi VNC Server Browser"              	Exec /usr/bin/bvnc
++				"Chromium"                              	Exec chromium
++				"Google Music Manager"                  	Exec /opt/google/musicmanager/google-musicmanager
++				"HexChat"                               	Exec hexchat --existing
++				"Thunderbird"                           	Exec /usr/lib/thunderbird/thunderbird
+
+AddToMenu "Multimedia"   	"Multimedia"                            	Title
++				"Brasero"                               	Exec brasero
++				"Google Music Manager"                  	Exec /opt/google/musicmanager/google-musicmanager
++				"puddletag"                             	Exec puddletag
++				"PulseAudio Volume Control"             	Exec pavucontrol
++				"Qt V4L2 test Utility"                  	Exec qv4l2
++				"VLC media player"                      	Exec /usr/bin/vlc --started-from-file
+
+AddToMenu "Office"       	"Office"                                	Title
++				"LibreOffice"                           	Exec libreoffice
++				"LibreOffice Base"                      	Exec libreoffice --base
++				"LibreOffice Calc"                      	Exec libreoffice --calc
++				"LibreOffice Draw"                      	Exec libreoffice --draw
++				"LibreOffice Impress"                   	Exec libreoffice --impress
++				"LibreOffice Math"                      	Exec libreoffice --math
++				"LibreOffice Writer"                    	Exec libreoffice --writer
+
+AddToMenu "Other"        	"Other"                                 	Title
++				"XSane - Scanning"                      	Exec xsane
+
+AddToMenu "Science"      	"Science"                               	Title
++				"LibreOffice Math"                      	Exec libreoffice --math
+
+AddToMenu "Settings"     	"Settings"                              	Title
++				"Bluetooth Manager"                     	Exec blueman-manager
++				"Network Connections"                   	Exec nm-connection-editor
++				"Print Settings"                        	Exec system-config-printer
++				"Qt5 Settings"                          	Exec qt5ct
++				"Screensaver"                           	Exec xscreensaver-demo
+
+AddToMenu "System"       	"System"                                	Title
++				"Avahi Zeroconf Browser"                	Exec /usr/bin/avahi-discover
++				"dconf Editor"                          	Exec dconf-editor
++				"Manage Printing"                       	Exec /usr/bin/xdg-open http://localhost:631/
++				"Oracle VM VirtualBox"                  	Exec VirtualBox
++				"Print Settings"                        	Exec system-config-printer
++				"urxvt"                                 	Exec urxvt
++				"urxvt (client)"                        	Exec urxvtc
++				"urxvt (tabbed)"                        	Exec urxvt-tabbed
++				"UXTerm"                                	Exec uxterm
++				"XTerm"                                 	Exec xterm
+
+AddToMenu "Applications" 	"Applications"                          	Title
++				"Accessories"                           	Popup	"Accessories"
++				"Chromium Apps"                         	Popup	"Chromium Apps"
++				"Development"                           	Popup	"Development"
++				"Education"                             	Popup	"Education"
++				"Graphics"                              	Popup	"Graphics"
++				"Internet"                              	Popup	"Internet"
++				"Multimedia"                            	Popup	"Multimedia"
++				"Office"                                	Popup	"Office"
++				"Other"                                 	Popup	"Other"
++				"Science"                               	Popup	"Science"
++				"Settings"                              	Popup	"Settings"
++				"System"                                	Popup	"System"
+

@@ -1,0 +1,60 @@
+!!
+!! XTerm resources
+!!
+
+XTerm*VT100*geometry:			80x24
+XTerm*selectToClipboard:		true
+XTerm*faceName:					DejaVu Sans Mono
+XTerm*faceSize:					10
+XTerm*activeIcon:				false
+XTerm*saveLines:				2048
+XTerm*jumpScroll:				true
+XTerm*fastScroll:				true
+XTerm*termName:					xterm-256color
+XTerm*locale:					true
+XTerm*cursorBlink:				true
+
+!!
+!! UXTerm resources
+!!
+
+UXTerm*VT100*geometry:			80x24
+UXTerm*selectToClipboard:		true
+UXTerm*faceName:				DejaVu Sans Mono
+UXTerm*faceSize:				10
+UXTerm*activeIcon:				false
+UXTerm*saveLines:				2048
+UXTerm*jumpScroll:				true
+UXTerm*fastScroll:				true
+UXTerm*termName:				xterm-256color
+UXTerm*locale:					true
+UXTerm*cursorBlink:				true
+
+!!
+!! urxvt resources
+!!
+
+urxvt*geometry:					80x24
+urxvt*font:						xft:DejaVu Sans Mono:size=10:pixelsize=13
+urxvt*letterSpace:				-1
+urxvt*saveLines:				2048
+urxvt*jumpScroll:				true
+urxvt*cursorBlink:				true
+urxvt*scrollBar:				false
+urxvt*perl-ext-common:			default,matcher,selection-to-clipboard
+urxvt*url-launcher:				/usr/bin/xdg-open
+urxvt*matcher*button:			1
+
+!!
+!! XScreenSaver resources
+!!
+
+xscreensaver*newLoginCommand:
+
+!!
+!! XClock resources
+!!
+
+XClock*minuteColor:				steelblue3
+XClock*hourColor:				red
+

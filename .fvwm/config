@@ -1,0 +1,284 @@
+# Charles' Fvwm configuration file
+
+# Commands
+EdgeResistance 250 10
+EdgeScroll 0 0
+ClickTime 750
+DesktopSize 2x2
+ColormapFocus FollowsMouse
+IgnoreModifiers L25
+Emulate Mwm
+
+# External files
+Read appmenu
+Read themes/MWM/theme
+
+# Default styles
+Style * ColorSet 41, HilightColorSet 40
+Style * Icon /usr/share/icons/gnome/48x48/status/image-missing.png
+Style * MiniIcon /usr/share/icons/gnome/16x16/status/image-missing.png
+Style * DecorateTransient
+Style * !UsePPosition 
+Style * IconBox +0 +0 -0 -0, IconFill left bottom
+Style * ClickToFocus
+Style * PositionPlacement center
+Style * FPLenient
+Style * !StickyStippledTitle, !StickyStippledIconTitle
+Style * ResizeHintOverride
+Style * IconSize 57 57
+Style * IconBackgroundColorset 43
+Style * IconTitleColorset 43
+
+# Module styles
+Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+Style "DockApps" !Title, Sticky, WindowListSkip, HandleWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+Style "QuitVerify" !Title, Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip, !Iconifiable, !Maximizable, !Closable
+
+# Program styles
+Style Gsimplecal !MwmDecor
+Style urxvt Icon /usr/share/icons/gnome/48x48/apps/terminal.png, MiniIcon /usr/share/icons/gnome/16x16/apps/terminal.png
+# Temporary workaround for GVim - it crashes when de-iconified
+Style Gvim !Iconifiable
+
+# Key bindings
+Key Next A SCM Next (AcceptsFocus) Focus
+Key Prior A SCM Prev (AcceptsFocus) Focus
+Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, CurrentAtEnd
+Key F1 A 1 Menu RootMenu Nop
+Key F2 A 1 Exec urxvt
+Key F3 A 1 Lower
+Key F4 A 1 Close
+Key F5 A 1 Raise
+Key F6 A 1 WindowShade
+Key F7 A 1 Move
+Key F8 A 1 Resize
+Key F9 A 1 Iconify
+Key F10 A 1 Maximize
+Key F11 A 1 Menu Window-Ops Nop
+Key r A C1 Restart
+Key delete A C1 FvwmForm QuitVerify ACTION="Quit Fvwm" COMMAND="Quit"
+Key l A C1 Exec loginctl lock-session
+Key Left A C1 GoToPage -1p +0p
+Key Right A C1 GoToPage +1p +0p
+Key Up A C1 GoToPage +0p -1p
+Key Down A C1 GoToPage +0p +1p
+Key Left A S1 MoveToPage -1w +0w
+Key Right A S1 MoveToPage +1w +0w
+Key Up A S1 MoveToPage +0w -1w
+Key Down A S1 MoveToPage +0w +1w
+Key Up A C4 GoToDesk -1 0 3
+Key Down A C4 GoToDesk +1 0 3
+Key Up A S4 MoveToDesk -1 0 3
+Key Down A S4 MoveToDesk +1 0 3
+Key Left A 4 TileLeft
+Key Right A 4 TileRight
+Key Up A 4 TileTop
+Key Down A 4 TileBottom
+Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
+Key XF86MonBrightnessDown A N Exec xbacklight -dec 10
+
+# Mouse bindings
+# Root window
+Mouse 1 R A -
+Mouse 2	R A -
+Mouse 3	R A Menu RootMenu Nop
+
+# Windows/borders/icons
+Mouse 1	F A Resize-or-Raise
+Mouse 1	TS A Move-or-Raise
+Mouse 1	I A Move-or-Iconify
+Mouse 2	I A Iconify
+Mouse 2	FST	A RaiseLower
+Mouse 3	TSIF A Menu Window-Ops Nop
+
+# Initialisation
+AddToFunc StartFunction
++ I Module FvwmPager MainPager 0 3
++ I Module FvwmButtons DockApps
++ I Test (!Init) Break
++ I Exec sleep 0.2 && nitrogen --restore > /dev/null 2>&1
++ I Exec wmsystemtray --non-wmaker > /dev/null 2>&1 &
++ I Exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
++ I Exec nm-applet > /dev/null 2>&1 &
++ I Exec cbatticon -c "xmessage -center 'Power is critically low. Please take action.'" -r 5 > /dev/null 2>&1 &
++ I Exec volumeicon > /dev/null 2>&1 &
++ I Exec blueman-applet > /dev/null 2>&1 &
++ I Exec xscreensaver -nosplash > /dev/null 2>&1 &
++ I Exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1 &
++ I Exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 > /dev/null 2>&1 &
+
+# Menus
+AddToMenu RootMenu "Root Menu" Title
++ "Applications"		PopUp Applications
++ "urxvt"				Exec urxvt
++ "Chromium"			Exec chromium
++ "Thunderbird"			Exec thunderbird
++ "LibreOffice"			Exec libreoffice
++ ""					Nop
++ "GTK+ Settings"		Exec setgtktheme.py
++ "Set Background"		Exec nitrogen
++ "Select Display"		Exec display-selector.sh
++ "Fvwm Menu"			PopUp FvwmMenu
++ ""					Nop
++ "Session"				PopUp Session
+
+AddToMenu Window-Ops
++ "Move"				Move
++ "Resize"				Resize
++ "Raise"				Raise
++ "Lower"				Lower
++ ""					Nop
++ "Iconify"				Iconify
++ "Stick"				Stick
++ "Maximize"			Maximize
++ "Shade"				WindowShade
++ ""					Nop
++ "Tile Window"			PopUp TileWindow
++ "Send To"				PopUp SendTo
++ ""					Nop
++ "Close"				Close
+
+AddToMenu SendTo
++ "Page Left"			MoveToPage -1p +0p
++ "Page Right"			MoveToPage +1p +0p
++ "Page Up"				MoveToPage +0p -1p
++ "Page Down"			MoveToPage +0p +1p
++ ""					Nop
++ "Page Number"			PopUp SendToPageNumber
++ ""					Nop
++ "Desk Up"				MoveToDesk -1
++ "Desk Down"			MoveToDesk +1
++ ""					Nop
++ "Desk Number"			PopUp SendToDeskNumber
+
+AddToMenu SendToPageNumber
++ "Page 0"				MoveToPage 0 0
++ "Page 1"				MoveToPage 1 0
++ "Page 2"				MoveToPage 0 1
++ "Page 3"				MoveToPage 1 1
+
+AddToMenu SendToDeskNumber
++ "Desk 0"				MoveToDesk 0 0
++ "Desk 1"				MoveToDesk 0 1
++ "Desk 2"				MoveToDesk 0 2
++ "Desk 3"				MoveToDesk 0 3
+
+AddToMenu TileWindow
++ "Left Half"			TileLeft
++ "Right Half"			TileRight
++ "Top Half"			TileTop
++ "Bottom Half"			TileBottom
++ ""					Nop
++ "Top Left"			TileTopLeft
++ "Top Right"			TileTopRight
++ "Bottom Left"			TileBottomLeft
++ "Bottom Right"		TileBottomRight
+
+AddToMenu Themes "Select Theme" Title
+PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; done'
+
+AddToMenu FvwmMenu "Fvwm Menu" Title
++ "Themes"				PopUp Themes
++ "Refresh Apps"		RefreshAppMenu
++ "About Fvwm"			Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
+
+AddToMenu Session "Session" Title
++ "Quit Fvwm"			FvwmForm QuitVerify ACTION="Quit Fvwm" COMMAND="Quit"
++ "Restart Fvwm"		Restart
++ ""					Nop
++ "Lock Screen"			Exec loginctl lock-session
++ ""					Nop
++ "Suspend"				FvwmForm QuitVerify ACTION="Suspend" COMMAND="Exec systemctl suspend"
++ "Hibernate"			FvwmForm QuitVerify ACTION="Hibernate" COMMAND="Exec if [ `canhibernate.sh` = 1 ]; then systemctl hibernate; else xmessage -center 'Cannot hibernate. Insufficient free memory.'; fi"
++ "Reboot"				FvwmForm QuitVerify ACTION="Reboot" COMMAND="Exec systemctl reboot"
++ "Poweroff"			FvwmForm QuitVerify ACTION="Poweroff" COMMAND="Exec systemctl poweroff"
+
+# Functions
+AddToFunc Move-or-Raise I Raise
++ M Move
++ D Lower
+
+AddToFunc Move-or-Iconify I Raise
++ M Move
++ D Iconify
+
+AddToFunc Resize-or-Raise I Raise
++ M Resize
++ D Lower
+
+AddToFunc TileLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+AddToFunc TileRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
+
+AddToFunc TileTop
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+AddToFunc TileBottom
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
+
+AddToFunc TileTopLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+AddToFunc TileTopRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
+
+AddToFunc TileBottomLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
+
+AddToFunc TileBottomRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
+
+AddToFunc SetTheme
++ I PipeRead "echo SetEnv FVWM_THEMEPATH `grep Read.*theme $FVWM_USERDIR/config | cut -d ' ' -f 2`"
++ I Exec sed -i "s@$FVWM_THEMEPATH@themes/$0/theme@g" $FVWM_USERDIR/config
++ I UnsetEnv FVWM_THEMEPATH
++ I Restart
+
+AddToFunc RefreshAppMenu
++ I Exec mwmmenu -fvwm > $FVWM_USERDIR/appmenu
++ I Restart
+
+# Modules
+# FvwmPager
+*MainPager: Geometry 102x368+0+0
+*MainPager: Font "xft:DejaVu Sans:size=9"
+*MainPager: ColorSet * 42
+*MainPager: HilightColorSet * 44
+*MainPager: MiniIcons
+*MainPager: Rows 4
+*MainPager: Columns 1
+
+# FvwmButtons
+*DockApps: Geometry 128x64-0+0
+*DockApps: BoxSize fixed
+*DockApps: ColorSet 42
+*DockApps: Rows 1
+*DockApps: Columns 2
+*DockApps: (Frame 1, Swallow(UseOld, NoClose) "wmclock" Nop)
+*DockApps: (Frame 1, Swallow(UseOld, NoClose) "wmsystemtray" Nop)
+
+# FvwmForm
+*QuitVerify: GrabServer
+*QuitVerify: WarpPointer
+*QuitVerify: ColorSet 42
+*QuitVerify: ItemColorSet 42
+*QuitVerify: Font "xft:DejaVu Sans:size=10"
+*QuitVerify: ButtonFont "xft:DejaVu Sans:size=9"
+*QuitVerify: Command Beep
+*QuitVerify: Line center
+*QuitVerify: Text "$ACTION?"
+*QuitVerify: Line expand
+*QuitVerify: Button quit " OK " ^M
+*QuitVerify: Command $COMMAND
+*QuitVerify: Button quit "Cancel" ^[
+*QuitVerify: Command Nop

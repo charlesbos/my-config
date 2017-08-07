@@ -1,0 +1,48 @@
+# MWM themefile
+# Here we set the decor, colorsets, titlebar buttons and menus
+
+# Colorsets
+# 40 is for active windows
+# 41 is for inactive windows
+# 42 is for modules
+# 43 is for icons and menus
+# 44 is for pager and menu hilights
+# 45 is for greyed menu items
+ColorSet 40 fg white, bg cadetblue
+ColorSet 41 fg black, bg silver
+ColorSet 42 fg black, bg silver
+ColorSet 43 fg black, bg silver
+ColorSet 44 fg white, bg cadetblue
+ColorSet 45 fg grey40
+DefaultColorSet 40
+
+# Title bar buttons
+Mouse 0 1 A Menu Window-Ops Close
+Mouse 0	2 A Maximize
+Mouse 0	4 A Iconify
+
+# Decor
+AddToDecor MWM
++ TitleStyle Height 18
++ ButtonStyle All - Clear
++ ButtonStyle 1 - MwmDecorMenu
++ ButtonStyle 2 - MwmDecorMax
++ ButtonStyle 4 - MwmDecorMin
+
+# Some decor related styles
+Style * MwmFunctions, MwmDecor, MwmBorder, MwmButtons, HintOverride
+Style * HandleWidth 7
+Style * Font "xft:DejaVu Sans:size=10", IconFont "xft:DejaVu Sans:size=8"
+
+# Set the decor
+Style * UseDecor MWM
+
+# Menus
+MenuStyle * Mwm
+MenuStyle * MenuColorSet 43
+MenuStyle * GreyedColorSet 45
+MenuStyle * ActiveColorSet 44
+MenuStyle * Font "xft:DejaVu Sans:size=10"
+MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
+MenuStyle * VerticalItemSpacing +2 +3
+MenuStyle * VerticalTitleSpacing +3 +2

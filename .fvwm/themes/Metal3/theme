@@ -1,0 +1,61 @@
+# Metal3 themefile
+# Here we set the decor, colorsets, titlebar buttons and menus
+
+# Colorsets
+# 40 is for active windows
+# 41 is for inactive windows
+# 42 is for modules
+# 43 is for icons and menus
+# 44 is for pager and menu hilights
+# 45 is for greyed menu items
+ColorSet 40 fg grey15, bg silver, hi grey75, sh grey40, TiledPixmap themes/Metal3/metal3.png
+ColorSet 41 fg grey60, bg silver, hi gainsboro, sh darkgrey, TiledPixmap themes/Metal3/metal3.png
+ColorSet 42 fg grey15, bg silver, hi grey75, sh grey40, TiledPixmap themes/Metal3/metal3.png
+ColorSet 43 fg grey15, bg silver, hi gainsboro, sh grey40, TiledPixmap themes/Metal3/metal3.png
+ColorSet 44 fg grey15, bg slategrey, hi #C1C5CC, sh #495568
+ColorSet 45 fg grey40
+DefaultColorSet 42
+
+# Title bar buttons
+Mouse 0	2 A Close
+Mouse 0	4 A Maximize
+Mouse 0	6 A Iconify
+
+# Decor
+AddToDecor Metal3
++ TitleStyle Active TiledPixmap themes/Metal3/metal3.png
++ TitleStyle InActive TiledPixmap themes/Metal3/metal3-faded.png
++ TitleStyle Height 21
++ TitleStyle -- Flat
++ BorderStyle Active TiledPixmap themes/Metal3/metal3.png
++ BorderStyle InActive TiledPixmap themes/Metal3/metal3-faded.png
++ BorderStyle -- HiddenHandles NoInset
++ ButtonStyle 2 16 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
++ ButtonStyle 4 8 40x80@1 40x50@1 20x50@1 50x20@1 80x50@0 60x50@0 60x80@0 40x80@0
++ ButtonStyle 6 8 40x20@1 40x50@1 20x50@1 50x80@1 80x50@0 60x50@0 60x20@0 40x20@1
++ ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) InactiveUp (-- Flat) InActiveDown (-- Raised)
++ ButtonStyle All -- UseTitleStyle
++ ButtonStyle All - Clear
++ ButtonStyle 4 - MwmDecorMax
++ ButtonStyle 6 - MwmDecorMin
+
+# Some decor related styles
+Style * MwmFunctions, MwmDecor, !MwmBorder, !MwmButtons, HintOverride
+Style * HandleWidth 5
+Style * Font "xft:DejaVu Sans:size=10", IconFont "xft:DejaVu Sans:size=8"
+
+# Set the decor
+Style * UseDecor Metal3
+
+# Menus
+MenuStyle * Fvwm
+MenuStyle * PopupOffset -3 100
+MenuStyle * MenuColorSet 43
+MenuStyle * GreyedColorSet 45
+MenuStyle * HilightBack
+MenuStyle * ActiveColorSet 44
+MenuStyle * Font "xft:DejaVu Sans:size=10"
+MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
+MenuStyle * VerticalItemSpacing +2 +3
+MenuStyle * VerticalTitleSpacing +3 +2
+MenuStyle * SeparatorsLong

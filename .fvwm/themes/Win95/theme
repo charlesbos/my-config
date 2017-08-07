@@ -1,0 +1,75 @@
+# Win95 themefile
+# Here we set the decor, colorsets, titlebar buttons and menus
+
+# Colorsets
+# 40 is for active windows
+# 41 is for inactive windows
+# 42 is for modules
+# 43 is for icons and menus
+# 44 is for pager and menu hilights
+# 45 is for greyed menu items
+ColorSet 40 fg white, bg #C3C8CB
+ColorSet 41 fg #C3C6CB, bg #C3C6CB
+ColorSet 42 fg black, bg #C3C6CB
+ColorSet 43 fg black, bg #C3C6CB
+ColorSet 44 fg white, bg #010081
+ColorSet 45 fg grey40
+DefaultColorSet 42
+
+# Title bar buttons
+Mouse 0	2 A Close
+Mouse 0	4 A Maximize
+Mouse 0	6 A Iconify
+
+# Decor
+AddToDecor Win95
++ TitleStyle Active Solid #010081
++ TitleStyle Inactive Solid #86898E
++ TitleStyle ToggledActive Solid #010081
++ TitleStyle ToggledInactive Solid #86898E
++ TitleStyle Height 20
++ TitleStyle LeftJustified
++ TitleStyle -- Flat
++ BorderStyle Active Solid #c3c6cb
++ BorderStyle InActive Solid #c3c6cb
++ BorderStyle -- HiddenHandles NoInset
++ ButtonStyle 2 ActiveUp Pixmap themes/Win95/close.png
++ ButtonStyle 2 ActiveDown Pixmap themes/Win95/close_pressed.png
++ ButtonStyle 2 InactiveUp Pixmap themes/Win95/close.png
++ ButtonStyle 2 InactiveDown Pixmap themes/Win95/close_pressed.png
++ ButtonStyle 4 ActiveUp Pixmap themes/Win95/maximize.png -- Left
++ ButtonStyle 4 ActiveDown Pixmap themes/Win95/maximize_pressed.png -- Left
++ ButtonStyle 4 InactiveUp Pixmap themes/Win95/maximize.png -- Left
++ ButtonStyle 4 InactiveDown Pixmap themes/Win95/maximize_pressed.png -- Left
++ ButtonStyle 4 ToggledActiveUp Pixmap themes/Win95/restore.png -- Left
++ ButtonStyle 4 ToggledActiveDown Pixmap themes/Win95/restore_pressed.png -- Left
++ ButtonStyle 4 ToggledInactiveUp Pixmap themes/Win95/restore.png -- Left
++ ButtonStyle 4 ToggledInactiveDown Pixmap themes/Win95/restore_pressed.png -- Left
++ ButtonStyle 6 ActiveUp Pixmap themes/Win95/minimize.png
++ ButtonStyle 6 ActiveDown Pixmap themes/Win95/minimize_pressed.png
++ ButtonStyle 6 InactiveUp Pixmap themes/Win95/minimize.png
++ ButtonStyle 6 InactiveDown Pixmap themes/Win95/minimize_pressed.png
++ ButtonStyle All Active (-- Flat) Inactive (-- Flat) ToggledActive (-- Flat) ToggledInactive (-- Flat)
++ ButtonStyle All -- UseTitleStyle
++ ButtonStyle All - Clear
++ ButtonStyle 4 - MwmDecorMax
++ ButtonStyle 6 - MwmDecorMin
+
+# Some decor related styles
+Style * MwmFunctions, MwmDecor, !MwmBorder, MwmButtons, HintOverride
+Style * HandleWidth 5
+Style * Font "xft:DejaVu Sans:size=9:bold", IconFont "xft:DejaVu Sans:size=9"
+
+# Set the decor
+Style * UseDecor Win95
+
+# Menus
+MenuStyle * Win
+MenuStyle * MenuColorSet 43
+MenuStyle * GreyedColorSet 45
+MenuStyle * HilightBack
+MenuStyle * ActiveColorSet 44
+MenuStyle * Font "xft:DejaVu Sans:size=10"
+MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
+MenuStyle * VerticalItemSpacing +3 +4
+MenuStyle * VerticalTitleSpacing +3 +2

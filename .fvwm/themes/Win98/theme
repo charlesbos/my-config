@@ -1,0 +1,83 @@
+# Win98 themefile
+# Here we set the decor, colorsets, titlebar buttons and menus
+
+# Colorsets
+# 40 is for active windows
+# 41 is for inactive windows
+# 42 is for modules
+# 43 is for icons and menus
+# 44 is for pager and menu hilights
+# 45 is for greyed menu items
+ColorSet 40 fg white, bg #C3C8CB
+ColorSet 41 fg #C3C6CB, bg #C3C6CB
+ColorSet 42 fg black, bg #C3C6CB
+ColorSet 43 fg black, bg #C3C6CB
+ColorSet 44 fg white, bg #010081
+ColorSet 45 fg grey40
+DefaultColorSet 42
+
+# Title bar buttons
+Mouse 0 1 A Menu Window-Ops Nop
+Mouse 0	2 A Close
+Mouse 0	4 A Maximize
+Mouse 0	6 A Iconify
+
+# Decor
+AddToDecor Win98
++ TitleStyle Active HGradient 128 #00007B #087BC6
++ TitleStyle Inactive HGradient 128 #7B7B7B #ADADAD
++ TitleStyle ToggledActive HGradient 128 #00007B #087BC6
++ TitleStyle ToggledInactive HGradient 128 #7B7B7B #ADADAD
++ TitleStyle Height 20
++ TitleStyle LeftJustified
++ TitleStyle -- Flat
++ BorderStyle Active Solid #c3c6cb
++ BorderStyle InActive Solid #c3c6cb
++ BorderStyle -- HiddenHandles NoInset
++ ButtonStyle All Active Solid #087BC6
++ ButtonStyle All ToggledActive Solid #087BC6
++ ButtonStyle All Inactive Solid #ADADAD
++ ButtonStyle All ToggledInactive Solid #ADADAD
++ ButtonStyle 1 Active Solid #00007B
++ ButtonStyle 1 Inactive Solid #7B7B7B
++ AddButtonStyle 1 Active MiniIcon
++ AddButtonStyle 1 Inactive MiniIcon
++ AddButtonStyle 2 ActiveUp Pixmap themes/Win98/close.png
++ AddButtonStyle 2 ActiveDown Pixmap themes/Win98/close_pressed.png
++ AddButtonStyle 2 InactiveUp Pixmap themes/Win98/close.png
++ AddButtonStyle 2 InactiveDown Pixmap themes/Win98/close_pressed.png
++ AddButtonStyle 4 ActiveUp Pixmap themes/Win98/maximize.png -- Left
++ AddButtonStyle 4 ActiveDown Pixmap themes/Win98/maximize_pressed.png -- Left
++ AddButtonStyle 4 InactiveUp Pixmap themes/Win98/maximize.png -- Left
++ AddButtonStyle 4 InactiveDown Pixmap themes/Win98/maximize_pressed.png -- Left
++ AddButtonStyle 4 ToggledActiveUp Pixmap themes/Win98/restore.png -- Left
++ AddButtonStyle 4 ToggledActiveDown Pixmap themes/Win98/restore_pressed.png -- Left
++ AddButtonStyle 4 ToggledInactiveUp Pixmap themes/Win98/restore.png -- Left
++ AddButtonStyle 4 ToggledInactiveDown Pixmap themes/Win98/restore_pressed.png -- Left
++ AddButtonStyle 6 ActiveUp Pixmap themes/Win98/minimize.png
++ AddButtonStyle 6 ActiveDown Pixmap themes/Win98/minimize_pressed.png
++ AddButtonStyle 6 InactiveUp Pixmap themes/Win98/minimize.png
++ AddButtonStyle 6 InactiveDown Pixmap themes/Win98/minimize_pressed.png
++ ButtonStyle All Active (-- Flat) Inactive (-- Flat) ToggledActive (-- Flat) ToggledInactive (-- Flat)
++ ButtonStyle All - Clear
++ ButtonStyle 4 - MwmDecorMax
++ ButtonStyle 6 - MwmDecorMin
+
+# Some decor related styles
+Style * MwmFunctions, MwmDecor, !MwmBorder, MwmButtons, HintOverride
+Style * HandleWidth 5
+Style * Font "xft:DejaVu Sans:size=9:bold", IconFont "xft:DejaVu Sans:size=9"
+
+# Set the decor
+Style * UseDecor Win98
+
+# Menus
+MenuStyle * Win
+MenuStyle * MenuColorSet 43
+MenuStyle * GreyedColorSet 45
+MenuStyle * HilightBack
+MenuStyle * ActiveColorSet 44
+MenuStyle * Font "xft:DejaVu Sans:size=10"
+MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
+MenuStyle * VerticalItemSpacing +3 +4
+MenuStyle * VerticalTitleSpacing +3 +2
