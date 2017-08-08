@@ -90,8 +90,10 @@ copyconfigs() {
   sync_files=('.bash_profile' '.bashrc' '.fvwm' '.gvimrc' '.vimrc' '.xinitrc' 
               '.Xresources')
   for x in ${sync_files[@]}; do
-    echo "Copying ~/$x"
-    cp -r ~/$x ~/Devel/GitHub/my-config/
+    if [ "$(diff -Nurq $HOME/Devel/GitHub/my-config/$x $HOME/$x)" ]; then
+      echo "Copying $HOME/$x"
+      cp -r $HOME/$x $HOME/Devel/GitHub/my-config/
+    fi
   done
   unset sync_files
 }
