@@ -91,8 +91,12 @@ copyconfigs() {
               '.Xresources')
   for x in ${sync_files[@]}; do
     if [ "$(diff -Nurq $HOME/Devel/GitHub/my-config/$x $HOME/$x)" ]; then
-      echo "Copying $HOME/$x"
-      cp -r $HOME/$x $HOME/Devel/GitHub/my-config/
+      if [ "$1" ] && [ "$1" == "check" ]; then
+        echo "Changed: $HOME/$x"
+      else
+        echo "Copying: $HOME/$x"
+        cp -r $HOME/$x $HOME/Devel/GitHub/my-config/
+      fi
     fi
   done
   unset sync_files
