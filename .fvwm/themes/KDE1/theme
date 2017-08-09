@@ -1,0 +1,67 @@
+# KDE1 themefile
+# Here we set the decor, colorsets, titlebar buttons and menus
+
+# Colorsets
+# 40 is for active windows
+# 41 is for inactive windows
+# 42 is for modules
+# 43 is for icons and menus
+# 44 is for pager and menu hilights
+# 45 is for greyed menu items
+ColorSet 40 fg white, bg #C0C0C0
+ColorSet 41 fg #C0C0C0, bg #C0C0C0
+ColorSet 42 fg black, bg #C0C0C0
+ColorSet 43 fg black, bg #C0C0C0
+ColorSet 44 fg white, bg #00007F
+ColorSet 45 fg grey40
+DefaultColorSet 42
+
+# Title bar buttons
+Mouse 0 1 A Menu Window-Ops Nop
+Mouse 0 3 A Stick
+Mouse 0	2 A Close
+Mouse 0	4 A Maximize
+Mouse 0	6 A Iconify
+
+# Decor
+AddToDecor KDE1
++ TitleStyle Active HGradient 128 2 #00007F 4 #000049 1 black
++ TitleStyle InActive HGradient 128 2 #808080 4 #AAAAAA 1 #C0C0C0
++ TitleStyle LeftJustified
++ TitleStyle Height 21
++ TitleStyle -- Flat
++ BorderStyle Active Solid #C0C0C0
++ BorderStyle InActive Solid #C0C0C0
++ BorderStyle -- HiddenHandles NoInset
++ ButtonStyle 1 MiniIcon
++ ButtonStyle 3 Pixmap themes/KDE1/pinup.xpm
++ ButtonStyle 2 Pixmap themes/KDE1/close.xpm
++ ButtonStyle 4 Pixmap themes/KDE1/maximize.xpm
++ ButtonStyle 6 Pixmap themes/KDE1/iconify.xpm
++ ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) InactiveUp (-- Flat) InActiveDown (-- Raised)
++ ButtonStyle 3 ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
++ ButtonStyle 4 ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
++ ButtonStyle All - Clear
++ ButtonStyle 1 - MwmDecorMenu
++ ButtonStyle 3 - MwmDecorStick
++ ButtonStyle 4 - MwmDecorMax
++ ButtonStyle 6 - MwmDecorMin
+
+# Some decor related styles
+Style * MwmFunctions, MwmDecor, !MwmBorder, MwmButtons, HintOverride
+Style * HandleWidth 5
+Style * Font "xft:DejaVu Sans:size=10", IconFont "xft:DejaVu Sans:size=8"
+
+# Set the decor
+Style * UseDecor KDE1
+
+# Menus
+MenuStyle * Win
+MenuStyle * MenuColorSet 43
+MenuStyle * GreyedColorSet 45
+MenuStyle * HilightBack
+MenuStyle * ActiveColorSet 44
+MenuStyle * Font "xft:DejaVu Sans:size=10"
+MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
+MenuStyle * VerticalItemSpacing +3 +4
+MenuStyle * VerticalTitleSpacing +3 +2
