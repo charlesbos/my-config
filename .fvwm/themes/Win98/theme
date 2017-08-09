@@ -60,6 +60,7 @@ AddToDecor Win98
 + AddButtonStyle 6 InactiveDown Pixmap themes/Win98/minimize_pressed.png
 + ButtonStyle All Active (-- Flat) Inactive (-- Flat) ToggledActive (-- Flat) ToggledInactive (-- Flat)
 + ButtonStyle All - Clear
++ ButtonStyle 1 - MwmDecorMenu
 + ButtonStyle 4 - MwmDecorMax
 + ButtonStyle 6 - MwmDecorMin
 
