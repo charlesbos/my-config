@@ -180,6 +180,8 @@ PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; don
 AddToMenu FvwmMenu "Fvwm Menu" Title
 + "Themes"			PopUp Themes
 + "Refresh Apps"		RefreshAppMenu
++ "Identify Window"		Module FvwmIdent
++ "Fvwm Console"		Module FvwmConsole
 + "About Fvwm"			Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
 
 AddToMenu Session "Session" Title
