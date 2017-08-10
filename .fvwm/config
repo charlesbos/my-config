@@ -11,7 +11,7 @@ Emulate Mwm
 
 # External files
 Read appmenu
-Read themes/KDE1/theme
+Read themes/Metal3/theme
 
 # Default styles
 Style * ColorSet 41, HilightColorSet 40

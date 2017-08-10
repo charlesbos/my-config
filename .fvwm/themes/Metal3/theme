@@ -25,6 +25,8 @@ Mouse 0	6 A Iconify
 AddToDecor Metal3
 + TitleStyle Active TiledPixmap themes/Metal3/metal3.png
 + TitleStyle InActive TiledPixmap themes/Metal3/metal3-faded.png
++ TitleStyle ToggledActive TiledPixmap themes/Metal3/metal3.png
++ TitleStyle ToggledInActive TiledPixmap themes/Metal3/metal3-faded.png
 + TitleStyle Height 21
 + TitleStyle -- Flat
 + BorderStyle Active TiledPixmap themes/Metal3/metal3.png
@@ -33,14 +35,14 @@ AddToDecor Metal3
 + ButtonStyle 2 16 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
 + ButtonStyle 4 8 40x80@1 40x50@1 20x50@1 50x20@1 80x50@0 60x50@0 60x80@0 40x80@0
 + ButtonStyle 6 8 40x20@1 40x50@1 20x50@1 50x80@1 80x50@0 60x50@0 60x20@0 40x20@1
-+ ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) InactiveUp (-- Flat) InActiveDown (-- Raised)
++ ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) InactiveUp (-- Flat) InActiveDown (-- Raised) ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
 + ButtonStyle All -- UseTitleStyle
 + ButtonStyle All - Clear
 + ButtonStyle 4 - MwmDecorMax
 + ButtonStyle 6 - MwmDecorMin
 
 # Some decor related styles
-Style * MwmFunctions, MwmDecor, !MwmBorder, !MwmButtons, HintOverride
+Style * MwmFunctions, MwmDecor, !MwmBorder, MwmButtons, HintOverride
 Style * HandleWidth 5
 Style * Font "xft:DejaVu Sans:size=10", IconFont "xft:DejaVu Sans:size=8"
 
