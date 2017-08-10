@@ -14,11 +14,10 @@ set noswapfile
 "Disable viminfo
 set viminfo=
 
-"Use 4 spaces for block indentation
+"Tab widths
 set shiftwidth=8
-
-"Width of a tab character
 set tabstop=8
+set softtabstop=8
 
 "Allow mouse scrolling
 set mouse=a
