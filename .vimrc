@@ -15,10 +15,10 @@ set noswapfile
 set viminfo=
 
 "Use 4 spaces for block indentation
-set shiftwidth=4
+set shiftwidth=8
 
 "Width of a tab character
-set tabstop=4
+set tabstop=8
 
 "Allow mouse scrolling
 set mouse=a

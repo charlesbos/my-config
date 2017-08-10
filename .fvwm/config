@@ -88,7 +88,7 @@ Mouse 1	F A Resize-or-Raise
 Mouse 1	TS A Move-or-Raise
 Mouse 1	I A Move-or-Iconify
 Mouse 2	I A Iconify
-Mouse 2	FST	A RaiseLower
+Mouse 2	FST A RaiseLower
 Mouse 3	TSIF A Menu Window-Ops Nop
 
 # Initialisation
@@ -110,65 +110,65 @@ AddToFunc StartFunction
 # Menus
 AddToMenu RootMenu "Root Menu" Title
 + "Applications"		PopUp Applications
-+ "urxvt"				Exec urxvt
++ "urxvt"			Exec urxvt
 + "Chromium"			Exec chromium
 + "Thunderbird"			Exec thunderbird
 + "LibreOffice"			Exec libreoffice
-+ ""					Nop
++ ""				Nop
 + "GTK+ Settings"		Exec setgtktheme.py
 + "Set Background"		Exec nitrogen
 + "Select Display"		Exec display-selector.sh
 + "Fvwm Menu"			PopUp FvwmMenu
-+ ""					Nop
-+ "Session"				PopUp Session
++ ""				Nop
++ "Session"			PopUp Session
 
 AddToMenu Window-Ops
-+ "Move"				Move
-+ "Resize"				Resize
-+ "Raise"				Raise
-+ "Lower"				Lower
-+ ""					Nop
-+ "Iconify"				Iconify
-+ "Stick"				Stick
++ "Move"			Move
++ "Resize"			Resize
++ "Raise"			Raise
++ "Lower"			Lower
++ ""				Nop
++ "Iconify"			Iconify
++ "Stick"			Stick
 + "Maximize"			Maximize
-+ "Shade"				WindowShade
-+ ""					Nop
++ "Shade"			WindowShade
++ ""				Nop
 + "Tile Window"			PopUp TileWindow
-+ "Send To"				PopUp SendTo
-+ ""					Nop
-+ "Close"				Close
++ "Send To"			PopUp SendTo
++ ""				Nop
++ "Close"			Close
 
 AddToMenu SendTo
 + "Page Left"			MoveToPage -1p +0p
 + "Page Right"			MoveToPage +1p +0p
-+ "Page Up"				MoveToPage +0p -1p
++ "Page Up"			MoveToPage +0p -1p
 + "Page Down"			MoveToPage +0p +1p
-+ ""					Nop
++ ""				Nop
 + "Page Number"			PopUp SendToPageNumber
-+ ""					Nop
-+ "Desk Up"				MoveToDesk -1
++ ""				Nop
++ "Desk Up"			MoveToDesk -1
 + "Desk Down"			MoveToDesk +1
-+ ""					Nop
++ ""				Nop
 + "Desk Number"			PopUp SendToDeskNumber
 
 AddToMenu SendToPageNumber
-+ "Page 0"				MoveToPage 0 0
-+ "Page 1"				MoveToPage 1 0
-+ "Page 2"				MoveToPage 0 1
-+ "Page 3"				MoveToPage 1 1
++ "Page 0"			MoveToPage 0 0
++ "Page 1"			MoveToPage 1 0
++ "Page 2"			MoveToPage 0 1
++ "Page 3"			MoveToPage 1 1
 
 AddToMenu SendToDeskNumber
-+ "Desk 0"				MoveToDesk 0 0
-+ "Desk 1"				MoveToDesk 0 1
-+ "Desk 2"				MoveToDesk 0 2
-+ "Desk 3"				MoveToDesk 0 3
++ "Desk 0"			MoveToDesk 0 0
++ "Desk 1"			MoveToDesk 0 1
++ "Desk 2"			MoveToDesk 0 2
++ "Desk 3"			MoveToDesk 0 3
 
 AddToMenu TileWindow
 + "Left Half"			TileLeft
 + "Right Half"			TileRight
 + "Top Half"			TileTop
 + "Bottom Half"			TileBottom
-+ ""					Nop
++ ""				Nop
 + "Top Left"			TileTopLeft
 + "Top Right"			TileTopRight
 + "Bottom Left"			TileBottomLeft
@@ -178,19 +178,19 @@ AddToMenu Themes "Select Theme" Title
 PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; done'
 
 AddToMenu FvwmMenu "Fvwm Menu" Title
-+ "Themes"				PopUp Themes
++ "Themes"			PopUp Themes
 + "Refresh Apps"		RefreshAppMenu
 + "About Fvwm"			Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
 
 AddToMenu Session "Session" Title
 + "Quit Fvwm"			FvwmForm QuitVerify ACTION="Quit Fvwm" COMMAND="Quit"
 + "Restart Fvwm"		Restart
-+ ""					Nop
++ ""				Nop
 + "Lock Screen"			Exec loginctl lock-session
-+ ""					Nop
-+ "Suspend"				FvwmForm QuitVerify ACTION="Suspend" COMMAND="Exec systemctl suspend"
++ ""				Nop
++ "Suspend"			FvwmForm QuitVerify ACTION="Suspend" COMMAND="Exec systemctl suspend"
 + "Hibernate"			FvwmForm QuitVerify ACTION="Hibernate" COMMAND="Exec if [ `canhibernate.sh` = 1 ]; then systemctl hibernate; else xmessage -center 'Cannot hibernate. Insufficient free memory.'; fi"
-+ "Reboot"				FvwmForm QuitVerify ACTION="Reboot" COMMAND="Exec systemctl reboot"
++ "Reboot"			FvwmForm QuitVerify ACTION="Reboot" COMMAND="Exec systemctl reboot"
 + "Poweroff"			FvwmForm QuitVerify ACTION="Poweroff" COMMAND="Exec systemctl poweroff"
 
 # Functions

@@ -11,9 +11,6 @@ PS1='[\u@\h \W]\$ '
 #Disable flow control
 stty -ixon
 
-#Set tab width to 4
-tabs -4
-
 #My aliases
 alias pkgcount='pacman -Q | wc -l'
 alias reset='reset -Q'
