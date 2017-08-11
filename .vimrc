@@ -24,3 +24,6 @@ set mouse=a
 
 "Copy to system clipboard
 set clipboard=unnamedplus
+
+"Enable spell checking
+set spell
