@@ -84,15 +84,16 @@ setperms() {
 }
 
 copyconfigs() {
-  sync_files=('.bash_profile' '.bashrc' '.fvwm' '.gvimrc' '.vimrc' '.xinitrc' 
-              '.Xresources')
+  sync_files=('.bash_profile' '.bashrc' '.config/gtk-3.0/gtk.css' 
+              '.config/gtk-3.0/settings.ini' '.fvwm' '.gtkrc-2.0' '.gvimrc' 
+              '.vimrc' '.xinitrc' '.Xresources')
   for x in ${sync_files[@]}; do
     if [ "$(diff -Nurq $HOME/Devel/GitHub/my-config/$x $HOME/$x)" ]; then
       if [ "$1" ] && [ "$1" == "check" ]; then
         echo "Changed: $HOME/$x"
       else
         echo "Copying: $HOME/$x"
-        cp -r $HOME/$x $HOME/Devel/GitHub/my-config/
+        cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config/$x"
       fi
     fi
   done

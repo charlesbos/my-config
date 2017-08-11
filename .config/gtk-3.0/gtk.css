@@ -1,0 +1,12 @@
+/* Some overrides for the Adwaita theme. */
+
+/* Remove round borders and padding from tooltips */
+tooltip,
+.tooltip {
+  border-radius: 0px;
+}
+
+tooltip *,
+.tooltip * {
+  padding: 0px;
+}
