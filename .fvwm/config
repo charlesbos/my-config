@@ -285,3 +285,5 @@ AddToFunc RefreshAppMenu
 *QuitVerify: Command $COMMAND
 *QuitVerify: Button quit "Cancel" ^[
 *QuitVerify: Command Nop
+
+# vim: ts=8 sts=8 sw=8 noet
