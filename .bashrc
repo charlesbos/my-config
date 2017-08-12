@@ -93,7 +93,11 @@ copyconfigs() {
         echo "Changed: $HOME/$x"
       else
         echo "Copying: $HOME/$x"
-        cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config/$x"
+        if [ -f "$x" ]; then 
+          cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config/$x"
+        else
+          cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config"
+        fi
       fi
     fi
   done
