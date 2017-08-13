@@ -22,6 +22,7 @@ Mouse 0	4 A Maximize
 Mouse 0	6 A Iconify
 
 # Decor
+DestroyDecor Metal3
 AddToDecor Metal3
 + TitleStyle Active TiledPixmap themes/Metal3/metal3.png
 + TitleStyle InActive TiledPixmap themes/Metal3/metal3-faded.png

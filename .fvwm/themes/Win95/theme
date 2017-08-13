@@ -22,6 +22,7 @@ Mouse 0	4 A Maximize
 Mouse 0	6 A Iconify
 
 # Decor
+DestroyDecor Win95
 AddToDecor Win95
 + TitleStyle Active Solid #010081
 + TitleStyle Inactive Solid #86898E

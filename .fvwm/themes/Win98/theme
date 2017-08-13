@@ -23,6 +23,7 @@ Mouse 0	4 A Maximize
 Mouse 0	6 A Iconify
 
 # Decor
+DestroyDecor Win98
 AddToDecor Win98
 + TitleStyle Active HGradient 128 #00007B #087BC6
 + TitleStyle Inactive HGradient 128 #7B7B7B #ADADAD

@@ -24,6 +24,7 @@ Mouse 0	4 A Maximize
 Mouse 0	6 A Iconify
 
 # Decor
+DestroyDecor KDE1
 AddToDecor KDE1
 + TitleStyle Active HGradient 128 2 #00007F 4 #000049 1 black
 + TitleStyle InActive HGradient 128 2 #808080 4 #AAAAAA 1 #C0C0C0

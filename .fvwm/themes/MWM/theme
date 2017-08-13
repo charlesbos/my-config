@@ -22,6 +22,7 @@ Mouse 0	2 A Maximize
 Mouse 0	4 A Iconify
 
 # Decor
+DestroyDecor MWM
 AddToDecor MWM
 + TitleStyle Height 18
 + ButtonStyle All - Clear

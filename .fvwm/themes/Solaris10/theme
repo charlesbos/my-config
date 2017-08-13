@@ -22,6 +22,7 @@ Mouse 0	2 A Maximize
 Mouse 0	4 A Iconify
 
 # Decor
+DestroyDecor Solaris10
 AddToDecor Solaris10
 + TitleStyle Height 20
 + ButtonStyle All - Clear
