@@ -8,9 +8,9 @@ DesktopSize 2x2
 ColormapFocus FollowsMouse
 IgnoreModifiers L25
 Emulate Mwm
+BusyCursor Read off
 
 # External files
-Read appmenu
 Read themes/Metal3/theme
 
 # Default styles
@@ -111,19 +111,14 @@ AddToFunc StartFunction
 
 # Menus
 DestroyMenu RootMenu
-AddToMenu RootMenu "Root Menu" Title
-+ "Applications"		PopUp Applications
-+ "urxvt"			Exec urxvt
-+ "Chromium"			Exec chromium
-+ "Thunderbird"			Exec thunderbird
-+ "LibreOffice"			Exec libreoffice
-+ ""				Nop
-+ "GTK+ Settings"		Exec setgtktheme.py
-+ "Set Background"		Exec nitrogen
-+ "Select Display"		Exec display-selector.sh
-+ "Fvwm Menu"			PopUp FvwmMenu
-+ ""				Nop
-+ "Session"			PopUp Session
+AddToMenu RootMenu
++ DynamicPopUpAction Function CreateRootMenu
++ DynamicPopDownAction DestroyMenu recreate RootMenu
+
+DestroyMenu Applications
+AddToMenu Applications
++ DynamicPopUpAction Function CreateAppsMenu
++ DynamicPopDownAction DestroyMenu recreate Applications
 
 DestroyMenu Window-Ops
 AddToMenu Window-Ops
@@ -189,7 +184,6 @@ PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; don
 DestroyMenu FvwmMenu
 AddToMenu FvwmMenu "Fvwm Menu" Title
 + "Themes"			PopUp Themes
-+ "Refresh Apps"		RefreshAppMenu
 + "Identify Window"		Module FvwmIdent
 + "Fvwm Console"		Module FvwmConsole
 + "About Fvwm"			Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
@@ -269,10 +263,27 @@ AddToFunc SetTheme
 + I UnsetEnv FVWM_THEMEPATH
 + I Restart
 
-DestroyFunc RefreshAppMenu
-AddToFunc RefreshAppMenu
-+ I Exec mwmmenu -fvwm > $FVWM_USERDIR/appmenu
-+ I Restart
+DestroyFunc CreateRootMenu
+AddToFunc CreateRootMenu
++ I DestroyMenu recreate RootMenu
++ I AddToMenu RootMenu "Root Menu" Title
++ I AddToMenu RootMenu "Applications" PopUp Applications
++ I AddToMenu RootMenu "urxvt" Exec urxvt
++ I AddToMenu RootMenu "Chromium" Exec chromium
++ I AddToMenu RootMenu "Thunderbird" Exec thunderbird
++ I AddToMenu RootMenu "LibreOffice" Exec libreoffice
++ I AddToMenu RootMenu "" Nop
++ I AddToMenu RootMenu "GTK+ Settings" Exec setgtktheme.py
++ I AddToMenu RootMenu "Set Background" Exec nitrogen
++ I AddToMenu RootMenu "Select Display" Exec display-selector.sh
++ I AddToMenu RootMenu "Fvwm Menu" PopUp FvwmMenu
++ I AddToMenu RootMeu "" Nop
++ I AddToMenu RootMenu "Session" PopUp Session
+
+DestroyFunc CreateAppsMenu
+AddToFunc CreateAppsMenu
++ I DestroyMenu recreate Applications
++ I PipeRead 'mwmmenu -fvwm_dynamic'
 
 # Modules
 # FvwmPager
