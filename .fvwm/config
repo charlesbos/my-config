@@ -93,6 +93,7 @@ Mouse 2	FST A RaiseLower
 Mouse 3	TSIF A Menu Window-Ops Nop
 
 # Initialisation
+DestroyFunc StartFunction
 AddToFunc StartFunction
 + I Module FvwmPager MainPager 0 3
 + I Module FvwmButtons DockApps
@@ -109,6 +110,7 @@ AddToFunc StartFunction
 + I Exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 > /dev/null 2>&1 &
 
 # Menus
+DestroyMenu RootMenu
 AddToMenu RootMenu "Root Menu" Title
 + "Applications"		PopUp Applications
 + "urxvt"			Exec urxvt
@@ -123,6 +125,7 @@ AddToMenu RootMenu "Root Menu" Title
 + ""				Nop
 + "Session"			PopUp Session
 
+DestroyMenu Window-Ops
 AddToMenu Window-Ops
 + "Move"			Move
 + "Resize"			Resize
@@ -139,6 +142,7 @@ AddToMenu Window-Ops
 + ""				Nop
 + "Close"			Close
 
+DestroyMenu SendTo
 AddToMenu SendTo
 + "Page Left"			MoveToPage -1p +0p
 + "Page Right"			MoveToPage +1p +0p
@@ -152,18 +156,21 @@ AddToMenu SendTo
 + ""				Nop
 + "Desk Number"			PopUp SendToDeskNumber
 
+DestroyMenu SendToPageNumber
 AddToMenu SendToPageNumber
 + "Page 0"			MoveToPage 0 0
 + "Page 1"			MoveToPage 1 0
 + "Page 2"			MoveToPage 0 1
 + "Page 3"			MoveToPage 1 1
 
+DestroyMenu SendToDeskNumber
 AddToMenu SendToDeskNumber
 + "Desk 0"			MoveToDesk 0 0
 + "Desk 1"			MoveToDesk 0 1
 + "Desk 2"			MoveToDesk 0 2
 + "Desk 3"			MoveToDesk 0 3
 
+DestroyMenu TileWindow
 AddToMenu TileWindow
 + "Left Half"			TileLeft
 + "Right Half"			TileRight
@@ -175,9 +182,11 @@ AddToMenu TileWindow
 + "Bottom Left"			TileBottomLeft
 + "Bottom Right"		TileBottomRight
 
+DestroyMenu Themes
 AddToMenu Themes "Select Theme" Title
 PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; done'
 
+DestroyMenu FvwmMenu
 AddToMenu FvwmMenu "Fvwm Menu" Title
 + "Themes"			PopUp Themes
 + "Refresh Apps"		RefreshAppMenu
@@ -185,6 +194,7 @@ AddToMenu FvwmMenu "Fvwm Menu" Title
 + "Fvwm Console"		Module FvwmConsole
 + "About Fvwm"			Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
 
+DestroyMenu Session
 AddToMenu Session "Session" Title
 + "Quit Fvwm"			FvwmForm QuitVerify ACTION="Quit Fvwm" COMMAND="Quit"
 + "Restart Fvwm"		Restart
@@ -197,56 +207,69 @@ AddToMenu Session "Session" Title
 + "Poweroff"			FvwmForm QuitVerify ACTION="Poweroff" COMMAND="Exec systemctl poweroff"
 
 # Functions
+DestroyFunc Move-or-Raise
 AddToFunc Move-or-Raise I Raise
 + M Move
 + D Lower
 
+DestroyFunc Move-or-Iconify
 AddToFunc Move-or-Iconify I Raise
 + M Move
 + D Iconify
 
+DestroyFunc Resize-or-Raise
 AddToFunc Resize-or-Raise I Raise
 + M Resize
 + D Lower
 
+DestroyFunc TileLeft
 AddToFunc TileLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
+DestroyFunc TileRight
 AddToFunc TileRight
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
 
+DestroyFunc TileTop
 AddToFunc TileTop
 + I ThisWindow (!Shaded, !Iconic) Maximize 100 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
+DestroyFunc TileBottom
 AddToFunc TileBottom
 + I ThisWindow (!Shaded, !Iconic) Maximize 100 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
 
+DestroyFunc TileTopLeft
 AddToFunc TileTopLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
+DestroyFunc TileTopRight
 AddToFunc TileTopRight
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
 
+DestroyFunc TileBottomLeft
 AddToFunc TileBottomLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
 
+DestroyFunc TileBottomRight
 AddToFunc TileBottomRight
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
 
+DestroyFunc SetTheme
 AddToFunc SetTheme
 + I PipeRead "echo SetEnv FVWM_THEMEPATH `grep Read.*theme $FVWM_USERDIR/config | cut -d ' ' -f 2`"
 + I Exec sed -i "s@$FVWM_THEMEPATH@themes/$0/theme@g" $FVWM_USERDIR/config
 + I UnsetEnv FVWM_THEMEPATH
 + I Restart
 
+DestroyFunc RefreshAppMenu
 AddToFunc RefreshAppMenu
 + I Exec mwmmenu -fvwm > $FVWM_USERDIR/appmenu
 + I Restart

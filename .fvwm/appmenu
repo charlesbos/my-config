@@ -1,3 +1,4 @@
+DestroyMenu "Accessories"
 AddToMenu "Accessories"  	"Accessories"                           	Title
 +				"Galculator"                            	Exec galculator
 +				"Gnote"                                 	Exec gnote
@@ -6,23 +7,28 @@ AddToMenu "Accessories"  	"Accessories"                           	Title
 +				"nitrogen"                              	Exec nitrogen
 +				"Xarchiver"                             	Exec xarchiver
 
+DestroyMenu "Chromium Apps"
 AddToMenu "Chromium Apps"	"Chromium Apps"                         	Title
 +				"Google Play Music"                     	Exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi
 
+DestroyMenu "Development"
 AddToMenu "Development"  	"Development"                           	Title
 +				"Qt4 Assistant"                         	Exec assistant-qt4
 +				"Qt4 Designer"                          	Exec designer-qt4
 +				"Qt4 Linguist"                          	Exec linguist-qt4
 +				"Qt4 QDbusViewer"                       	Exec qdbusviewer-qt4
 
+DestroyMenu "Education"
 AddToMenu "Education"    	"Education"                             	Title
 +				"LibreOffice Math"                      	Exec libreoffice --math
 
+DestroyMenu "Graphics"
 AddToMenu "Graphics"     	"Graphics"                              	Title
 +				"Geeqie"                                	Exec geeqie -r
 +				"GNU Image Manipulation Program"        	Exec gimp-2.8
 +				"LibreOffice Draw"                      	Exec libreoffice --draw
 
+DestroyMenu "Internet"
 AddToMenu "Internet"     	"Internet"                              	Title
 +				"Avahi SSH Server Browser"              	Exec /usr/bin/bssh
 +				"Avahi VNC Server Browser"              	Exec /usr/bin/bvnc
@@ -31,6 +37,7 @@ AddToMenu "Internet"     	"Internet"                              	Title
 +				"HexChat"                               	Exec hexchat --existing
 +				"Thunderbird"                           	Exec /usr/lib/thunderbird/thunderbird
 
+DestroyMenu "Multimedia"
 AddToMenu "Multimedia"   	"Multimedia"                            	Title
 +				"Brasero"                               	Exec brasero
 +				"Google Music Manager"                  	Exec /opt/google/musicmanager/google-musicmanager
@@ -39,6 +46,7 @@ AddToMenu "Multimedia"   	"Multimedia"                            	Title
 +				"Qt V4L2 test Utility"                  	Exec qv4l2
 +				"VLC media player"                      	Exec /usr/bin/vlc --started-from-file
 
+DestroyMenu "Office"
 AddToMenu "Office"       	"Office"                                	Title
 +				"LibreOffice"                           	Exec libreoffice
 +				"LibreOffice Base"                      	Exec libreoffice --base
@@ -48,12 +56,15 @@ AddToMenu "Office"       	"Office"                                	Title
 +				"LibreOffice Math"                      	Exec libreoffice --math
 +				"LibreOffice Writer"                    	Exec libreoffice --writer
 
+DestroyMenu "Other"
 AddToMenu "Other"        	"Other"                                 	Title
 +				"XSane - Scanning"                      	Exec xsane
 
+DestroyMenu "Science"
 AddToMenu "Science"      	"Science"                               	Title
 +				"LibreOffice Math"                      	Exec libreoffice --math
 
+DestroyMenu "Settings"
 AddToMenu "Settings"     	"Settings"                              	Title
 +				"Bluetooth Manager"                     	Exec blueman-manager
 +				"Network Connections"                   	Exec nm-connection-editor
@@ -61,6 +72,7 @@ AddToMenu "Settings"     	"Settings"                              	Title
 +				"Qt5 Settings"                          	Exec qt5ct
 +				"Screensaver"                           	Exec xscreensaver-demo
 
+DestroyMenu "System"
 AddToMenu "System"       	"System"                                	Title
 +				"Avahi Zeroconf Browser"                	Exec /usr/bin/avahi-discover
 +				"dconf Editor"                          	Exec dconf-editor
@@ -73,6 +85,7 @@ AddToMenu "System"       	"System"                                	Title
 +				"UXTerm"                                	Exec uxterm
 +				"XTerm"                                 	Exec xterm
 
+DestroyMenu "Applications"
 AddToMenu "Applications" 	"Applications"                          	Title
 +				"Accessories"                           	Popup	"Accessories"
 +				"Chromium Apps"                         	Popup	"Chromium Apps"
