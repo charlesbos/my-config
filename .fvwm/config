@@ -115,10 +115,32 @@ AddToMenu RootMenu
 + DynamicPopUpAction Function CreateRootMenu
 + DynamicPopDownAction DestroyMenu recreate RootMenu
 
+DestroyFunc CreateRootMenu
+AddToFunc CreateRootMenu
++ I DestroyMenu recreate RootMenu
++ I AddToMenu RootMenu "Root Menu" Title
++ I AddToMenu RootMenu "Applications" PopUp Applications
++ I AddToMenu RootMenu "urxvt" Exec urxvt
++ I AddToMenu RootMenu "Chromium" Exec chromium
++ I AddToMenu RootMenu "Thunderbird" Exec thunderbird
++ I AddToMenu RootMenu "LibreOffice" Exec libreoffice
++ I AddToMenu RootMenu "" Nop
++ I AddToMenu RootMenu "GTK+ Settings" Exec setgtktheme.py
++ I AddToMenu RootMenu "Set Background" Exec nitrogen
++ I AddToMenu RootMenu "Select Display" Exec display-selector.sh
++ I AddToMenu RootMenu "Fvwm Menu" PopUp FvwmMenu
++ I AddToMenu RootMenu "" Nop
++ I AddToMenu RootMenu "Session" PopUp Session
+
 DestroyMenu Applications
 AddToMenu Applications
 + DynamicPopUpAction Function CreateAppsMenu
 + DynamicPopDownAction DestroyMenu recreate Applications
+
+DestroyFunc CreateAppsMenu
+AddToFunc CreateAppsMenu
++ I DestroyMenu recreate Applications
++ I PipeRead 'mwmmenu -fvwm_dynamic'
 
 DestroyMenu Window-Ops
 AddToMenu Window-Ops
@@ -182,10 +204,25 @@ AddToMenu Themes
 + DynamicPopUpAction Function CreateThemesMenu
 + DynamicPopDownAction DestroyMenu recreate Themes
 
+DestroyFunc CreateThemesMenu
+AddToFunc CreateThemesMenu
++ I DestroyMenu recreate Themes
++ I AddToMenu Themes "Select Theme" Title
++ I PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; done'
+
 DestroyMenu FvwmMenu
 AddToMenu FvwmMenu
 + DynamicPopUpAction Function CreateFvwmMenu
 + DynamicPopDownAction DestroyMenu recreate FvwmMenu
+
+DestroyFunc CreateFvwmMenu
+AddToFunc CreateFvwmMenu
++ I DestroyMenu recreate FvwmMenu
++ I AddToMenu FvwmMenu "Fvwm Menu" Title
++ I AddToMenu FvwmMenu "Themes" PopUp Themes
++ I AddToMenu FvwmMenu "Identify Window" Module FvwmIdent
++ I AddToMenu FvwmMenu "Fvwm Console" Module FvwmConsole
++ I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
 
 DestroyMenu Session
 AddToMenu Session "Session" Title
@@ -261,43 +298,6 @@ AddToFunc SetTheme
 + I Exec sed -i "s@$FVWM_THEMEPATH@themes/$0/theme@g" $FVWM_USERDIR/config
 + I UnsetEnv FVWM_THEMEPATH
 + I Restart
-
-DestroyFunc CreateRootMenu
-AddToFunc CreateRootMenu
-+ I DestroyMenu recreate RootMenu
-+ I AddToMenu RootMenu "Root Menu" Title
-+ I AddToMenu RootMenu "Applications" PopUp Applications
-+ I AddToMenu RootMenu "urxvt" Exec urxvt
-+ I AddToMenu RootMenu "Chromium" Exec chromium
-+ I AddToMenu RootMenu "Thunderbird" Exec thunderbird
-+ I AddToMenu RootMenu "LibreOffice" Exec libreoffice
-+ I AddToMenu RootMenu "" Nop
-+ I AddToMenu RootMenu "GTK+ Settings" Exec setgtktheme.py
-+ I AddToMenu RootMenu "Set Background" Exec nitrogen
-+ I AddToMenu RootMenu "Select Display" Exec display-selector.sh
-+ I AddToMenu RootMenu "Fvwm Menu" PopUp FvwmMenu
-+ I AddToMenu RootMenu "" Nop
-+ I AddToMenu RootMenu "Session" PopUp Session
-
-DestroyFunc CreateAppsMenu
-AddToFunc CreateAppsMenu
-+ I DestroyMenu recreate Applications
-+ I PipeRead 'mwmmenu -fvwm_dynamic'
-
-DestroyFunc CreateFvwmMenu
-AddToFunc CreateFvwmMenu
-+ I DestroyMenu recreate FvwmMenu
-+ I AddToMenu FvwmMenu "Fvwm Menu" Title
-+ I AddToMenu FvwmMenu "Themes" PopUp Themes
-+ I AddToMenu FvwmMenu "Identify Window" Module FvwmIdent
-+ I AddToMenu FvwmMenu "Fvwm Console" Module FvwmConsole
-+ I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
-
-DestroyFunc CreateThemesMenu
-AddToFunc CreateThemesMenu
-+ I DestroyMenu recreate Themes
-+ I AddToMenu Themes "Select Theme" Title
-+ I PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; done'
 
 # Modules
 # FvwmPager
