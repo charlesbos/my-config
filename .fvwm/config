@@ -178,15 +178,14 @@ AddToMenu TileWindow
 + "Bottom Right"		TileBottomRight
 
 DestroyMenu Themes
-AddToMenu Themes "Select Theme" Title
-PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; done'
+AddToMenu Themes
++ DynamicPopUpAction Function CreateThemesMenu
++ DynamicPopDownAction DestroyMenu recreate Themes
 
 DestroyMenu FvwmMenu
-AddToMenu FvwmMenu "Fvwm Menu" Title
-+ "Themes"			PopUp Themes
-+ "Identify Window"		Module FvwmIdent
-+ "Fvwm Console"		Module FvwmConsole
-+ "About Fvwm"			Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
+AddToMenu FvwmMenu
++ DynamicPopUpAction Function CreateFvwmMenu
++ DynamicPopDownAction DestroyMenu recreate FvwmMenu
 
 DestroyMenu Session
 AddToMenu Session "Session" Title
@@ -284,6 +283,21 @@ DestroyFunc CreateAppsMenu
 AddToFunc CreateAppsMenu
 + I DestroyMenu recreate Applications
 + I PipeRead 'mwmmenu -fvwm_dynamic'
+
+DestroyFunc CreateFvwmMenu
+AddToFunc CreateFvwmMenu
++ I DestroyMenu recreate FvwmMenu
++ I AddToMenu FvwmMenu "Fvwm Menu" Title
++ I AddToMenu FvwmMenu "Themes" PopUp Themes
++ I AddToMenu FvwmMenu "Identify Window" Module FvwmIdent
++ I AddToMenu FvwmMenu "Fvwm Console" Module FvwmConsole
++ I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
+
+DestroyFunc CreateThemesMenu
+AddToFunc CreateThemesMenu
++ I DestroyMenu recreate Themes
++ I AddToMenu Themes "Select Theme" Title
++ I PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; done'
 
 # Modules
 # FvwmPager
