@@ -8,12 +8,16 @@
 # 43 is for icons and menus
 # 44 is for pager and menu hilights
 # 45 is for greyed menu items
+# 46 is for inactive windows in the pager
+# 47 is for active windows in the pager
 ColorSet 40 fg white, bg #C3C8CB
 ColorSet 41 fg #C3C6CB, bg #C3C6CB
 ColorSet 42 fg black, bg #C3C6CB
 ColorSet 43 fg black, bg #C3C6CB
 ColorSet 44 fg white, bg #010081
 ColorSet 45 fg grey40
+ColorSet 46 bg grey70
+ColorSet 47 bg lightgrey
 DefaultColorSet 42
 
 # Title bar buttons

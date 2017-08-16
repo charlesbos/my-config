@@ -309,6 +309,8 @@ AddToFunc SetTheme
 *MainPager: Font "xft:DejaVu Sans:size=9"
 *MainPager: ColorSet * 42
 *MainPager: HilightColorSet * 44
+*MainPager: WindowColorSets 46 47
+*MainPager: Window3DBorders
 *MainPager: MiniIcons
 *MainPager: Rows 4
 *MainPager: Columns 1
