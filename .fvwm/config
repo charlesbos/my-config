@@ -5,7 +5,7 @@ EdgeResistance 250 10
 EdgeScroll 0 0
 ClickTime 750
 DesktopSize 2x2
-ColormapFocus FollowsMouse
+ColormapFocus FollowsFocus
 IgnoreModifiers L25
 Emulate Mwm
 BusyCursor Read off
