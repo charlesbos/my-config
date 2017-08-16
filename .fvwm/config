@@ -27,7 +27,7 @@ Style * !StickyStippledTitle, !StickyStippledIconTitle
 Style * ResizeHintOverride
 Style * IconSize 57 57
 Style * IconBackgroundColorset 43
-Style * IconTitleColorset 43
+Style * IconTitleColorset 43, HilightIconTitleColorset 44
 
 # Module styles
 Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
