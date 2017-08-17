@@ -30,9 +30,9 @@ Style * IconBackgroundColorset 43
 Style * IconTitleColorset 43, HilightIconTitleColorset 44
 
 # Module styles
-Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "DockApps" !Title, Sticky, WindowListSkip, HandleWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "QuitVerify" !Title, Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip, !Iconifiable, !Maximizable, !Closable
+Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2, MiniIcon /dev/null
+Style "DockApps" !Title, Sticky, WindowListSkip, HandleWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2, MiniIcon /dev/null
+Style "QuitVerify" !Title, Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip, !Iconifiable, !Maximizable, !Closable, MiniIcon /dev/null
 
 # Program styles
 Style Gsimplecal !MwmDecor
