@@ -20,9 +20,6 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
-"Allow mouse scrolling
-set mouse=a
-
 "Copy to system clipboard
 set clipboard=unnamedplus
 
