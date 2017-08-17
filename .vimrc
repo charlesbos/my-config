@@ -20,8 +20,5 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
-"Copy to system clipboard
-set clipboard=unnamedplus
-
 "Enable spell checking
 set spell
