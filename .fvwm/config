@@ -111,7 +111,6 @@ AddToFunc StartFunction
 + I Exec blueman-applet > /dev/null 2>&1 &
 + I Exec xscreensaver -nosplash > /dev/null 2>&1 &
 + I Exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1 &
-+ I Exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 > /dev/null 2>&1 &
 
 # Menus
 DestroyMenu RootMenu
