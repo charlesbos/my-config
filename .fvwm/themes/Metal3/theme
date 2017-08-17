@@ -16,8 +16,8 @@ ColorSet 42 fg grey15, bg silver, hi grey75, sh grey40, TiledPixmap themes/Metal
 ColorSet 43 fg grey15, bg silver, hi gainsboro, sh grey40, TiledPixmap themes/Metal3/metal3.png
 ColorSet 44 fg grey15, bg slategrey, hi #C1C5CC, sh #495568
 ColorSet 45 fg grey40
-ColorSet 46 bg grey60
-ColorSet 47 bg grey75
+ColorSet 46 bg grey70
+ColorSet 47 bg #8899AA
 DefaultColorSet 42
 
 # Title bar buttons

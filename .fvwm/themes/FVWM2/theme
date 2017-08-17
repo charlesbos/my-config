@@ -16,8 +16,8 @@ ColorSet 42 fg black, bg grey60
 ColorSet 43 fg maroon, bg grey60
 ColorSet 44 fg white, bg palevioletred
 ColorSet 45 fg grey40
-ColorSet 46 bg dimgrey
-ColorSet 47 bg silver
+ColorSet 46 bg grey50
+ColorSet 47 bg grey60
 DefaultColorSet 41
 
 # Title bar buttons

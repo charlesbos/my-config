@@ -16,7 +16,7 @@ ColorSet 42 fg black, bg #C0C0C0
 ColorSet 43 fg black, bg #C0C0C0
 ColorSet 44 fg white, bg #00007F
 ColorSet 45 fg grey40
-ColorSet 46 bg grey65
+ColorSet 46 bg grey70
 ColorSet 47 bg lightgrey
 DefaultColorSet 42
 

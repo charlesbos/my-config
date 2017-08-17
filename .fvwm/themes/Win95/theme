@@ -16,8 +16,8 @@ ColorSet 42 fg black, bg #C3C6CB
 ColorSet 43 fg black, bg #C3C6CB
 ColorSet 44 fg white, bg #010081
 ColorSet 45 fg grey40
-ColorSet 46 bg grey70
-ColorSet 47 bg lightgrey
+ColorSet 46 bg #C3C8CB
+ColorSet 47 bg grey90, hi white
 DefaultColorSet 42
 
 # Title bar buttons

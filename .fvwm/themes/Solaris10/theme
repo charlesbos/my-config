@@ -16,7 +16,7 @@ ColorSet 42 fg black, bg #aeb8d5
 ColorSet 43 fg black, bg #aeb8d5
 ColorSet 44 fg white, bg #b24f86
 ColorSet 45 fg grey40
-ColorSet 46 bg lightsteelblue3
+ColorSet 46 bg #aeb8d5
 ColorSet 47 bg hotpink3
 DefaultColorSet 42
 
