@@ -130,7 +130,7 @@ AddToFunc CreateRootMenu
 + I AddToMenu RootMenu "" Nop
 + I AddToMenu RootMenu "GTK+ Settings" Exec setgtktheme.py
 + I AddToMenu RootMenu "Set Background" Exec nitrogen
-+ I AddToMenu RootMenu "Select Display" Exec display-selector.sh
++ I AddToMenu RootMenu "Select Display" Exec display-selector.py
 + I AddToMenu RootMenu "Fvwm Menu" PopUp FvwmMenu
 + I AddToMenu RootMenu "" Nop
 + I AddToMenu RootMenu "Session" PopUp Session
