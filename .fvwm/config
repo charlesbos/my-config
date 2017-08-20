@@ -4,14 +4,14 @@
 EdgeResistance 250 10
 EdgeScroll 0 0
 ClickTime 750
-DesktopSize 2x2
+DesktopSize 3x3
 ColormapFocus FollowsFocus
 IgnoreModifiers L25
 Emulate Mwm
 BusyCursor Read off
 
 # External files
-Read themes/Metal3/theme
+Read themes/KDE1/theme
 
 # Default styles
 Style * ColorSet 41, HilightColorSet 40
@@ -66,10 +66,10 @@ Key Left A S1 MoveToPage -1w +0w
 Key Right A S1 MoveToPage +1w +0w
 Key Up A S1 MoveToPage +0w -1w
 Key Down A S1 MoveToPage +0w +1w
-Key Up A C4 GoToDesk -1 0 3
-Key Down A C4 GoToDesk +1 0 3
-Key Up A S4 MoveToDesk -1 0 3
-Key Down A S4 MoveToDesk +1 0 3
+Key Up A C4 GoToDesk -1
+Key Down A C4 GoToDesk +1
+Key Up A S4 MoveToDesk -1
+Key Down A S4 MoveToDesk +1
 Key Left A 4 TileLeft
 Key Right A 4 TileRight
 Key Up A 4 TileTop
@@ -97,7 +97,7 @@ Mouse 3	TSIF A Menu Window-Ops Nop
 # Initialisation
 DestroyFunc StartFunction
 AddToFunc StartFunction
-+ I Module FvwmPager MainPager 0 3
++ I Module FvwmPager MainPager *
 + I Module FvwmButtons DockApps
 + I Test (!Init) Break
 # Run mwmmenu on startup to avoid a slow firstrun
@@ -173,22 +173,18 @@ AddToMenu SendTo
 + ""				Nop
 + "Desk Up"			MoveToDesk -1
 + "Desk Down"			MoveToDesk +1
-+ ""				Nop
-+ "Desk Number"			PopUp SendToDeskNumber
 
 DestroyMenu SendToPageNumber
 AddToMenu SendToPageNumber
 + "Page 0"			MoveToPage 0 0
 + "Page 1"			MoveToPage 1 0
-+ "Page 2"			MoveToPage 0 1
-+ "Page 3"			MoveToPage 1 1
-
-DestroyMenu SendToDeskNumber
-AddToMenu SendToDeskNumber
-+ "Desk 0"			MoveToDesk 0 0
-+ "Desk 1"			MoveToDesk 0 1
-+ "Desk 2"			MoveToDesk 0 2
-+ "Desk 3"			MoveToDesk 0 3
++ "Page 2"			MoveToPage 2 0
++ "Page 3"			MoveToPage 0 1
++ "Page 4"			MoveToPage 1 1
++ "Page 5"			MoveToPage 2 1
++ "Page 6"			MoveToPage 0 2
++ "Page 7"			MoveToPage 1 2
++ "Page 8"			MoveToPage 2 2
 
 DestroyMenu TileWindow
 AddToMenu TileWindow
@@ -304,15 +300,13 @@ AddToFunc SetTheme
 
 # Modules
 # FvwmPager
-*MainPager: Geometry 102x368+0+0
+*MainPager: Geometry 150x120+0+0
 *MainPager: Font "xft:DejaVu Sans:size=9"
 *MainPager: ColorSet * 42
 *MainPager: HilightColorSet * 44
 *MainPager: WindowColorSets 46 47
 *MainPager: Window3DBorders
 *MainPager: MiniIcons
-*MainPager: Rows 4
-*MainPager: Columns 1
 
 # FvwmButtons
 *DockApps: Geometry 128x64-0+0
