@@ -37,8 +37,6 @@ Style "QuitVerify" !Title, Sticky, WindowListSkip, CirculateSkipIcon, CirculateS
 # Program styles
 Style Gsimplecal !MwmDecor
 Style urxvt Icon /usr/share/icons/gnome/48x48/apps/terminal.png, MiniIcon /usr/share/icons/gnome/16x16/apps/terminal.png
-# Temporary workaround for GVim - it crashes when de-iconified
-Style Gvim !Iconifiable
 
 # Key bindings
 Key Next A SCM Next (AcceptsFocus) Focus
@@ -102,6 +100,7 @@ AddToFunc StartFunction
 + I Test (!Init) Break
 # Run mwmmenu on startup to avoid a slow firstrun
 + I Exec mwmmenu > /dev/null 2>&1 &
+# Pause needed otherwise background not set (race condition??)
 + I Exec sleep 0.2 && nitrogen --restore > /dev/null 2>&1
 + I Exec wmsystemtray --non-wmaker > /dev/null 2>&1 &
 + I Exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
@@ -169,7 +168,7 @@ AddToMenu SendTo
 + "Page Up"			MoveToPage +0p -1p
 + "Page Down"			MoveToPage +0p +1p
 + ""				Nop
-+ "Page Number"			PopUp SendToPageNumber
++ "Page..."			PopUp SendToPageNumber
 + ""				Nop
 + "Desk Up"			MoveToDesk -1
 + "Desk Down"			MoveToDesk +1
@@ -231,7 +230,7 @@ AddToMenu Session "Session" Title
 + "Lock Screen"			Exec loginctl lock-session
 + ""				Nop
 + "Suspend"			FvwmForm QuitVerify ACTION="Suspend" COMMAND="Exec systemctl suspend"
-+ "Hibernate"			FvwmForm QuitVerify ACTION="Hibernate" COMMAND="Exec if [ `canhibernate.sh` = 1 ]; then systemctl hibernate; else xmessage -center 'Cannot hibernate. Insufficient free memory.'; fi"
++ "Hibernate"			FvwmForm QuitVerify ACTION="Hibernate" COMMAND="Exec safehibernate.sh"
 + "Reboot"			FvwmForm QuitVerify ACTION="Reboot" COMMAND="Exec systemctl reboot"
 + "Poweroff"			FvwmForm QuitVerify ACTION="Poweroff" COMMAND="Exec systemctl poweroff"
 
