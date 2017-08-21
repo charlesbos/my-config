@@ -53,6 +53,7 @@ Key F8 A 1 Resize
 Key F9 A 1 Iconify
 Key F10 A 1 Maximize
 Key F11 A 1 Menu Window-Ops Nop
+Key Escape A C WindowList NoGeometryWithInfo
 Key r A C1 Restart
 Key delete A C1 FvwmForm QuitVerify ACTION="Quit Fvwm" COMMAND="Quit"
 Key l A C1 Exec loginctl lock-session
