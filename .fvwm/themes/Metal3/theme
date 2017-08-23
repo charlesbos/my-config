@@ -48,7 +48,7 @@ AddToDecor Metal3
 
 # Some decor related styles
 Style * MwmFunctions, MwmDecor, !MwmBorder, MwmButtons, HintOverride
-Style * HandleWidth 5
+Style * HandleWidth 5, BorderWidth 5
 Style * Font "xft:DejaVu Sans:size=10", IconFont "xft:DejaVu Sans:size=8"
 
 # Set the decor

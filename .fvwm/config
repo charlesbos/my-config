@@ -30,8 +30,8 @@ Style * IconBackgroundColorset 43
 Style * IconTitleColorset 43, HilightIconTitleColorset 44
 
 # Module styles
-Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "DockApps" !Title, Sticky, WindowListSkip, HandleWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+Style "DockApps" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "QuitVerify" !Title, Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip, !Iconifiable, !Maximizable, !Closable
 
 # Program styles

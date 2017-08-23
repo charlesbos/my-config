@@ -71,7 +71,7 @@ AddToDecor Win98
 
 # Some decor related styles
 Style * MwmFunctions, MwmDecor, !MwmBorder, MwmButtons, HintOverride
-Style * HandleWidth 5
+Style * HandleWidth 5, BorderWidth 5
 Style * Font "xft:DejaVu Sans:size=9:bold", IconFont "xft:DejaVu Sans:size=9"
 
 # Set the decor

@@ -36,7 +36,7 @@ AddToDecor MWM
 
 # Some decor related styles
 Style * MwmFunctions, MwmDecor, MwmBorder, MwmButtons, HintOverride
-Style * HandleWidth 7
+Style * HandleWidth 7, BorderWidth 7
 Style * Font "xft:DejaVu Sans:size=10", IconFont "xft:DejaVu Sans:size=8"
 
 # Set the decor
