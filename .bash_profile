@@ -10,5 +10,5 @@ PATH=$PATH:~/Devel/GitHub/my-scripts
 # Add mwmmenu to PATH
 PATH=$PATH:~/Devel/GitHub/mwmmenu
 
-# For qt5ct
-export QT_QPA_PLATFORMTHEME=qt5ct
+# Use GTK2 theme and dialogues in Qt5 apps
+export QT_QPA_PLATFORMTHEME=gtk2
