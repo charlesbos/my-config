@@ -74,7 +74,7 @@ Key Left A 4 TileLeft
 Key Right A 4 TileRight
 Key Up A 4 TileTop
 Key Down A 4 TileBottom
-Key J A 4 All (CurrentDesk, Focused) Focus
+Key J A 4 Jump-to-Window
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
 Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
@@ -309,6 +309,11 @@ DestroyFunc MoveToDesk-and-Focus
 AddToFunc MoveToDesk-and-Focus
 + I MoveToDesk $0
 + I Prev (CurrentDesk, AcceptsFocus) Focus-and-Raise
+
+DestroyFunc Jump-to-Window
+AddToFunc Jump-to-Window
++ I All (CurrentDesk, Focused) Focus-and-Raise
++ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) Focus-and-Raise
 
 DestroyFunc TileLeft
 AddToFunc TileLeft
