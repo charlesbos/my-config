@@ -46,12 +46,12 @@ Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, Curr
 Key F1 A 1 Menu RootMenu Nop
 Key F2 A 1 Exec urxvt
 Key F3 A 1 Lower
-Key F4 A 1 Close
+Key F4 A 1 Close-and-Focus
 Key F5 A 1 Raise
 Key F6 A 1 WindowShade
 Key F7 A 1 Move
 Key F8 A 1 Resize
-Key F9 A 1 Iconify
+Key F9 A 1 Iconify-and-Focus
 Key F10 A 1 Maximize
 Key F11 A 1 Menu Window-Ops Nop
 Key Escape A C WindowList Root c c NoGeometryWithInfo
@@ -90,7 +90,7 @@ Mouse 1	F A Resize-or-Raise
 Mouse 1	TS A Move-or-Raise
 Mouse 1	I A Move-or-Iconify
 Mouse 1 W 1 Move-or-Raise
-Mouse 2	I A Iconify
+Mouse 2	I A Iconify-and-Focus
 Mouse 2	FST A RaiseLower
 Mouse 3	TSIF A Menu Window-Ops Nop
 
@@ -154,7 +154,7 @@ AddToMenu Window-Ops
 + "Raise"			Raise
 + "Lower"			Lower
 + ""				Nop
-+ "Iconify"			Iconify
++ "Iconify"			Iconify-and-Focus
 + "Stick"			Stick
 + "Maximize"			Maximize
 + "Shade"			WindowShade
@@ -162,7 +162,7 @@ AddToMenu Window-Ops
 + "Tile Window"			PopUp TileWindow
 + "Send To"			PopUp SendTo
 + ""				Nop
-+ "Close"			Close
++ "Close"			Close-and-Focus
 
 DestroyMenu SendTo
 AddToMenu SendTo
@@ -246,7 +246,7 @@ AddToFunc Move-or-Raise I Raise
 DestroyFunc Move-or-Iconify
 AddToFunc Move-or-Iconify I Raise
 + M Move
-+ D Iconify
++ D Iconify-and-Focus
 
 DestroyFunc Resize-or-Raise
 AddToFunc Resize-or-Raise I Raise
@@ -258,6 +258,26 @@ AddToFunc Focus-and-Raise
 + I Focus
 + I Raise
 
+# When a window is closed or iconified, FVWM attempts to pass keyboard focus to
+# the next window in the stack. However, if the next window in the stack is not
+# in the current page then no window gets the keyboard focus. The next two functions
+# are workarounds to ensure that when a window is closed or iconified, focus is
+# passed to the next window in the stack that happens to be in the current page.
+DestroyFunc Iconify-and-Focus
+AddToFunc Iconify-and-Focus
++ I Iconify
++ I All (CurrentPage, Focused) Focus-and-Raise
++ I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus, !Iconic) Focus-and-Raise
+
+DestroyFunc Close-and-Focus
+AddToFunc Close-and-Focus
++ I Close
++ I Prev (CurrentPage, AcceptsFocus) Focus-and-Raise
+
+# When desk switching or page switching hand keyboard focus to the previously
+# focused window in that desk or page. Likewise, if a window is sent to a
+# different desk, hand keyboard focus to the previously focused window in that
+# desk.
 DestroyFunc GoToDesk-and-Focus
 AddToFunc GoToDesk-and-Focus
 + I GoToDesk $0
