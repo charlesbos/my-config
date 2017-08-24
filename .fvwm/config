@@ -253,22 +253,27 @@ AddToFunc Resize-or-Raise I Raise
 + M Resize
 + D Lower
 
+DestroyFunc Focus-and-Raise
+AddToFunc Focus-and-Raise
++ I Focus
++ I Raise
+
 DestroyFunc GoToDesk-and-Focus
 AddToFunc GoToDesk-and-Focus
 + I GoToDesk $0
-+ I All (CurrentDesk, Focused) Focus
-+ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) Focus
++ I All (CurrentDesk, Focused) Focus-and-Raise
++ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) Focus-and-Raise
 
 DestroyFunc GoToPage-and-Focus
 AddToFunc GoToPage-and-Focus
 + I GoToPage $0 $1
-+ I All (CurrentPage, Focused) Focus
-+ I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus) Focus
++ I All (CurrentPage, Focused) Focus-and-Raise
++ I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus) Focus-and-Raise
 
 DestroyFunc MoveToDesk-and-Focus
 AddToFunc MoveToDesk-and-Focus
 + I MoveToDesk $0
-+ I Prev (CurrentDesk, AcceptsFocus) Focus
++ I Prev (CurrentDesk, AcceptsFocus) Focus-and-Raise
 
 DestroyFunc TileLeft
 AddToFunc TileLeft
