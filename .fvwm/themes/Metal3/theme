@@ -21,9 +21,9 @@ ColorSet 47 bg #8899AA
 DefaultColorSet 42
 
 # Title bar buttons
-Mouse 0	2 A Close-and-Focus
+Mouse 0	2 A Close-and-Focus-OnClick
 Mouse 0	4 A Maximize
-Mouse 0	6 A Iconify-and-Focus
+Mouse 0	6 A Iconify-and-Focus-OnClick
 
 # Decor
 DestroyDecor Metal3

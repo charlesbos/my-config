@@ -260,19 +260,31 @@ AddToFunc Focus-and-Raise
 
 # When a window is closed or iconified, FVWM attempts to pass keyboard focus to
 # the next window in the stack. However, if the next window in the stack is not
-# in the current page then no window gets the keyboard focus. The next two functions
-# are workarounds to ensure that when a window is closed or iconified, focus is
-# passed to the next window in the stack that happens to be in the current page.
+# in the current page then no window gets the keyboard focus. The next four
+# functions are workarounds to ensure that when a window is closed or 
+# iconified, focus is passed to the next window in the stack that happens to be
+# in the current page.
 DestroyFunc Iconify-and-Focus
 AddToFunc Iconify-and-Focus
 + I Iconify
 + I All (CurrentPage, Focused) Focus-and-Raise
 + I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus, !Iconic) Focus-and-Raise
 
+DestroyFunc Iconify-and-Focus-OnClick
+AddToFunc Iconify-and-Focus-OnClick
++ C Iconify
++ C All (CurrentPage, Focused) Focus-and-Raise
++ C TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus, !Iconic) Focus-and-Raise
+
 DestroyFunc Close-and-Focus
 AddToFunc Close-and-Focus
 + I Close
 + I Prev (CurrentPage, AcceptsFocus) Focus-and-Raise
+
+DestroyFunc Close-and-Focus-OnClick
+AddToFunc Close-and-Focus-OnClick
++ C Close
++ C Prev (CurrentPage, AcceptsFocus) Focus-and-Raise
 
 # When desk switching or page switching hand keyboard focus to the previously
 # focused window in that desk or page. Likewise, if a window is sent to a
