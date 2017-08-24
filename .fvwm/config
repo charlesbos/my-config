@@ -68,8 +68,8 @@ Key Up A S1 MoveToPage +0w -1w
 Key Down A S1 MoveToPage +0w +1w
 Key Up A C4 GoToDesk-and-Focus -1
 Key Down A C4 GoToDesk-and-Focus +1
-Key Up A S4 MoveToDesk -1
-Key Down A S4 MoveToDesk +1
+Key Up A S4 MoveToDesk-and-Focus -1
+Key Down A S4 MoveToDesk-and-Focus +1
 Key Left A 4 TileLeft
 Key Right A 4 TileRight
 Key Up A 4 TileTop
@@ -173,8 +173,8 @@ AddToMenu SendTo
 + ""				Nop
 + "Page..."			PopUp SendToPageNumber
 + ""				Nop
-+ "Desk Prev"			MoveToDesk -1
-+ "Desk Next"			MoveToDesk +1
++ "Desk Prev"			MoveToDesk-and-Focus -1
++ "Desk Next"			MoveToDesk-and-Focus +1
 
 DestroyMenu SendToPageNumber
 AddToMenu SendToPageNumber
@@ -264,6 +264,11 @@ AddToFunc GoToPage-and-Focus
 + I GoToPage $0 $1
 + I All (CurrentPage, Focused) Focus
 + I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus) Focus
+
+DestroyFunc MoveToDesk-and-Focus
+AddToFunc MoveToDesk-and-Focus
++ I MoveToDesk $0
++ I Prev (CurrentDesk, AcceptsFocus) Focus
 
 DestroyFunc TileLeft
 AddToFunc TileLeft
