@@ -241,6 +241,7 @@ AddToMenu Session "Session" Title
 + "Poweroff"			FvwmForm QuitVerify ACTION="Poweroff" COMMAND="Exec systemctl poweroff"
 
 # Functions
+# Basic functions
 DestroyFunc Move-or-Raise
 AddToFunc Move-or-Raise I Raise
 + M Move
@@ -292,7 +293,8 @@ AddToFunc Close-and-Focus-OnClick
 # When desk switching or page switching hand keyboard focus to the previously
 # focused window in that desk or page. Likewise, if a window is sent to a
 # different desk, hand keyboard focus to the previously focused window in that
-# desk.
+# desk. Finally, we want to able to jump to the page of the currently or previously
+# focused window in the desk if that happens to be in a different page
 DestroyFunc GoToDesk-and-Focus
 AddToFunc GoToDesk-and-Focus
 + I GoToDesk $0
@@ -315,6 +317,7 @@ AddToFunc Jump-to-Window
 + I All (CurrentDesk, Focused) Focus-and-Raise
 + I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) Focus-and-Raise
 
+# Tiling functions
 DestroyFunc TileLeft
 AddToFunc TileLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
@@ -355,6 +358,7 @@ AddToFunc TileBottomRight
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
 
+# Misc functions
 DestroyFunc SetTheme
 AddToFunc SetTheme
 + I PipeRead "echo SetEnv FVWM_THEMEPATH `grep Read.*theme $FVWM_USERDIR/config | cut -d ' ' -f 2`"
