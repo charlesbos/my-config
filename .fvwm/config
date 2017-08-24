@@ -31,6 +31,7 @@ Style * IconTitleColorset 43, HilightIconTitleColorset 44
 
 # Module styles
 Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+Style "PagerFrame" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "DockApps" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "QuitVerify" !Title, Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip, !Iconifiable, !Maximizable, !Closable
 
@@ -97,6 +98,7 @@ Mouse 3	TSIF A Menu Window-Ops Nop
 DestroyFunc StartFunction
 AddToFunc StartFunction
 + I Module FvwmPager MainPager *
++ I Module FvwmButtons PagerFrame
 + I Module FvwmButtons DockApps
 + I Test (!Init) Break
 # Run mwmmenu on startup to avoid a slow firstrun
@@ -171,8 +173,8 @@ AddToMenu SendTo
 + ""				Nop
 + "Page..."			PopUp SendToPageNumber
 + ""				Nop
-+ "Desk Up"			MoveToDesk -1
-+ "Desk Down"			MoveToDesk +1
++ "Desk Prev"			MoveToDesk -1
++ "Desk Next"			MoveToDesk +1
 
 DestroyMenu SendToPageNumber
 AddToMenu SendToPageNumber
@@ -300,7 +302,6 @@ AddToFunc SetTheme
 
 # Modules
 # FvwmPager
-*MainPager: Geometry 150x120+0+0
 *MainPager: Font "xft:DejaVu Sans:size=9"
 *MainPager: ColorSet * 42
 *MainPager: HilightColorSet * 44
@@ -310,6 +311,24 @@ AddToFunc SetTheme
 *MainPager: UseSkipList
 
 # FvwmButtons
+*PagerFrame: Geometry 150x140+0+0
+*PagerFrame: BoxSize fixed
+*PagerFrame: ColorSet 42
+*PagerFrame: Rows 140
+*PagerFrame: Columns 150
+*PagerFrame: (150x120, Container)
+*PagerFrame: (Frame 1, Swallow(UseOld, NoClose) "MainPager" Nop)
+*PagerFrame: (End)
+*PagerFrame: (40x20, Container)
+*PagerFrame: (Frame 1, Title "<--", Action (Mouse 1) GoToDesk -1)
+*PagerFrame: (End)
+*PagerFrame: (70x20, Container)
+*PagerFrame: (Frame 1, Title "")
+*PagerFrame: (End)
+*PagerFrame: (40x20, Container)
+*PagerFrame: (Frame 1, Title "-->", Action (Mouse 1) GoToDesk +1)
+*PagerFrame: (End)
+
 *DockApps: Geometry 128x64-0+0
 *DockApps: BoxSize fixed
 *DockApps: ColorSet 42
