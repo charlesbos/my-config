@@ -32,7 +32,7 @@ Style * IconTitleColorset 43, HilightIconTitleColorset 44
 # Module styles
 Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "PagerFrame" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "DockApps" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+Style "WMakerApps" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "QuitVerify" !Title, Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip, !Iconifiable, !Maximizable, !Closable
 
 # Program styles
@@ -101,7 +101,7 @@ DestroyFunc StartFunction
 AddToFunc StartFunction
 + I Module FvwmPager MainPager *
 + I Module FvwmButtons PagerFrame
-+ I Module FvwmButtons DockApps
++ I Module FvwmButtons WMakerApps
 + I Test (!Init) Break
 # Run mwmmenu on startup to avoid a slow firstrun
 + I Exec mwmmenu > /dev/null 2>&1 &
@@ -385,13 +385,13 @@ AddToFunc SetTheme
 *PagerFrame: (Frame 1, Title "-->", Action (Mouse 1) GoToDesk-and-Focus +1)
 *PagerFrame: (End)
 
-*DockApps: Geometry 128x64-0+0
-*DockApps: BoxSize fixed
-*DockApps: ColorSet 42
-*DockApps: Rows 1
-*DockApps: Columns 2
-*DockApps: (Frame 1, Swallow(UseOld, NoClose) "wmclock" Nop)
-*DockApps: (Frame 1, Swallow(UseOld, NoClose) "wmsystemtray" Nop)
+*WMakerApps: Geometry 128x64-0+0
+*WMakerApps: BoxSize fixed
+*WMakerApps: ColorSet 42
+*WMakerApps: Rows 1
+*WMakerApps: Columns 2
+*WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmclock" Nop)
+*WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmsystemtray" Nop)
 
 # FvwmForm
 *QuitVerify: GrabServer
