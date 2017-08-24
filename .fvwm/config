@@ -66,8 +66,8 @@ Key Left A S1 MoveToPage -1w +0w
 Key Right A S1 MoveToPage +1w +0w
 Key Up A S1 MoveToPage +0w -1w
 Key Down A S1 MoveToPage +0w +1w
-Key Up A C4 GoToDesk -1
-Key Down A C4 GoToDesk +1
+Key Up A C4 GoToDesk-and-Focus -1
+Key Down A C4 GoToDesk-and-Focus +1
 Key Up A S4 MoveToDesk -1
 Key Down A S4 MoveToDesk +1
 Key Left A 4 TileLeft
@@ -253,6 +253,12 @@ AddToFunc Resize-or-Raise I Raise
 + M Resize
 + D Lower
 
+DestroyFunc GoToDesk-and-Focus
+AddToFunc GoToDesk-and-Focus
++ I GoToDesk $0
++ I All (CurrentDesk, Focused) Focus
++ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) Focus
+
 DestroyFunc TileLeft
 AddToFunc TileLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
@@ -320,13 +326,13 @@ AddToFunc SetTheme
 *PagerFrame: (Frame 1, Swallow(UseOld, NoClose) "MainPager" Nop)
 *PagerFrame: (End)
 *PagerFrame: (40x20, Container)
-*PagerFrame: (Frame 1, Title "<--", Action (Mouse 1) GoToDesk -1)
+*PagerFrame: (Frame 1, Title "<--", Action (Mouse 1) GoToDesk-and-Focus -1)
 *PagerFrame: (End)
 *PagerFrame: (70x20, Container)
 *PagerFrame: (Frame 1, Title "")
 *PagerFrame: (End)
 *PagerFrame: (40x20, Container)
-*PagerFrame: (Frame 1, Title "-->", Action (Mouse 1) GoToDesk +1)
+*PagerFrame: (Frame 1, Title "-->", Action (Mouse 1) GoToDesk-and-Focus +1)
 *PagerFrame: (End)
 
 *DockApps: Geometry 128x64-0+0
