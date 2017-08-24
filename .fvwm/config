@@ -58,10 +58,10 @@ Key Escape A C WindowList Root c c NoGeometryWithInfo
 Key r A C1 Restart
 Key delete A C1 FvwmForm QuitVerify ACTION="Quit Fvwm" COMMAND="Quit"
 Key l A C1 Exec loginctl lock-session
-Key Left A C1 GoToPage -1p +0p
-Key Right A C1 GoToPage +1p +0p
-Key Up A C1 GoToPage +0p -1p
-Key Down A C1 GoToPage +0p +1p
+Key Left A C1 GoToPage-and-Focus -1p +0p
+Key Right A C1 GoToPage-and-Focus +1p +0p
+Key Up A C1 GoToPage-and-Focus +0p -1p
+Key Down A C1 GoToPage-and-Focus +0p +1p
 Key Left A S1 MoveToPage -1w +0w
 Key Right A S1 MoveToPage +1w +0w
 Key Up A S1 MoveToPage +0w -1w
@@ -258,6 +258,12 @@ AddToFunc GoToDesk-and-Focus
 + I GoToDesk $0
 + I All (CurrentDesk, Focused) Focus
 + I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) Focus
+
+DestroyFunc GoToPage-and-Focus
+AddToFunc GoToPage-and-Focus
++ I GoToPage $0 $1
++ I All (CurrentPage, Focused) Focus
++ I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus) Focus
 
 DestroyFunc TileLeft
 AddToFunc TileLeft
