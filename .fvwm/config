@@ -257,15 +257,10 @@ AddToFunc Resize-or-Raise I Raise
 + M Resize
 + D Lower
 
-DestroyFunc Focus-and-Raise
-AddToFunc Focus-and-Raise
-+ I FlipFocus
-+ I Raise
-
 DestroyFunc Jump-to-Window
 AddToFunc Jump-to-Window
-+ I All ($0, Focused) Focus-and-Raise
-+ I TestRc (NoMatch) Prev ($0, AcceptsFocus) Focus-and-Raise
++ I All ($0, Focused) FlipFocus
++ I TestRc (NoMatch) Prev ($0, AcceptsFocus) FlipFocus
 
 # When a window is closed or iconified, FVWM attempts to pass keyboard focus to
 # the next window in the stack. However, if the next window in the stack is not
@@ -286,12 +281,12 @@ AddToFunc Iconify-and-Focus-OnClick
 DestroyFunc Close-and-Focus
 AddToFunc Close-and-Focus
 + I Close
-+ I Prev (CurrentPage, AcceptsFocus) Focus-and-Raise
++ I Prev (CurrentPage, AcceptsFocus) FlipFocus
 
 DestroyFunc Close-and-Focus-OnClick
 AddToFunc Close-and-Focus-OnClick
 + C Close
-+ C Prev (CurrentPage, AcceptsFocus) Focus-and-Raise
++ C Prev (CurrentPage, AcceptsFocus) FlipFocus
 
 # When desk switching or page switching hand keyboard focus to the previously
 # focused window in that desk or page. Likewise, if a window is sent to a
