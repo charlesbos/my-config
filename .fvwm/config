@@ -257,42 +257,40 @@ AddToFunc Resize-or-Raise I Raise
 + M Resize
 + D Lower
 
+# When a window is closed or iconified, FVWM attempts to pass keyboard focus to
+# the next window in the stack. However, if the next window in the stack is not
+# in the current page then no window gets the keyboard focus. The next four
+# functions are workarounds to ensure that when a window is closed or 
+# iconified, focus is passed to the topmost window in the current page
+DestroyFunc Iconify-and-Focus
+AddToFunc Iconify-and-Focus
++ I Iconify
++ I All Reverse UseStack (CurrentPage, AcceptsFocus) FlipFocus
+
+DestroyFunc Iconify-and-Focus-OnClick
+AddToFunc Iconify-and-Focus-OnClick
++ C Iconify
++ C All Reverse UseStack (CurrentPage, AcceptsFocus) FlipFocus
+
+DestroyFunc Close-and-Focus
+AddToFunc Close-and-Focus
++ I Close
++ I All Reverse UseStack (CurrentPage, AcceptsFocus) FlipFocus
+
+DestroyFunc Close-and-Focus-OnClick
+AddToFunc Close-and-Focus-OnClick
++ C Close
++ C All Reverse UseStack (CurrentPage, AcceptsFocus) FlipFocus
+
+# When desk switching or page switching hand keyboard focus to the previously
+# focused window in that desk or page. Likewise, if a window is sent to a
+# different desk, hand keyboard focus to the previously focused window in that
+# desk.
 DestroyFunc Jump-to-Window
 AddToFunc Jump-to-Window
 + I All ($0, Focused) FlipFocus
 + I TestRc (NoMatch) Prev ($0, AcceptsFocus) FlipFocus
 
-# When a window is closed or iconified, FVWM attempts to pass keyboard focus to
-# the next window in the stack. However, if the next window in the stack is not
-# in the current page then no window gets the keyboard focus. The next four
-# functions are workarounds to ensure that when a window is closed or 
-# iconified, focus is passed to the next window in the stack that happens to be
-# in the current page.
-DestroyFunc Iconify-and-Focus
-AddToFunc Iconify-and-Focus
-+ I Iconify
-+ I Jump-to-Window CurrentPage
-
-DestroyFunc Iconify-and-Focus-OnClick
-AddToFunc Iconify-and-Focus-OnClick
-+ C Iconify
-+ C Jump-to-Window CurrentPage
-
-DestroyFunc Close-and-Focus
-AddToFunc Close-and-Focus
-+ I Close
-+ I Prev (CurrentPage, AcceptsFocus) FlipFocus
-
-DestroyFunc Close-and-Focus-OnClick
-AddToFunc Close-and-Focus-OnClick
-+ C Close
-+ C Prev (CurrentPage, AcceptsFocus) FlipFocus
-
-# When desk switching or page switching hand keyboard focus to the previously
-# focused window in that desk or page. Likewise, if a window is sent to a
-# different desk, hand keyboard focus to the previously focused window in that
-# desk. Finally, we want to able to jump to the page of the currently or previously
-# focused window in the desk if that happens to be in a different page
 DestroyFunc GoToDesk-and-Focus
 AddToFunc GoToDesk-and-Focus
 + I GoToDesk $0
