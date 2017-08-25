@@ -373,21 +373,21 @@ AddToFunc SetTheme
 *MainPager: UseSkipList
 
 # FvwmButtons
-*PagerFrame: Geometry 150x140+0+0
+*PagerFrame: Geometry 153x135+0+0
 *PagerFrame: BoxSize fixed
 *PagerFrame: ColorSet 42
-*PagerFrame: Rows 140
-*PagerFrame: Columns 150
-*PagerFrame: (150x120, Container)
+*PagerFrame: Rows 135
+*PagerFrame: Columns 153
+*PagerFrame: (153x119, Container)
 *PagerFrame: (Frame 1, Swallow(UseOld, NoClose) "MainPager" Nop)
 *PagerFrame: (End)
-*PagerFrame: (40x20, Container)
+*PagerFrame: (41x16, Container)
 *PagerFrame: (Frame 1, Title "<--", Action (Mouse 1) GoToDesk-and-Focus -1)
 *PagerFrame: (End)
-*PagerFrame: (70x20, Container)
+*PagerFrame: (71x16, Container)
 *PagerFrame: (Frame 1, Title "")
 *PagerFrame: (End)
-*PagerFrame: (40x20, Container)
+*PagerFrame: (41x16, Container)
 *PagerFrame: (Frame 1, Title "-->", Action (Mouse 1) GoToDesk-and-Focus +1)
 *PagerFrame: (End)
 
