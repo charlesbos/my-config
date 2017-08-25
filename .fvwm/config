@@ -74,7 +74,7 @@ Key Left A 4 TileLeft
 Key Right A 4 TileRight
 Key Up A 4 TileTop
 Key Down A 4 TileBottom
-Key J A 4 Jump-to-Window
+Key J A 4 Jump-to-Window CurrentDesk
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
 Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
@@ -259,8 +259,13 @@ AddToFunc Resize-or-Raise I Raise
 
 DestroyFunc Focus-and-Raise
 AddToFunc Focus-and-Raise
-+ I Focus
++ I FlipFocus
 + I Raise
+
+DestroyFunc Jump-to-Window
+AddToFunc Jump-to-Window
++ I All ($0, Focused) Focus-and-Raise
++ I TestRc (NoMatch) Prev ($0, AcceptsFocus) Focus-and-Raise
 
 # When a window is closed or iconified, FVWM attempts to pass keyboard focus to
 # the next window in the stack. However, if the next window in the stack is not
@@ -271,14 +276,12 @@ AddToFunc Focus-and-Raise
 DestroyFunc Iconify-and-Focus
 AddToFunc Iconify-and-Focus
 + I Iconify
-+ I All (CurrentPage, Focused) Focus-and-Raise
-+ I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus, !Iconic) Focus-and-Raise
++ I Jump-to-Window CurrentPage
 
 DestroyFunc Iconify-and-Focus-OnClick
 AddToFunc Iconify-and-Focus-OnClick
 + C Iconify
-+ C All (CurrentPage, Focused) Focus-and-Raise
-+ C TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus, !Iconic) Focus-and-Raise
++ C Jump-to-Window CurrentPage
 
 DestroyFunc Close-and-Focus
 AddToFunc Close-and-Focus
@@ -298,24 +301,17 @@ AddToFunc Close-and-Focus-OnClick
 DestroyFunc GoToDesk-and-Focus
 AddToFunc GoToDesk-and-Focus
 + I GoToDesk $0
-+ I All (CurrentDesk, Focused) Focus-and-Raise
-+ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) Focus-and-Raise
++ I Jump-to-Window CurrentDesk
 
 DestroyFunc GoToPage-and-Focus
 AddToFunc GoToPage-and-Focus
 + I GoToPage $0 $1
-+ I All (CurrentPage, Focused) Focus-and-Raise
-+ I TestRc (NoMatch) Prev (CurrentPage, AcceptsFocus) Focus-and-Raise
++ I Jump-to-Window CurrentPage
 
 DestroyFunc MoveToDesk-and-Focus
 AddToFunc MoveToDesk-and-Focus
 + I MoveToDesk $0
-+ I Prev (CurrentDesk, AcceptsFocus) Focus-and-Raise
-
-DestroyFunc Jump-to-Window
-AddToFunc Jump-to-Window
-+ I All (CurrentDesk, Focused) Focus-and-Raise
-+ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) Focus-and-Raise
++ I Jump-to-Window CurrentPage
 
 # Tiling functions
 DestroyFunc TileLeft
