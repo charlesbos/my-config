@@ -262,47 +262,56 @@ AddToFunc Focus-and-Raise
 + I FlipFocus
 + I Raise
 
+# A function which passes keyboard focus to the window at the top of the stack
+# by traversing the stack in reverse order, focusing each window in turn.
+# In order to avoid each window being highlighted on traversal, causing a
+# flickering effect, we temporarily set the hilight colorset to the background
+# one. It's a nasty hack but I can't see any other way of achieving this.
+DestroyFunc Focus-Top
+AddToFunc Focus-Top
++ I None ($0, AcceptsFocus) Break
++ I Style * HilightColorSet 41
++ I All Reverse UseStack ($0, AcceptsFocus) FlipFocus
++ I Style * HilightColorSet 40
+
+# This function first tries calling the Focus-and-Raise command on a window
+# that is already focused and not overlapped by other windows. This is useful
+# for when we want to jump to a focused window in a different page. If that fails
+# we then call Focus-Top
+DestroyFunc Jump-to-Window
+AddToFunc Jump-to-Window
++ I All ($0, Focused, !Overlapped) Focus-and-Raise
++ I TestRc (NoMatch) Focus-Top $0
+
 # When a window is closed or iconified, FVWM attempts to pass keyboard focus to
 # the next window in the stack. However, if the next window in the stack is not
 # in the current page then no window gets the keyboard focus. The next four
 # functions are workarounds to ensure that when a window is closed or 
 # iconified, focus is passed to the topmost window in the current page
-DestroyFunc Focus-Top
-AddToFunc Focus-Top
-+ I None (CurrentPage, AcceptsFocus) Break
-+ I Style * HilightColorSet 41
-+ I All Reverse UseStack (CurrentPage, AcceptsFocus) FlipFocus
-+ I Style * HilightColorSet 40
-
 DestroyFunc Iconify-and-Focus
 AddToFunc Iconify-and-Focus
 + I Iconify
-+ I Focus-Top
++ I Focus-Top CurrentPage
 
 DestroyFunc Iconify-and-Focus-OnClick
 AddToFunc Iconify-and-Focus-OnClick
 + C Iconify
-+ C Focus-Top
++ C Focus-Top CurrentPage
 
 DestroyFunc Close-and-Focus
 AddToFunc Close-and-Focus
 + I Close
-+ I Focus-Top
++ I Focus-Top CurrentPage
 
 DestroyFunc Close-and-Focus-OnClick
 AddToFunc Close-and-Focus-OnClick
 + C Close
-+ C Focus-Top
++ C Focus-Top CurrentPage
 
 # When desk switching or page switching hand keyboard focus to the previously
 # focused window in that desk or page. Likewise, if a window is sent to a
 # different desk, hand keyboard focus to the previously focused window in that
 # desk.
-DestroyFunc Jump-to-Window
-AddToFunc Jump-to-Window
-+ I All ($0, Focused, !Overlapped) Focus-and-Raise
-+ I TestRc (NoMatch) All Reverse UseStack ($0, AcceptsFocus) Focus-and-Raise
-
 DestroyFunc GoToDesk-and-Focus
 AddToFunc GoToDesk-and-Focus
 + I GoToDesk $0
