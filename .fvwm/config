@@ -269,7 +269,7 @@ AddToFunc Focus-and-Raise
 # iconified, focus is passed to the topmost window in the current page
 DestroyFunc Focus-Top
 AddToFunc Focus-Top
-+ I All Reverse UseStack (CurrentPage, AcceptsFocus) FlipFocus
++ I All Reverse UseStack (CurrentPage, AcceptsFocus, !Focused) FlipFocus
 
 DestroyFunc Iconify-and-Focus
 AddToFunc Iconify-and-Focus
