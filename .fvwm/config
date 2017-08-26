@@ -297,8 +297,8 @@ AddToFunc Close-and-Focus-OnClick
 # desk.
 DestroyFunc Jump-to-Window
 AddToFunc Jump-to-Window
-+ I All ($0, Focused) Focus-and-Raise
-+ I TestRc (NoMatch) Prev ($0, AcceptsFocus) Focus-and-Raise
++ I All ($0, Focused, !Overlapped) Focus-and-Raise
++ I TestRc (NoMatch) All Reverse UseStack ($0, AcceptsFocus) Focus-and-Raise
 
 DestroyFunc GoToDesk-and-Focus
 AddToFunc GoToDesk-and-Focus
