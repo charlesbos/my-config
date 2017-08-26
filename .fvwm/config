@@ -269,7 +269,9 @@ AddToFunc Focus-and-Raise
 # iconified, focus is passed to the topmost window in the current page
 DestroyFunc Focus-Top
 AddToFunc Focus-Top
-+ I All Reverse UseStack (CurrentPage, AcceptsFocus, !Focused, !Iconic) FlipFocus
++ I Style * HilightColorSet 41
++ I All Reverse UseStack (CurrentPage, AcceptsFocus) FlipFocus
++ I Style * HilightColorSet 40
 
 DestroyFunc Iconify-and-Focus
 AddToFunc Iconify-and-Focus
