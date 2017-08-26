@@ -243,19 +243,20 @@ AddToMenu Session "Session" Title
 # Functions
 # Basic functions
 DestroyFunc Move-or-Raise
-AddToFunc Move-or-Raise I Raise
+AddToFunc Move-or-Raise 
++ I Raise
 + M Move
-+ D Lower
 
 DestroyFunc Move-or-Iconify
-AddToFunc Move-or-Iconify I Raise
+AddToFunc Move-or-Iconify 
++ I Raise
 + M Move
 + D Iconify-and-Focus
 
 DestroyFunc Resize-or-Raise
-AddToFunc Resize-or-Raise I Raise
+AddToFunc Resize-or-Raise 
++ I Raise
 + M Resize
-+ D Lower
 
 DestroyFunc Focus-and-Raise
 AddToFunc Focus-and-Raise
