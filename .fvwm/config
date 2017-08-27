@@ -321,6 +321,7 @@ AddToFunc GoToPage-and-Focus
 DestroyFunc MoveToDesk-and-Focus
 AddToFunc MoveToDesk-and-Focus
 + I MoveToDesk $0
++ I Raise
 + I Jump-to-Window CurrentPage
 
 # Tiling functions
