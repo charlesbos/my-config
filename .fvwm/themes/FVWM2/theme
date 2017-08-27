@@ -21,7 +21,7 @@ ColorSet 47 bg grey60
 DefaultColorSet 41
 
 # Title bar buttons
-Mouse 0 1 A Menu Window-Ops Close-and-Focus-OnClick
+Mouse 0 1 A Menu Window-Ops Close-and-Focus
 Mouse 0	2 A Maximize
 Mouse 0	4 A Iconify-and-Focus-OnClick
 
