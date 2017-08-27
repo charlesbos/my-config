@@ -316,7 +316,7 @@ AddToFunc Close-and-Focus-OnClick
 DestroyFunc GoToDesk-and-Focus
 AddToFunc GoToDesk-and-Focus
 + I GoToDesk $0
-+ I Jump-to-Window CurrentDesk
++ I Focus-Top CurrentDesk
 
 DestroyFunc GoToPage-and-Focus
 AddToFunc GoToPage-and-Focus
