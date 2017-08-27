@@ -258,11 +258,6 @@ AddToFunc Resize-or-Raise
 + I Raise
 + M Resize
 
-DestroyFunc Focus-and-Raise
-AddToFunc Focus-and-Raise
-+ I FlipFocus
-+ I Raise
-
 # A function which passes keyboard focus to the window at the top of the stack
 # by traversing the stack in reverse order, focusing each window in turn.
 # In order to avoid each window being highlighted on traversal, causing a
@@ -275,13 +270,13 @@ AddToFunc Focus-Top
 + I All Reverse UseStack ($0, AcceptsFocus) FlipFocus
 + I Style * HilightColorSet 40
 
-# This function first tries calling the Focus-and-Raise command on a window
-# that is already focused and not overlapped by other windows. This is useful
-# for when we want to jump to a focused window in a different page. If that fails
-# we then call Focus-Top
+# This function first tries calling the FlipFocus command on a window that is
+# already focused and not overlapped by other windows. This is useful for when
+# we want to jump to a focused window in a different page. If that fails we
+# then call Focus-Top
 DestroyFunc Jump-to-Window
 AddToFunc Jump-to-Window
-+ I All ($0, Focused, !Overlapped) Focus-and-Raise
++ I All ($0, Focused, !Overlapped) FlipFocus
 + I TestRc (NoMatch) Focus-Top $0
 
 # When a window is closed or iconified, FVWM attempts to pass keyboard focus to
