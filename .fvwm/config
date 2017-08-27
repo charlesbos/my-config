@@ -8,7 +8,7 @@ DesktopSize 3x3
 ColormapFocus FollowsFocus
 IgnoreModifiers L25
 Emulate Mwm
-BusyCursor Read off
+CursorStyle WAIT left_ptr
 
 # External files
 Read themes/KDE1/theme
