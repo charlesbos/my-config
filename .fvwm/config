@@ -22,7 +22,7 @@ Style * !UsePPosition
 Style * IconBox +0 +0 -0 -0, IconFill left bottom
 Style * ClickToFocus
 Style * PositionPlacement center
-Style * FPLenient, FPIgnoreRaiseClickMotion
+Style * FPLenient, FPIgnoreRaiseClickMotion, FPSortWindowlistByFocus
 Style * !StickyStippledTitle, !StickyStippledIconTitle
 Style * ResizeHintOverride
 Style * IconSize 57 57
