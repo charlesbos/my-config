@@ -420,7 +420,7 @@ AddToFunc SetTheme
 *PagerFrame: (Frame 1, Title "<--", Action (Mouse 1) GoToDesk-and-Focus -1)
 *PagerFrame: (End)
 *PagerFrame: (71x16, Container)
-*PagerFrame: (Frame 1, Title "...", Action (Mouse 1) FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk-Abs-and-Focus")
+*PagerFrame: (Frame 1, Title "...", Action (Mouse 1) FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk-Abs-and-Focus", Action (Mouse 3) GoToDesk-Abs-and-Focus 0)
 *PagerFrame: (End)
 *PagerFrame: (41x16, Container)
 *PagerFrame: (Frame 1, Title "-->", Action (Mouse 1) GoToDesk-and-Focus +1)
