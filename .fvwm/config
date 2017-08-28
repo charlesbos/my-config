@@ -45,7 +45,7 @@ Key Next A SCM Next (AcceptsFocus) Focus
 Key Prior A SCM Prev (AcceptsFocus) Focus
 Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, CurrentAtEnd, IconifiedAtEnd
 Key F1 A 1 Menu RootMenu Nop
-Key F2 A 1 Exec urxvt
+Key F2 A 1 Exec bbrun -w
 Key F3 A 1 Lower
 Key F4 A 1 Close-and-Focus
 Key F5 A 1 Raise
@@ -80,6 +80,7 @@ Key Down A 4 TileBottom
 Key J A 4 Jump-to-Window CurrentDesk
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
+Key T A 4 Exec urxvt
 Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
 Key XF86MonBrightnessDown A N Exec xbacklight -dec 10
 Key Print A N Exec scrot -e 'xdg-open $f'
