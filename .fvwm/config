@@ -59,6 +59,8 @@ Key Escape A C WindowList Root c c NoGeometryWithInfo, IconifiedAtEnd
 Key r A C1 Restart
 Key delete A C1 FvwmForm ConfirmForm ACTION="Quit Fvwm" COMMAND="Quit"
 Key l A C1 Exec loginctl lock-session
+Key g A C1 FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk-Abs-and-Focus"
+Key m A C1 ThisWindow (CurrentPage, Focused) FvwmForm InputForm ITEM="Move to desk" COMMAND="MoveToDesk-Abs-and-Focus"
 Key Left A C1 GoToPage-and-Focus -1p +0p
 Key Right A C1 GoToPage-and-Focus +1p +0p
 Key Up A C1 GoToPage-and-Focus +0p -1p
