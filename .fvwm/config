@@ -77,6 +77,10 @@ Key Left A 4 TileLeft
 Key Right A 4 TileRight
 Key Up A 4 TileTop
 Key Down A 4 TileBottom
+Key Home A 4 TileTopLeft
+Key Prior A 4 TileTopRight
+Key End A 4 TileBottomLeft
+Key Next A 4 TileBottomRight
 Key J A 4 Jump-to-Window CurrentDesk
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
