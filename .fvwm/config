@@ -370,13 +370,13 @@ AddToFunc SetTheme
 *PagerFrame: (Frame 1, Swallow(UseOld, NoClose) "MainPager" Nop)
 *PagerFrame: (End)
 *PagerFrame: (41x16, Container)
-*PagerFrame: (Frame 1, Title "<--", Action (Mouse 1) GoToDesk -1)
+*PagerFrame: (Frame 1, Title "←", Action (Mouse 1) GoToDesk -1)
 *PagerFrame: (End)
 *PagerFrame: (71x16, Container)
 *PagerFrame: (Frame 1, Title "...", Action (Mouse 1) FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk 0", Action (Mouse 3) PipeRead 'echo GoToDesk 0 0')
 *PagerFrame: (End)
 *PagerFrame: (41x16, Container)
-*PagerFrame: (Frame 1, Title "-->", Action (Mouse 1) GoToDesk +1)
+*PagerFrame: (Frame 1, Title "→", Action (Mouse 1) GoToDesk +1)
 *PagerFrame: (End)
 
 *WMakerApps: Geometry 128x64-0+0
