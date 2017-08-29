@@ -16,11 +16,11 @@ Read themes/KDE1/theme
 # Default styles
 Style * ColorSet 41, HilightColorSet 40
 Style * DecorateTransient
-#Style * !UsePPosition 
-#Style * ClickToFocus
+# Style * !UsePPosition 
+# Style * ClickToFocus
 Style * UsePPosition
 Style * SloppyFocus
-#Style * PositionPlacement center
+# Style * PositionPlacement center
 Style * MinOverlapPlacement
 Style * FPLenient, FPIgnoreRaiseClickMotion, FPSortWindowlistByFocus
 Style * MouseFocusClickRaises
@@ -111,7 +111,7 @@ Key Next A 4 TileBottomRight
 
 # The <Super>* bindings - for misc actions
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
-Key J A 4 Jump-to-Window CurrentDesk
+# Key J A 4 Jump-to-Window CurrentDesk
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 Key T A 4 Exec urxvt
 
@@ -142,7 +142,7 @@ AddToFunc StartFunction
 + I Module FvwmPager MainPager *
 + I Module FvwmButtons PagerFrame
 + I Module FvwmButtons WMakerApps
-#+ I Module FvwmEvent FocusEvents
+# + I Module FvwmEvent FocusEvents
 + I Test (!Init) Break
 # Run mwmmenu on startup to avoid a slow firstrun
 + I Exec mwmmenu > /dev/null 2>&1 &
