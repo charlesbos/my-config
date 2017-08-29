@@ -24,6 +24,7 @@ Style * IconBox +0 +0 -0 -0, IconFill left bottom
 Style * SloppyFocus
 Style * PositionPlacement center
 Style * FPLenient, FPIgnoreRaiseClickMotion, FPSortWindowlistByFocus
+Style * MouseFocusClickRaises
 Style * !StickyStippledTitle, !StickyStippledIconTitle
 Style * ResizeHintOverride
 Style * IconSize 57 57
