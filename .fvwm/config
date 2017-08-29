@@ -1,7 +1,7 @@
 # Charles' Fvwm configuration file
 
 # Commands
-EdgeResistance 0 0
+EdgeResistance 0
 EdgeScroll 100 100
 ClickTime 750
 DesktopSize 3x3
