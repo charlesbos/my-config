@@ -18,7 +18,7 @@ Style * DecorateTransient
 Style * UsePPosition
 Style * SloppyFocus
 Style * MinOverlapPlacement
-Style * FPLenient, FPSortWindowlistByFocus
+Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
 Style * MouseFocusClickRaises
 Style * ResizeHintOverride
 Style * Icon /usr/share/icons/gnome/48x48/status/image-missing.png
