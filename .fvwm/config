@@ -291,7 +291,7 @@ AddToFunc Resize-or-Raise
 
 DestroyFunc Focus-and-Raise
 AddToFunc Focus-and-Raise
-+ I FlipFocus
++ I FlipFocus $0
 + I Raise
 
 # A function which passes keyboard focus to the window at the top of the stack
@@ -312,7 +312,7 @@ AddToFunc Focus-Top
 # then call Focus-Top
 DestroyFunc Jump-to-Window
 AddToFunc Jump-to-Window
-+ I All ($0, Focused, !Overlapped) Focus-and-Raise
++ I All ($0, Focused, !Overlapped) Focus-and-Raise $1
 + I TestRc (NoMatch) Focus-Top $0
 
 # Tiling functions
@@ -438,7 +438,7 @@ AddToFunc SetTheme
 *ConfirmForm: Command Nop
 
 # FvwmEvent
-*FocusEvents: new_page "Jump-to-Window CurrentPage"
+*FocusEvents: new_page "Jump-to-Window CurrentPage NoWarp"
 *FocusEvents: new_desk "Focus-Top CurrentDesk"
 *FocusEvents: iconify "Focus-Top CurrentPage"
 *FocusEvents: deiconify "Focus-Top CurrentPage"
