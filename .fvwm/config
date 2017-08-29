@@ -61,7 +61,7 @@ Key Prior A SCM Prev (AcceptsFocus) Focus
 # The <Alt>F* bindings, primarily for window controls
 # We mostly use MWM's defaults here
 Key F1 A 1 Menu RootMenu Nop
-Key F2 A 1 Launch-and-Warp "bbrun -w"
+Key F2 A 1 Exec urxvt
 Key F3 A 1 Lower
 Key F4 A 1 Close
 Key F5 A 1 Raise
@@ -113,7 +113,6 @@ Key Next A 4 TileBottomRight
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
 # Key J A 4 Jump-to-Window CurrentDesk
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
-Key T A 4 Exec urxvt
 
 # Multimedia and screenshot
 Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
@@ -304,11 +303,6 @@ DestroyFunc Focus-and-Raise
 AddToFunc Focus-and-Raise
 + I FlipFocus $0
 + I Raise
-
-DestroyFunc Launch-and-Warp
-AddToFunc Launch-and-Warp
-+ I Exec $0
-+ I WarpToWindow !Raise 50 50
 
 # A function which passes keyboard focus to the window at the top of the stack
 # by traversing the stack in reverse order, focusing each window in turn.
