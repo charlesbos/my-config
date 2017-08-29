@@ -21,9 +21,9 @@ ColorSet 47 bg lightgrey
 DefaultColorSet 40
 
 # Title bar buttons
-Mouse 0 1 A Menu Window-Ops Close-and-Focus
+Mouse 0 1 A Menu Window-Ops Close
 Mouse 0	2 A Maximize
-Mouse 0	4 A Iconify-and-Focus-OnClick
+Mouse 0	4 A Iconify
 
 # Decor
 DestroyDecor MWM

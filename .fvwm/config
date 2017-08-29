@@ -52,12 +52,12 @@ Key Prior A SCM Prev (AcceptsFocus) Focus
 Key F1 A 1 Menu RootMenu Nop
 Key F2 A 1 Exec bbrun -w
 Key F3 A 1 Lower
-Key F4 A 1 Close-and-Focus
+Key F4 A 1 Close
 Key F5 A 1 Raise
 Key F6 A 1 WindowShade
 Key F7 A 1 Move
 Key F8 A 1 Resize
-Key F9 A 1 Iconify-and-Focus
+Key F9 A 1 Iconify
 Key F10 A 1 Maximize
 Key F11 A 1 Menu Window-Ops Nop
 
@@ -67,10 +67,10 @@ Key Delete A C1 FvwmForm ConfirmForm ACTION="Quit Fvwm" COMMAND="Quit"
 Key R A C1 Restart
 
 # Page switching
-Key Left A C1 GoToPage-and-Focus -1p +0p
-Key Right A C1 GoToPage-and-Focus +1p +0p
-Key Up A C1 GoToPage-and-Focus +0p -1p
-Key Down A C1 GoToPage-and-Focus +0p +1p
+Key Left A C1 GoToPage -1p +0p
+Key Right A C1 GoToPage +1p +0p
+Key Up A C1 GoToPage +0p -1p
+Key Down A C1 GoToPage +0p +1p
 
 # Moving window to page
 Key Left A S1 MoveToPage -1w +0w
@@ -79,14 +79,14 @@ Key Up A S1 MoveToPage +0w -1w
 Key Down A S1 MoveToPage +0w +1w
 
 # Desk switching
-Key Up A C4 GoToDesk-and-Focus -1
-Key Down A C4 GoToDesk-and-Focus +1
-Key G A C1 FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk-Abs-and-Focus"
+Key Up A C4 GoToDesk -1
+Key Down A C4 GoToDesk +1
+Key G A C1 FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk 0"
 
 # Moving window to desk
-Key Up A S4 MoveToDesk-and-Focus -1
-Key Down A S4 MoveToDesk-and-Focus +1
-Key M A C1 ThisWindow (CurrentPage, Focused) FvwmForm InputForm ITEM="Move to desk" COMMAND="MoveToDesk-Abs-and-Focus"
+Key Up A S4 MoveToDesk -1
+Key Down A S4 MoveToDesk +1
+Key M A C1 ThisWindow (CurrentPage, Focused) FvwmForm InputForm ITEM="Move to desk" COMMAND="MoveToDesk 0"
 
 # Window tiling
 Key Left A 4 TileLeft
@@ -121,7 +121,7 @@ Mouse 1	F A Resize-or-Raise
 Mouse 1	TS A Move-or-Raise
 Mouse 1	I A Move-or-Iconify
 Mouse 1 W 1 Move-or-Raise
-Mouse 2	I A Iconify-and-Focus
+Mouse 2	I A Iconify
 Mouse 2	FST A RaiseLower
 Mouse 3	TSIF A Menu Window-Ops Nop
 
@@ -131,6 +131,7 @@ AddToFunc StartFunction
 + I Module FvwmPager MainPager *
 + I Module FvwmButtons PagerFrame
 + I Module FvwmButtons WMakerApps
++ I Module FvwmEvent FocusEvents
 + I Test (!Init) Break
 # Run mwmmenu on startup to avoid a slow firstrun
 + I Exec mwmmenu > /dev/null 2>&1 &
@@ -185,7 +186,7 @@ AddToMenu Window-Ops
 + "Raise"			Raise
 + "Lower"			Lower
 + ""				Nop
-+ "Iconify"			Iconify-and-Focus
++ "Iconify"			Iconify
 + "Stick"			Stick
 + "Maximize"			Maximize
 + "Shade"			WindowShade
@@ -193,7 +194,7 @@ AddToMenu Window-Ops
 + "Tile Window"			PopUp TileWindow
 + "Send To"			PopUp SendTo
 + ""				Nop
-+ "Close"			Close-and-Focus
++ "Close"			Close
 
 DestroyMenu SendTo
 AddToMenu SendTo
@@ -204,10 +205,10 @@ AddToMenu SendTo
 + ""				Nop
 + "Page..."			PopUp SendToPageNumber
 + ""				Nop
-+ "Desk Prev"			MoveToDesk-and-Focus -1
-+ "Desk Next"			MoveToDesk-and-Focus +1
++ "Desk Prev"			MoveToDesk -1
++ "Desk Next"			MoveToDesk +1
 + ""				Nop
-+ "Desk..."			FvwmForm InputForm ITEM="Move to desk" COMMAND="MoveToDesk-Abs-and-Focus"
++ "Desk..."			FvwmForm InputForm ITEM="Move to desk" COMMAND="MoveToDesk 0"
 
 DestroyMenu SendToPageNumber
 AddToMenu SendToPageNumber
@@ -281,7 +282,7 @@ DestroyFunc Move-or-Iconify
 AddToFunc Move-or-Iconify 
 + I Raise
 + M Move
-+ D Iconify-and-Focus
++ D Iconify
 
 DestroyFunc Resize-or-Raise
 AddToFunc Resize-or-Raise 
@@ -313,62 +314,6 @@ DestroyFunc Jump-to-Window
 AddToFunc Jump-to-Window
 + I All ($0, Focused, !Overlapped) Focus-and-Raise
 + I TestRc (NoMatch) Focus-Top $0
-
-# When a window is closed or iconified, FVWM attempts to pass keyboard focus to
-# the next window in the stack. However, if the next window in the stack is not
-# in the current page then no window gets the keyboard focus. The next four
-# functions are workarounds to ensure that when a window is closed or 
-# iconified, focus is passed to the topmost window in the current page
-DestroyFunc Iconify-and-Focus
-AddToFunc Iconify-and-Focus
-+ I Iconify
-+ I Focus-Top CurrentPage
-
-DestroyFunc Iconify-and-Focus-OnClick
-AddToFunc Iconify-and-Focus-OnClick
-+ C Iconify
-+ C Focus-Top CurrentPage
-
-DestroyFunc Close-and-Focus
-AddToFunc Close-and-Focus
-+ I Close
-+ I Focus-Top CurrentPage
-
-DestroyFunc Close-and-Focus-OnClick
-AddToFunc Close-and-Focus-OnClick
-+ C Close
-+ C Focus-Top CurrentPage
-
-# When desk switching or page switching hand keyboard focus to the previously
-# focused window in that desk or page. Likewise, if a window is sent to a
-# different desk, hand keyboard focus to the previously focused window in that
-# desk.
-DestroyFunc GoToDesk-and-Focus
-AddToFunc GoToDesk-and-Focus
-+ I GoToDesk $0
-+ I Focus-Top CurrentDesk
-
-DestroyFunc GoToDesk-Abs-and-Focus
-AddToFunc GoToDesk-Abs-and-Focus
-+ I GoToDesk 0 $0
-+ I Focus-Top CurrentDesk
-
-DestroyFunc GoToPage-and-Focus
-AddToFunc GoToPage-and-Focus
-+ I GoToPage $0 $1
-+ I Jump-to-Window CurrentPage
-
-DestroyFunc MoveToDesk-and-Focus
-AddToFunc MoveToDesk-and-Focus
-+ I MoveToDesk $0
-+ I Raise
-+ I Jump-to-Window CurrentPage
-
-DestroyFunc MoveToDesk-Abs-and-Focus
-AddToFunc MoveToDesk-Abs-and-Focus
-+ I MoveToDesk 0 $0
-+ I Raise
-+ I Jump-to-Window CurrentPage
 
 # Tiling functions
 DestroyFunc TileLeft
@@ -442,13 +387,13 @@ AddToFunc SetTheme
 *PagerFrame: (Frame 1, Swallow(UseOld, NoClose) "MainPager" Nop)
 *PagerFrame: (End)
 *PagerFrame: (41x16, Container)
-*PagerFrame: (Frame 1, Title "<--", Action (Mouse 1) GoToDesk-and-Focus -1)
+*PagerFrame: (Frame 1, Title "<--", Action (Mouse 1) GoToDesk -1)
 *PagerFrame: (End)
 *PagerFrame: (71x16, Container)
-*PagerFrame: (Frame 1, Title "...", Action (Mouse 1) FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk-Abs-and-Focus", Action (Mouse 3) GoToDesk-Abs-and-Focus 0)
+*PagerFrame: (Frame 1, Title "...", Action (Mouse 1) FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk 0", Action (Mouse 3) PipeRead 'echo GoToDesk 0 0')
 *PagerFrame: (End)
 *PagerFrame: (41x16, Container)
-*PagerFrame: (Frame 1, Title "-->", Action (Mouse 1) GoToDesk-and-Focus +1)
+*PagerFrame: (Frame 1, Title "-->", Action (Mouse 1) GoToDesk +1)
 *PagerFrame: (End)
 
 *WMakerApps: Geometry 128x64-0+0
@@ -491,5 +436,12 @@ AddToFunc SetTheme
 *ConfirmForm: Command $COMMAND
 *ConfirmForm: Button quit "Cancel" ^[
 *ConfirmForm: Command Nop
+
+# FvwmEvent
+*FocusEvents: new_page "Jump-to-Window CurrentPage"
+*FocusEvents: new_desk "Focus-Top CurrentDesk"
+*FocusEvents: iconify "Focus-Top CurrentPage"
+*FocusEvents: deiconify "Focus-Top CurrentPage"
+*FocusEvents: destroy_window "Focus-Top CurrentPage"
 
 # vim: ts=8 sts=8 sw=8 noet

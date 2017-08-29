@@ -23,9 +23,9 @@ DefaultColorSet 42
 # Title bar buttons
 Mouse 0 1 A Menu Window-Ops Nop
 Mouse 0 3 A Stick
-Mouse 0	2 A Close-and-Focus-OnClick
+Mouse 0	2 A Close
 Mouse 0	4 A Maximize
-Mouse 0	6 A Iconify-and-Focus-OnClick
+Mouse 0	6 A Iconify
 
 # Decor
 DestroyDecor KDE1

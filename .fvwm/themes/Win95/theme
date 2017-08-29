@@ -21,9 +21,9 @@ ColorSet 47 bg grey90, hi white
 DefaultColorSet 42
 
 # Title bar buttons
-Mouse 0	2 A Close-and-Focus-OnClick
+Mouse 0	2 A Close
 Mouse 0	4 A Maximize
-Mouse 0	6 A Iconify-and-Focus-OnClick
+Mouse 0	6 A Iconify
 
 # Decor
 DestroyDecor Win95
