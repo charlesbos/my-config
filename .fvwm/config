@@ -68,6 +68,10 @@ Key F9 A 1 Iconify
 Key F10 A 1 Maximize
 Key F11 A 1 Menu Window-Ops Nop
 
+# Some <Shift><Alt>F* bindings, for modified versions of 
+# the <Alt>F* actions
+Key F2 A S1 Exec urxvt -geometry 110x34
+
 # Lock session, end session and restart the window manager
 Key L A C1 Exec loginctl lock-session
 Key Delete A C1 FvwmForm ConfirmForm ACTION="Quit Fvwm" COMMAND="Quit"
