@@ -365,6 +365,7 @@ AddToFunc SetTheme
 *PagerFrame: ColorSet 42
 *PagerFrame: Rows 135
 *PagerFrame: Columns 153
+*PagerFrame: Font "xft:DejaVu Sans:size=9"
 *PagerFrame: (153x119, Container)
 *PagerFrame: (Frame 1, Swallow(UseOld, NoClose) "MainPager" Nop)
 *PagerFrame: (End)
@@ -381,6 +382,7 @@ AddToFunc SetTheme
 *WMakerApps: Geometry 128x64-0+0
 *WMakerApps: BoxSize fixed
 *WMakerApps: ColorSet 42
+*WMakerApps: Font "xft:DejaVu Sans:size=9"
 *WMakerApps: Rows 1
 *WMakerApps: Columns 2
 *WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmclock" Nop)
