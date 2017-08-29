@@ -5,7 +5,6 @@ EdgeResistance 0 0
 EdgeScroll 100 100
 ClickTime 750
 DesktopSize 3x3
-ColormapFocus FollowsFocus
 IgnoreModifiers L25
 Emulate Mwm
 CursorStyle WAIT left_ptr
@@ -16,13 +15,10 @@ Read themes/KDE1/theme
 # Default styles
 Style * ColorSet 41, HilightColorSet 40
 Style * DecorateTransient
-# Style * !UsePPosition 
-# Style * ClickToFocus
 Style * UsePPosition
 Style * SloppyFocus
-# Style * PositionPlacement center
 Style * MinOverlapPlacement
-Style * FPLenient, FPIgnoreRaiseClickMotion, FPSortWindowlistByFocus
+Style * FPLenient, FPSortWindowlistByFocus
 Style * MouseFocusClickRaises
 Style * ResizeHintOverride
 Style * Icon /usr/share/icons/gnome/48x48/status/image-missing.png
@@ -111,7 +107,6 @@ Key Next A 4 TileBottomRight
 
 # The <Super>* bindings - for misc actions
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
-# Key J A 4 Jump-to-Window CurrentDesk
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 
 # Multimedia and screenshot
@@ -141,7 +136,6 @@ AddToFunc StartFunction
 + I Module FvwmPager MainPager *
 + I Module FvwmButtons PagerFrame
 + I Module FvwmButtons WMakerApps
-# + I Module FvwmEvent FocusEvents
 + I Test (!Init) Break
 # Run mwmmenu on startup to avoid a slow firstrun
 + I Exec mwmmenu > /dev/null 2>&1 &
@@ -299,32 +293,6 @@ AddToFunc Resize-or-Raise
 + I Raise
 + M Resize
 
-DestroyFunc Focus-and-Raise
-AddToFunc Focus-and-Raise
-+ I FlipFocus $0
-+ I Raise
-
-# A function which passes keyboard focus to the window at the top of the stack
-# by traversing the stack in reverse order, focusing each window in turn.
-# In order to avoid each window being highlighted on traversal, causing a
-# flickering effect, we temporarily set the hilight colorset to the background
-# one. It's a nasty hack but I can't see any other way of achieving this.
-DestroyFunc Focus-Top
-AddToFunc Focus-Top
-+ I None ($0, AcceptsFocus) Break
-+ I Style * HilightColorSet 41
-+ I All Reverse UseStack ($0, AcceptsFocus) FlipFocus $1
-+ I Style * HilightColorSet 40
-
-# This function first calls the Focus-and-Raise function on a window that is
-# already focused and not overlapped by other windows. This is useful for when
-# we want to jump to a focused window in a different page. If that fails we
-# then call Focus-Top
-DestroyFunc Jump-to-Window
-AddToFunc Jump-to-Window
-+ I All ($0, Focused, !Overlapped) Focus-and-Raise $1
-+ I TestRc (NoMatch) Focus-Top $0 $1
-
 # Tiling functions
 DestroyFunc TileLeft
 AddToFunc TileLeft
@@ -446,15 +414,5 @@ AddToFunc SetTheme
 *ConfirmForm: Command $COMMAND
 *ConfirmForm: Button quit "Cancel" ^[
 *ConfirmForm: Command Nop
-
-# FvwmEvent
-# FocusEvents is for use with ClickToFocus only. Disable it
-# for any other focus model. Note that it breaks right-click
-# panning in FvwmPager
-*FocusEvents: new_page "Jump-to-Window CurrentPage NoWarp"
-*FocusEvents: new_desk "Focus-Top CurrentDesk"
-*FocusEvents: iconify "Focus-Top CurrentPage"
-*FocusEvents: deiconify "Focus-Top CurrentPage"
-*FocusEvents: destroy_window "Focus-Top CurrentPage"
 
 # vim: ts=8 sts=8 sw=8 noet
