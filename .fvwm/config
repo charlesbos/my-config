@@ -15,21 +15,21 @@ Read themes/KDE1/theme
 
 # Default styles
 Style * ColorSet 41, HilightColorSet 40
-Style * Icon /usr/share/icons/gnome/48x48/status/image-missing.png
-Style * MiniIcon /usr/share/icons/gnome/16x16/status/image-missing.png
 Style * DecorateTransient
 Style * !UsePPosition 
-Style * IconBox +0 +0 -0 -0, IconFill left bottom
 #Style * ClickToFocus
 Style * SloppyFocus
 Style * PositionPlacement center
 Style * FPLenient, FPIgnoreRaiseClickMotion, FPSortWindowlistByFocus
 Style * MouseFocusClickRaises
-Style * !StickyStippledTitle, !StickyStippledIconTitle
 Style * ResizeHintOverride
+Style * Icon /usr/share/icons/gnome/48x48/status/image-missing.png
+Style * MiniIcon /usr/share/icons/gnome/16x16/status/image-missing.png
+Style * IconBox +0 +0 -0 -0, IconFill left bottom
 Style * IconSize 57 57
 Style * IconBackgroundColorset 43
 Style * IconTitleColorset 43, HilightIconTitleColorset 44
+Style * !StickyStippledTitle, !StickyStippledIconTitle
 
 # Module styles
 Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
