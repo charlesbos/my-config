@@ -303,7 +303,7 @@ DestroyFunc Focus-Top
 AddToFunc Focus-Top
 + I None ($0, AcceptsFocus) Break
 + I Style * HilightColorSet 41
-+ I All Reverse UseStack ($0, AcceptsFocus) FlipFocus
++ I All Reverse UseStack ($0, AcceptsFocus) FlipFocus $1
 + I Style * HilightColorSet 40
 
 # This function first calls the Focus-and-Raise function on a window that is
@@ -313,7 +313,7 @@ AddToFunc Focus-Top
 DestroyFunc Jump-to-Window
 AddToFunc Jump-to-Window
 + I All ($0, Focused, !Overlapped) Focus-and-Raise $1
-+ I TestRc (NoMatch) Focus-Top $0
++ I TestRc (NoMatch) Focus-Top $0 $1
 
 # Tiling functions
 DestroyFunc TileLeft
