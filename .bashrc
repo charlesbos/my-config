@@ -96,7 +96,7 @@ copyconfigs() {
         if [ -f "$x" ]; then 
           cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config/$x"
         else
-          rm -r "$HOME/Devel/GitHub/my-config/$x"
+          rm -rf "$HOME/Devel/GitHub/my-config/$x"
           cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config"
         fi
       fi
