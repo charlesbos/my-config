@@ -438,6 +438,9 @@ AddToFunc SetTheme
 *ConfirmForm: Command Nop
 
 # FvwmEvent
+# FocusEvents is for use with ClickToFocus only. Disable it
+# for any other focus model. Note that it breaks right-click
+# panning in FvwmPager
 *FocusEvents: new_page "Jump-to-Window CurrentPage NoWarp"
 *FocusEvents: new_desk "Focus-Top CurrentDesk"
 *FocusEvents: iconify "Focus-Top CurrentPage"
