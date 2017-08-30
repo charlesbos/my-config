@@ -13,6 +13,10 @@ DefaultFont "xft:DejaVu Sans:size=9:condensed"
 # External files
 Read themes/KDE1/theme
 
+# Infostore variables
+InfoStoreAdd edge_scroll on
+InfoStoreAdd focus_method sloppy_focus
+
 # Default styles
 Style * ColorSet 41, HilightColorSet 40
 Style * DecorateTransient
@@ -280,6 +284,8 @@ AddToFunc CreateFvwmMenu
 + I AddToMenu FvwmMenu "Fvwm Menu" Title
 + I AddToMenu FvwmMenu "Themes" PopUp Themes
 + I AddToMenu FvwmMenu "Identify Window" Module FvwmIdent
++ I AddToMenu FvwmMenu "Toggle Paging" ToggleEdgeScroll
++ I AddToMenu FvwmMenu "Toggle Focus" ToggleFocusMethod
 + I AddToMenu FvwmMenu "Fvwm Console" Module FvwmConsole
 + I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center \
 	"$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
@@ -318,6 +324,28 @@ DestroyFunc Resize-or-Raise
 AddToFunc Resize-or-Raise 
 + I Raise
 + M Resize
+
+# Toggle functions
+DestroyFunc ToggleEdgeScroll
+AddToFunc ToggleEdgeScroll
++ I Test (EnvMatch infostore.edge_scroll on) EdgeScroll 0 0
++ I Test (EnvMatch infostore.edge_scroll on) InfoStoreAdd edge_scroll off
++ I TestRc (Match) Break
++ I EdgeScroll 100 100
++ I InfoStoreAdd edge_scroll on
+
+DestroyFunc ToggleFocusMethod
+AddToFunc ToggleFocusMethod
++ I Test (EnvMatch infostore.focus_method sloppy_focus) Style * ClickToFocus
++ I Test (EnvMatch infostore.focus_method sloppy_focus) \
+	InfoStoreAdd focus_method click_focus
++ I TestRc (Match) Break
++ I Test (EnvMatch infostore.focus_method click_focus) Style * MouseFocus
++ I Test (EnvMatch infostore.focus_method click_focus) \
+	InfoStoreAdd focus_method mouse_focus
++ I TestRc (Match) Break
++ I Style * SloppyFocus
++ I InfoStoreAdd focus_method sloppy_focus
 
 # Tiling functions
 DestroyFunc TileLeft
