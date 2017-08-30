@@ -43,7 +43,8 @@ AddToDecor KDE1
 + ButtonStyle 2 Pixmap themes/KDE1/close.xpm
 + ButtonStyle 4 Pixmap themes/KDE1/maximize.xpm
 + ButtonStyle 6 Pixmap themes/KDE1/iconify.xpm
-+ ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) InactiveUp (-- Flat) InActiveDown (-- Raised)
++ ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) InactiveUp \
+	(-- Flat) InActiveDown (-- Raised)
 + ButtonStyle 3 ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
 + ButtonStyle 4 ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
 + ButtonStyle All - Clear

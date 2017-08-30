@@ -23,18 +23,24 @@ Style * MouseFocusClickRaises
 Style * ResizeHintOverride
 Style * Icon /usr/share/icons/gnome/48x48/status/image-missing.png
 Style * MiniIcon /usr/share/icons/gnome/16x16/status/image-missing.png
-Style * IconBox +140 -78 -170 -0, IconBox +8 -160 -170 -80, IconBox +8 +0 -0 -165, IconFill left bottom
+Style * IconBox +140 -78 -170 -0, IconBox +8 -160 -170 -80, \
+	IconBox +8 +0 -0 -165, IconFill left bottom
 Style * IconSize 57 57
 Style * IconBackgroundColorset 43
 Style * IconTitleColorset 43, HilightIconTitleColorset 44
 Style * !StickyStippledTitle, !StickyStippledIconTitle
 
 # Module styles
-Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "PagerFrame" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "WMakerApps" !Title, Sticky, WindowListSkip, HandleWidth 3, BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "ConfirmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip, !Iconifiable, !Maximizable, !Closable
-Style "InputForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip, !Iconifiable, !Maximizable, !Closable
+Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, \
+	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+Style "PagerFrame" !Title, Sticky, WindowListSkip, HandleWidth 3, \
+	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+Style "WMakerApps" !Title, Sticky, WindowListSkip, HandleWidth 3, \
+	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+Style "ConfirmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
+	CirculateSkip, !Iconifiable, !Maximizable, !Closable
+Style "InputForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
+	CirculateSkip, !Iconifiable, !Maximizable, !Closable
 
 # Program styles
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement center
@@ -45,12 +51,14 @@ Style libreoffice !UsePPosition, PositionPlacement center
 Style "Set GTK+ theme" PositionPlacement center
 Style "Display Selector" PositionPlacement center
 Style "Take Screenshot" PositionPlacement center
-Style urxvt Icon /usr/share/icons/gnome/48x48/apps/terminal.png, MiniIcon /usr/share/icons/gnome/16x16/apps/terminal.png
+Style urxvt Icon /usr/share/icons/gnome/48x48/apps/terminal.png, \
+	MiniIcon /usr/share/icons/gnome/16x16/apps/terminal.png
 
 # Key bindings
 # Window menu, <Alt>tab dialogue and window cycling
 Key Escape A C WindowList Root c c NoGeometryWithInfo, IconifiedAtEnd
-Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, CurrentAtEnd, IconifiedAtEnd
+Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, \
+	CurrentAtEnd, IconifiedAtEnd
 Key Next A SCM Next (AcceptsFocus) Focus
 Key Prior A SCM Prev (AcceptsFocus) Focus
 
@@ -97,7 +105,8 @@ Key G A C1 FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk 0"
 # Moving window to desk
 Key Up A S4 MoveToDesk -1
 Key Down A S4 MoveToDesk +1
-Key M A C1 ThisWindow (CurrentPage, Focused) FvwmForm InputForm ITEM="Move to desk" COMMAND="MoveToDesk 0"
+Key M A C1 ThisWindow (CurrentPage, Focused) FvwmForm InputForm \
+	ITEM="Move to desk" COMMAND="MoveToDesk 0"
 
 # Window tiling
 Key Left A 4 TileLeft
@@ -148,7 +157,8 @@ AddToFunc StartFunction
 + I Exec wmsystemtray --non-wmaker > /dev/null 2>&1 &
 + I Exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
 + I Exec nm-applet > /dev/null 2>&1 &
-+ I Exec cbatticon -c "xmessage -center 'Power is critically low. Please take action.'" -r 5 > /dev/null 2>&1 &
++ I Exec cbatticon -c "xmessage -center 'Power is critically low. \
+	Please take action.'" -r 5 > /dev/null 2>&1 &
 + I Exec volumeicon > /dev/null 2>&1 &
 + I Exec blueman-applet > /dev/null 2>&1 &
 + I Exec xscreensaver -nosplash > /dev/null 2>&1 &
@@ -216,7 +226,8 @@ AddToMenu SendTo
 + "Desk Prev"			MoveToDesk -1
 + "Desk Next"			MoveToDesk +1
 + ""				Nop
-+ "Desk..."			FvwmForm InputForm ITEM="Move to desk" COMMAND="MoveToDesk 0"
++ "Desk..."			FvwmForm InputForm ITEM="Move to desk" \
+					COMMAND="MoveToDesk 0"
 
 DestroyMenu SendToPageNumber
 AddToMenu SendToPageNumber
@@ -251,7 +262,8 @@ DestroyFunc CreateThemesMenu
 AddToFunc CreateThemesMenu
 + I DestroyMenu recreate Themes
 + I AddToMenu Themes "Select Theme" Title
-+ I PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} SetTheme ${x}; done'
++ I PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} \
+	SetTheme ${x}; done'
 
 DestroyMenu FvwmMenu
 AddToMenu FvwmMenu
@@ -265,19 +277,25 @@ AddToFunc CreateFvwmMenu
 + I AddToMenu FvwmMenu "Themes" PopUp Themes
 + I AddToMenu FvwmMenu "Identify Window" Module FvwmIdent
 + I AddToMenu FvwmMenu "Fvwm Console" Module FvwmConsole
-+ I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
++ I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center \
+	"$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
 
 DestroyMenu Session
 AddToMenu Session "Session" Title
-+ "Quit Fvwm"			FvwmForm ConfirmForm ACTION="Quit Fvwm" COMMAND="Quit"
++ "Quit Fvwm"			FvwmForm ConfirmForm ACTION="Quit Fvwm" \
+					COMMAND="Quit"
 + "Restart Fvwm"		Restart
 + ""				Nop
 + "Lock Screen"			Exec loginctl lock-session
 + ""				Nop
-+ "Suspend"			FvwmForm ConfirmForm ACTION="Suspend" COMMAND="Exec systemctl suspend"
-+ "Hibernate"			FvwmForm ConfirmForm ACTION="Hibernate" COMMAND="Exec safehibernate.sh"
-+ "Reboot"			FvwmForm ConfirmForm ACTION="Reboot" COMMAND="Exec systemctl reboot"
-+ "Poweroff"			FvwmForm ConfirmForm ACTION="Poweroff" COMMAND="Exec systemctl poweroff"
++ "Suspend"			FvwmForm ConfirmForm ACTION="Suspend" \
+					COMMAND="Exec systemctl suspend"
++ "Hibernate"			FvwmForm ConfirmForm ACTION="Hibernate" \
+					COMMAND="Exec safehibernate.sh"
++ "Reboot"			FvwmForm ConfirmForm ACTION="Reboot" \
+					COMMAND="Exec systemctl reboot"
++ "Poweroff"			FvwmForm ConfirmForm ACTION="Poweroff" \
+					COMMAND="Exec systemctl poweroff"
 
 # Functions
 # Basic functions
@@ -341,7 +359,8 @@ AddToFunc TileBottomRight
 # Misc functions
 DestroyFunc SetTheme
 AddToFunc SetTheme
-+ I PipeRead "echo SetEnv FVWM_THEMEPATH `grep Read.*theme $FVWM_USERDIR/config | cut -d ' ' -f 2`"
++ I PipeRead "echo SetEnv FVWM_THEMEPATH `grep Read.*theme \
+	$FVWM_USERDIR/config | cut -d ' ' -f 2`"
 + I Exec sed -i "s@$FVWM_THEMEPATH@themes/$0/theme@g" $FVWM_USERDIR/config
 + I UnsetEnv FVWM_THEMEPATH
 + I Restart
@@ -373,7 +392,9 @@ AddToFunc SetTheme
 *PagerFrame: (Frame 1, Title "←", Action (Mouse 1) GoToDesk -1)
 *PagerFrame: (End)
 *PagerFrame: (71x16, Container)
-*PagerFrame: (Frame 1, Title "...", Action (Mouse 1) FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk 0", Action (Mouse 3) PipeRead 'echo GoToDesk 0 0')
+*PagerFrame: (Frame 1, Title "...", Action (Mouse 1) FvwmForm InputForm \
+	ITEM="Go to desk" COMMAND="GoToDesk 0", Action (Mouse 3) \
+	PipeRead 'echo GoToDesk 0 0')
 *PagerFrame: (End)
 *PagerFrame: (41x16, Container)
 *PagerFrame: (Frame 1, Title "→", Action (Mouse 1) GoToDesk +1)
