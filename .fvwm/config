@@ -8,6 +8,7 @@ DesktopSize 3x3
 IgnoreModifiers L25
 Emulate Mwm
 CursorStyle WAIT left_ptr
+DefaultFont "xft:DejaVu Sans:size=9:condensed"
 
 # External files
 Read themes/KDE1/theme
