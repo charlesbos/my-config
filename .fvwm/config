@@ -24,8 +24,7 @@ Style * MouseFocusClickRaises
 Style * ResizeHintOverride
 Style * Icon /usr/share/icons/gnome/48x48/status/image-missing.png
 Style * MiniIcon /usr/share/icons/gnome/16x16/status/image-missing.png
-Style * IconBox +140 -78 -170 -0, IconBox +8 -160 -170 -80, \
-	IconBox +8 +0 -0 -165, IconFill left bottom
+Style * IconBox +140 -78 -0 -0, IconBox +8 +0 -0 -80, IconFill left bottom
 Style * IconSize 57 57
 Style * IconBackgroundColorset 43
 Style * IconTitleColorset 43, HilightIconTitleColorset 44
@@ -383,7 +382,7 @@ AddToFunc SetTheme
 *MainPager: BalloonFont "xft:DejaVu Sans:size=9"
 
 # FvwmButtons
-*PagerFrame: Geometry 153x135-0-0
+*PagerFrame: Geometry 153x135-0+0
 *PagerFrame: BoxSize fixed
 *PagerFrame: ColorSet 42
 *PagerFrame: Rows 135
