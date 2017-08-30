@@ -75,3 +75,5 @@ MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
 MenuStyle * VerticalItemSpacing +2 +3
 MenuStyle * VerticalTitleSpacing +3 +2
 MenuStyle * SeparatorsLong
+
+# vim: ts=8 sts=8 sw=8 noet
