@@ -66,7 +66,7 @@ AddToDecor Win95
 # Some decor related styles
 Style * MwmFunctions, MwmDecor, !MwmBorder, MwmButtons, HintOverride
 Style * HandleWidth 5, BorderWidth 5
-Style * Font "xft:DejaVu Sans:size=9:bold", IconFont "xft:DejaVu Sans:size=9"
+Style * Font "xft:DejaVu Sans:size=9:bold", IconFont "xft:DejaVu Sans:size=8"
 
 # Set the decor
 Style * UseDecor Win95

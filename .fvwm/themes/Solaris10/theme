@@ -37,7 +37,7 @@ AddToDecor Solaris10
 # Some decor related styles
 Style * MwmFunctions, MwmDecor, MwmBorder, MwmButtons, HintOverride
 Style * HandleWidth 6, BorderWidth 6
-Style * Font "xft:DejaVu Sans:size=10", IconFont "xft:DejaVu Sans:size=9"
+Style * Font "xft:DejaVu Sans:size=10", IconFont "xft:DejaVu Sans:size=8"
 
 # Set the decor
 Style * UseDecor Solaris10
