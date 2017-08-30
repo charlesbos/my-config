@@ -75,10 +75,12 @@ Key F8 A 1 Resize
 Key F9 A 1 Iconify
 Key F10 A 1 Maximize
 Key F11 A 1 Menu Window-Ops Nop
+Key F12 A 1 Stick
 
 # Some <Shift><Alt>F* bindings, for modified versions of 
 # the <Alt>F* actions
 Key F2 A S1 Exec urxvt -geometry 110x34
+Key F4 A S1 Destroy
 
 # Lock session, end session and restart the window manager
 Key L A C1 Exec loginctl lock-session
