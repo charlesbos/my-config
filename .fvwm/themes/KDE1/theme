@@ -54,9 +54,9 @@ AddToDecor KDE1
 + ButtonStyle 6 - MwmDecorMin
 
 # Some decor related styles
-Style * MwmFunctions, MwmDecor, !MwmBorder, MwmButtons, HintOverride
+Style * !MwmBorder
 Style * HandleWidth 5, BorderWidth 5
-Style * Font "xft:DejaVu Sans:size=10", IconFont "xft:DejaVu Sans:size=8"
+Style * Font "xft:DejaVu Sans:size=10"
 
 # Set the decor
 Style * UseDecor KDE1

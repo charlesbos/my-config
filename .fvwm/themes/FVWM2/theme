@@ -35,9 +35,9 @@ AddToDecor FVWM2
 + ButtonStyle 4 - MwmDecorMin
 
 # Some decor related styles
-Style * MwmFunctions, MwmDecor, !MwmBorder, MwmButtons, HintOverride
+Style * !MwmBorder
 Style * HandleWidth 7, BorderWidth 7
-Style * Font "xft:DejaVu Sans:size=9", IconFont "xft:DejaVu Sans:size=8"
+Style * Font "xft:DejaVu Sans:size=9"
 
 # Set the decor
 Style * UseDecor FVWM2

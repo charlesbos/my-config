@@ -15,6 +15,7 @@ Read themes/KDE1/theme
 # Default styles
 Style * ColorSet 41, HilightColorSet 40
 Style * DecorateTransient
+Style * MwmFunctions, MwmDecor, MwmButtons, HintOverride
 Style * UsePPosition
 Style * SloppyFocus
 Style * MinOverlapPlacement
@@ -28,6 +29,7 @@ Style * IconBox +140 -78 -170 -0, IconBox +8 -160 -170 -80, \
 Style * IconSize 57 57
 Style * IconBackgroundColorset 43
 Style * IconTitleColorset 43, HilightIconTitleColorset 44
+Style * IconFont "xft:DejaVu Sans:size=8"
 Style * !StickyStippledTitle, !StickyStippledIconTitle
 
 # Module styles
