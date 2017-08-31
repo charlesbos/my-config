@@ -38,16 +38,13 @@ Style * IconFont "xft:DejaVu Sans:size=8"
 Style * !StickyStippledTitle, !StickyStippledIconTitle
 
 # Module styles
-Style "MainPager" !Title, Sticky, WindowListSkip, HandleWidth 3, \
+Style "FvwmPager" !Title, Sticky, WindowListSkip, HandleWidth 3, \
 	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "PagerFrame" !Title, Sticky, WindowListSkip, HandleWidth 3, \
+Style "FvwmButtons" !Title, Sticky, WindowListSkip, HandleWidth 3, \
 	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "WMakerApps" !Title, Sticky, WindowListSkip, HandleWidth 3, \
-	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
-Style "ConfirmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
+Style "FvwmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
 	CirculateSkip, !Iconifiable, !Maximizable, !Closable
-Style "InputForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
-	CirculateSkip, !Iconifiable, !Maximizable, !Closable
+Style "InfoForm" Title
 
 # Program styles
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement center
@@ -376,9 +373,8 @@ AddToFunc ChangeFocusPolicy
 # all conflicting styles. Thus we reset all focus related styles here.
 + I Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
 + I Style * MouseFocusClickRaises
-+ I Style MainPager NeverFocus
-+ I Style PagerFrame NeverFocus
-+ I Style WMakerApps NeverFocus
++ I Style "FvwmPager" NeverFocus
++ I Style "FvwmButtons" NeverFocus
 
 DestroyFunc SetTheme
 AddToFunc SetTheme
