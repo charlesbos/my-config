@@ -329,22 +329,30 @@ AddToFunc Resize-or-Raise
 DestroyFunc ToggleEdgeScroll
 AddToFunc ToggleEdgeScroll
 + I Test (EnvMatch infostore.edge_scroll on) EdgeScroll 0 0
++ I Test (EnvMatch infostore.edge_scroll on) Module FvwmForm InfoForm \
+	INFO="Paging is now disabled."
 + I Test (EnvMatch infostore.edge_scroll on) InfoStoreAdd edge_scroll off
 + I TestRc (Match) Break
 + I EdgeScroll 100 100
++ I Module FvwmForm InfoForm INFO="Paging is now enabled."
 + I InfoStoreAdd edge_scroll on
 
 DestroyFunc ToggleFocusMethod
 AddToFunc ToggleFocusMethod
 + I Test (EnvMatch infostore.focus_method sloppy_focus) Style * ClickToFocus
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
+	Module FvwmForm InfoForm INFO="Focus policy is now ClickToFocus."
++ I Test (EnvMatch infostore.focus_method sloppy_focus) \
 	InfoStoreAdd focus_method click_focus
 + I TestRc (Match) Break
 + I Test (EnvMatch infostore.focus_method click_focus) Style * MouseFocus
 + I Test (EnvMatch infostore.focus_method click_focus) \
+	Module FvwmForm InfoForm INFO="Focus policy is now MouseFocus."
++ I Test (EnvMatch infostore.focus_method click_focus) \
 	InfoStoreAdd focus_method mouse_focus
 + I TestRc (Match) Break
 + I Style * SloppyFocus
++ I Module FvwmForm InfoForm INFO="Focus policy is now SloppyFocus."
 + I InfoStoreAdd focus_method sloppy_focus
 
 # Tiling functions
@@ -442,6 +450,19 @@ AddToFunc SetTheme
 *WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmsystemtray" Nop)
 
 # FvwmForm
+*InfoForm: GrabServer
+*InfoForm: WarpPointer
+*InfoForm: ColorSet 42
+*InfoForm: ItemColorSet 42
+*InfoForm: Font "xft:DejaVu Sans:size=10"
+*InfoForm: ButtonFont "xft:DejaVu Sans:size=9"
+*InfoForm: Command Beep
+*InfoForm: Title "Message"
+*InfoForm: Line expand
+*InfoForm: Text "$INFO"
+*InfoForm: Line right
+*InfoForm: Button quit "OK" ^M
+
 *InputForm: GrabServer
 *InputForm: WarpPointer
 *InputForm: ColorSet 42
