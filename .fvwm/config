@@ -339,19 +339,21 @@ AddToFunc ToggleEdgeScroll
 
 DestroyFunc ToggleFocusMethod
 AddToFunc ToggleFocusMethod
-+ I Test (EnvMatch infostore.focus_method sloppy_focus) Style * ClickToFocus
++ I Test (EnvMatch infostore.focus_method sloppy_focus) \
+	ChangeFocusPolicy ClickToFocus
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
 	Module FvwmForm InfoForm INFO="Focus policy is now ClickToFocus."
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
 	InfoStoreAdd focus_method click_focus
 + I TestRc (Match) Break
-+ I Test (EnvMatch infostore.focus_method click_focus) Style * MouseFocus
++ I Test (EnvMatch infostore.focus_method click_focus) \
+	ChangeFocusPolicy MouseFocus
 + I Test (EnvMatch infostore.focus_method click_focus) \
 	Module FvwmForm InfoForm INFO="Focus policy is now MouseFocus."
 + I Test (EnvMatch infostore.focus_method click_focus) \
 	InfoStoreAdd focus_method mouse_focus
 + I TestRc (Match) Break
-+ I Style * SloppyFocus
++ I ChangeFocusPolicy SloppyFocus
 + I Module FvwmForm InfoForm INFO="Focus policy is now SloppyFocus."
 + I InfoStoreAdd focus_method sloppy_focus
 
@@ -404,6 +406,17 @@ AddToFunc SetTheme
 + I Exec sed -i "s@$FVWM_THEMEPATH@themes/$0/theme@g" $FVWM_USERDIR/config
 + I UnsetEnv FVWM_THEMEPATH
 + I Restart
+
+# Setting Style * <focus_policy> isn't enough as that will override
+# all conflicting styles. Thus we reset all focus related styles here.
+DestroyFunc ChangeFocusPolicy
+AddToFunc ChangeFocusPolicy
++ I Style * $0
++ I Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
++ I Style * MouseFocusClickRaises
++ I Style MainPager NeverFocus
++ I Style PagerFrame NeverFocus
++ I Style WMakerApps NeverFocus
 
 # Modules
 # FvwmPager
