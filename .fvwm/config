@@ -380,6 +380,11 @@ AddToFunc ChangeFocusPolicy
 + I Style PagerFrame NeverFocus
 + I Style WMakerApps NeverFocus
 
+DestroyFunc SetTheme
+AddToFunc SetTheme
++ I Exec $FVWM_USERDIR/update-configs.sh 3 $0
++ I Restart
+
 # Tiling functions
 DestroyFunc TileLeft
 AddToFunc TileLeft
@@ -420,15 +425,6 @@ DestroyFunc TileBottomRight
 AddToFunc TileBottomRight
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
-
-# Misc functions
-DestroyFunc SetTheme
-AddToFunc SetTheme
-+ I PipeRead "echo SetEnv FVWM_THEMEPATH `grep Read.*theme \
-	$FVWM_USERDIR/config | cut -d ' ' -f 2`"
-+ I Exec sed -i "s@$FVWM_THEMEPATH@themes/$0/theme@g" $FVWM_USERDIR/config
-+ I UnsetEnv FVWM_THEMEPATH
-+ I Restart
 
 # Modules
 # FvwmPager

@@ -25,6 +25,11 @@ case $1 in
     sed -i "s/^InfoStoreAdd edge_scroll $5\b/InfoStoreAdd edge_scroll $4/g" \
       $FVWM_USERDIR/config
     ;;
+  3)
+    themepath=`grep "Read themes.*theme" $FVWM_USERDIR/config | cut -d ' ' -f 2`
+    sed -i "s@$themepath@themes/$2/theme@g" $FVWM_USERDIR/config
+    unset themepath
+    ;;
   *)
     usage
     ;;
