@@ -332,10 +332,13 @@ AddToFunc ToggleEdgeScroll
 + I Test (EnvMatch infostore.edge_scroll on) EdgeScroll 0 0
 + I Test (EnvMatch infostore.edge_scroll on) Module FvwmForm InfoForm \
 	INFO="Paging is now disabled."
++ I Test (EnvMatch infostore.edge_scroll on) Exec \
+	$FVWM_USERDIR/update-configs.sh 2 "0 0" "100 100" "off" "on"
 + I Test (EnvMatch infostore.edge_scroll on) InfoStoreAdd edge_scroll off
 + I TestRc (Match) Break
 + I EdgeScroll 100 100
 + I Module FvwmForm InfoForm INFO="Paging is now enabled."
++ I Exec $FVWM_USERDIR/update-configs.sh 2 "100 100" "0 0" "on" "off"
 + I InfoStoreAdd edge_scroll on
 
 DestroyFunc ToggleFocusMethod
