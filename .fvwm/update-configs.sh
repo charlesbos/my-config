@@ -14,16 +14,18 @@ Options:
   file: $FVWM_USERDIR/config"
 } 
 
-if [ ! $1 ] || [ $1 = "-h" ] || [ $1 = "--help" ]; then usage; fi
-
 case $1 in 
   1)
     sed -i "s/^Style \* $3\b/Style \* $2/g" $FVWM_USERDIR/config
-    sed -i "s/^InfoStoreAdd focus_method $5\b/InfoStoreAdd focus_method $4/g" $FVWM_USERDIR/config
+    sed -i "s/^InfoStoreAdd focus_method $5\b/InfoStoreAdd focus_method $4/g" \
+      $FVWM_USERDIR/config
     ;;
   2)
     sed -i "s/^EdgeScroll $3\b/EdgeScroll $2/g" $FVWM_USERDIR/config
     sed -i "s/^InfoStoreAdd edge_scroll $5\b/InfoStoreAdd edge_scroll $4/g" \
       $FVWM_USERDIR/config
+    ;;
+  *)
+    usage
     ;;
 esac
