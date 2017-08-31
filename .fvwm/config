@@ -341,22 +341,35 @@ AddToFunc ToggleEdgeScroll
 DestroyFunc ToggleFocusMethod
 AddToFunc ToggleFocusMethod
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
-	ChangeFocusPolicy ClickToFocus
+	ChangeFocusPolicy ClickToFocus SloppyFocus click_focus
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
 	Module FvwmForm InfoForm INFO="Focus policy is now ClickToFocus."
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
 	InfoStoreAdd focus_method click_focus
 + I TestRc (Match) Break
 + I Test (EnvMatch infostore.focus_method click_focus) \
-	ChangeFocusPolicy MouseFocus
+	ChangeFocusPolicy MouseFocus ClickToFocus mouse_focus
 + I Test (EnvMatch infostore.focus_method click_focus) \
 	Module FvwmForm InfoForm INFO="Focus policy is now MouseFocus."
 + I Test (EnvMatch infostore.focus_method click_focus) \
 	InfoStoreAdd focus_method mouse_focus
 + I TestRc (Match) Break
-+ I ChangeFocusPolicy SloppyFocus
++ I ChangeFocusPolicy SloppyFocus MouseFocus sloppy_focus
 + I Module FvwmForm InfoForm INFO="Focus policy is now SloppyFocus."
 + I InfoStoreAdd focus_method sloppy_focus
+
+DestroyFunc ChangeFocusPolicy
+AddToFunc ChangeFocusPolicy
++ I Style * $0
+# Setting Style * <focus_policy> isn't enough as that will override
+# all conflicting styles. Thus we reset all focus related styles here.
++ I Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
++ I Style * MouseFocusClickRaises
++ I Style MainPager NeverFocus
++ I Style PagerFrame NeverFocus
++ I Style WMakerApps NeverFocus
++ I Exec sed -i "s/^Style \* $1\b/Style \* $0/g" $FVWM_USERDIR/config
++ I Exec sed -i "s/^InfoStoreAdd focus_method $[infostore.focus_method]\b/InfoStoreAdd focus_method $2/g" $FVWM_USERDIR/config
 
 # Tiling functions
 DestroyFunc TileLeft
@@ -407,17 +420,6 @@ AddToFunc SetTheme
 + I Exec sed -i "s@$FVWM_THEMEPATH@themes/$0/theme@g" $FVWM_USERDIR/config
 + I UnsetEnv FVWM_THEMEPATH
 + I Restart
-
-# Setting Style * <focus_policy> isn't enough as that will override
-# all conflicting styles. Thus we reset all focus related styles here.
-DestroyFunc ChangeFocusPolicy
-AddToFunc ChangeFocusPolicy
-+ I Style * $0
-+ I Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
-+ I Style * MouseFocusClickRaises
-+ I Style MainPager NeverFocus
-+ I Style PagerFrame NeverFocus
-+ I Style WMakerApps NeverFocus
 
 # Modules
 # FvwmPager
