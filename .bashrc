@@ -91,6 +91,9 @@ copyconfigs() {
     if [ "$(diff -Nurq $HOME/Devel/GitHub/my-config/$x $HOME/$x)" ]; then
       if [ "$1" ] && [ "$1" == "check" ]; then
         echo "Changed: $HOME/$x"
+      elif [ "$1" ] && [ "$1" == "display" ]; then
+        echo "Changed: $HOME/$x"
+        echo "$(diff -Nur $HOME/Devel/GitHub/my-config/$x $HOME/$x)"
       else
         echo "Copying: $HOME/$x"
         if [ -f "$x" ]; then 
