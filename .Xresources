@@ -58,4 +58,12 @@ xscreensaver*newLoginCommand:
 XClock*minuteColor:			steelblue3
 XClock*hourColor:			red
 
+!!
+!! xmessage resources
+!!
+
+xmessage*baseTranslations:\
+	<Key>Return:exit()\n\
+	<Key>Escape:exit()
+
 !! vim: ts=8 sts=8 sw=8 noet
