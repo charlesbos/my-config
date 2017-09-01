@@ -371,7 +371,6 @@ AddToFunc ChangeFocusPolicy
 # Setting Style * <focus_policy> isn't enough as that will override
 # all conflicting styles. Thus we reset all focus related styles here.
 + I Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
-+ I Style * MouseFocusClickRaises
 + I Style "FvwmPager" NeverFocus
 + I Style "FvwmButtons" NeverFocus
 
