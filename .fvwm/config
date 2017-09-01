@@ -56,6 +56,7 @@ Style "Display Selector" PositionPlacement center
 Style "Take Screenshot" PositionPlacement center
 Style urxvt Icon /usr/share/icons/gnome/48x48/apps/terminal.png, \
 	MiniIcon /usr/share/icons/gnome/16x16/apps/terminal.png
+Style xmessage Sticky
 
 # Key bindings
 # Window menu, <Alt>tab dialogue and window cycling
