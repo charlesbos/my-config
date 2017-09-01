@@ -44,7 +44,6 @@ Style "FvwmButtons" !Title, Sticky, WindowListSkip, HandleWidth 3, \
 	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "FvwmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
 	CirculateSkip, !Iconifiable, !Maximizable, !Closable
-Style "InfoForm" Title
 
 # Program styles
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement center
@@ -327,14 +326,14 @@ AddToFunc Resize-or-Raise
 DestroyFunc ToggleEdgeScroll
 AddToFunc ToggleEdgeScroll
 + I Test (EnvMatch infostore.edge_scroll on) EdgeScroll 0 0
-+ I Test (EnvMatch infostore.edge_scroll on) Module FvwmForm InfoForm \
-	INFO="Paging is now disabled."
++ I Test (EnvMatch infostore.edge_scroll on) Exec xmessage -center \
+	"Paging is now disabled."
 + I Test (EnvMatch infostore.edge_scroll on) Exec \
 	$FVWM_USERDIR/update-configs.sh 2 "0 0" "100 100" "off" "on"
 + I Test (EnvMatch infostore.edge_scroll on) InfoStoreAdd edge_scroll off
 + I TestRc (Match) Break
 + I EdgeScroll 100 100
-+ I Module FvwmForm InfoForm INFO="Paging is now enabled."
++ I Exec xmessage -center "Paging is now enabled."
 + I Exec $FVWM_USERDIR/update-configs.sh 2 "100 100" "0 0" "on" "off"
 + I InfoStoreAdd edge_scroll on
 
@@ -346,14 +345,14 @@ AddToFunc ToggleFocusMethod
 	Exec $FVWM_USERDIR/update-configs.sh 1 ClickToFocus SloppyFocus \
 	click_focus sloppy_focus
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
-	Module FvwmForm InfoForm INFO="Focus policy is now ClickToFocus."
+	Exec xmessage -center "Focus policy is now ClickToFocus."
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
 	InfoStoreAdd focus_method click_focus
 + I TestRc (Match) Break
 + I Test (EnvMatch infostore.focus_method click_focus) \
 	ChangeFocusPolicy MouseFocus
 + I Test (EnvMatch infostore.focus_method click_focus) \
-	Module FvwmForm InfoForm INFO="Focus policy is now MouseFocus."
+	Exec xmessage -center "Focus policy is now MouseFocus."
 + I Test (EnvMatch infostore.focus_method click_focus) \
 	Exec $FVWM_USERDIR/update-configs.sh 1 MouseFocus ClickToFocus \
 	mouse_focus click_focus
@@ -361,7 +360,7 @@ AddToFunc ToggleFocusMethod
 	InfoStoreAdd focus_method mouse_focus
 + I TestRc (Match) Break
 + I ChangeFocusPolicy SloppyFocus
-+ I Module FvwmForm InfoForm INFO="Focus policy is now SloppyFocus."
++ I Exec xmessage -center "Focus policy is now SloppyFocus."
 + I Exec $FVWM_USERDIR/update-configs.sh 1 SloppyFocus MouseFocus sloppy_focus \
 	mouse_focus
 + I InfoStoreAdd focus_method sloppy_focus
@@ -467,19 +466,6 @@ AddToFunc TileBottomRight
 *WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmsystemtray" Nop)
 
 # FvwmForm
-*InfoForm: GrabServer
-*InfoForm: WarpPointer
-*InfoForm: ColorSet 42
-*InfoForm: ItemColorSet 42
-*InfoForm: Font "xft:DejaVu Sans:size=10"
-*InfoForm: ButtonFont "xft:DejaVu Sans:size=9"
-*InfoForm: Command Beep
-*InfoForm: Title "Message"
-*InfoForm: Line expand
-*InfoForm: Text "$INFO"
-*InfoForm: Line right
-*InfoForm: Button quit "OK" ^M
-
 *InputForm: GrabServer
 *InputForm: WarpPointer
 *InputForm: ColorSet 42
