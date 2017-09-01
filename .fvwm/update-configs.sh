@@ -2,16 +2,19 @@
 # Simple script to make changes to the Fvwm config file on the go
 
 usage() {
-  echo "update-configs.sh task-number [OPTIONS]
+  echo "update-configs.sh task-number [ARGS]
 
 Where task-number can be:
   1 - Change the focus policy
   2 - Enable/Disable edge scrolling
   3 - Change the theme
 
-Options:
-  These are dependent on the operation in question. Please consult your config
-  file: $FVWM_USERDIR/config"
+ARGS:
+  1 - new-policy old-policy new-policy-var old-policy-var
+  2 - new-scroll-val old-scroll-val new-scroll-var old-scroll-var
+  3 - new-theme-name
+
+For more information see your config file: $FVWM_USERDIR/config"
 } 
 
 case $1 in 
