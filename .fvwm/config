@@ -1,5 +1,9 @@
 # Charles' Fvwm configuration file
 
+# Infostore variables
+InfoStoreAdd edge_scroll on
+InfoStoreAdd focus_method sloppy_focus
+
 # Commands
 EdgeResistance 0
 EdgeScroll 100 100
@@ -14,10 +18,6 @@ DefaultFont "xft:DejaVu Sans:size=9:condensed"
 
 # External files
 Read themes/KDE1/theme
-
-# Infostore variables
-InfoStoreAdd edge_scroll on
-InfoStoreAdd focus_method sloppy_focus
 
 # Default styles
 Style * ColorSet 41, HilightColorSet 40
