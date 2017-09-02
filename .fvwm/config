@@ -124,8 +124,11 @@ Key End A 4 TileBottomLeft
 Key Next A 4 TileBottomRight
 
 # The <Super>* bindings - for misc actions
+Key F A 4 ToggleFocusMethod
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
+Key P A 4 ToggleEdgeScroll
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
+Key W A 4 NoWindow Module FvwmIdent
 
 # Multimedia and screenshot
 Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
