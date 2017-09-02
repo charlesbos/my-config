@@ -3,6 +3,7 @@
 # Commands
 EdgeResistance 0
 EdgeScroll 100 100
+EdgeThickness 1
 ClickTime 750
 DesktopSize 3x3
 IgnoreModifiers L25
