@@ -62,7 +62,7 @@ XClock*hourColor:			red
 !! xmessage resources
 !!
 
-xmessage*baseTranslations:\
+xmessage*baseTranslations:#augment\
 	<Key>Return:exit()\n\
 	<Key>Escape:exit()
 
