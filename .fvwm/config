@@ -134,6 +134,7 @@ Key W A 4 NoWindow Module FvwmIdent
 # Multimedia and screenshot
 Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
 Key XF86MonBrightnessDown A N Exec xbacklight -dec 10
+Key XF86Display A N Exec display-selector.py
 Key Print A N Exec scrot -e 'xdg-open $f'
 Key Print A S Exec tkscrot.py
 
