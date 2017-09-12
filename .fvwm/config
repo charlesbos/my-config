@@ -168,7 +168,7 @@ AddToFunc StartFunction
 + I Exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
 + I Exec nm-applet > /dev/null 2>&1 &
 + I Exec cbatticon -c "xmessage -center 'Power is critically low. \
-	Please take action.'" -r 5 > /dev/null 2>&1 &
+Please take action.'" -r 5 > /dev/null 2>&1 &
 + I Exec volumeicon > /dev/null 2>&1 &
 + I Exec blueman-applet > /dev/null 2>&1 &
 + I Exec xscreensaver -nosplash > /dev/null 2>&1 &
