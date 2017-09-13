@@ -2,27 +2,27 @@
 # Here we set the decor, colorsets, titlebar buttons and menus
 
 # Colorsets
-# 40 is for active windows
-# 41 is for inactive windows
-# 42 is for modules
-# 43 is for icons and menus
-# 44 is for pager, icon title and menu hilights
-# 45 is for greyed menu items
-# 46 is for inactive windows in the pager
-# 47 is for active windows in the pager
-ColorSet 40 fg grey15, bg silver, hi grey75, sh grey40, \
+# 0 is for active windows
+# 1 is for inactive windows
+# 2 is for modules
+# 3 is for icons and menus
+# 4 is for pager, icon title and menu hilights
+# 5 is for greyed menu items
+# 6 is for inactive windows in the pager
+# 7 is for active windows in the pager
+ColorSet 0 fg grey15, bg silver, hi grey75, sh grey40, \
 	TiledPixmap themes/Metal3/metal3.png
-ColorSet 41 fg grey60, bg silver, hi gainsboro, sh darkgrey, \
+ColorSet 1 fg grey60, bg silver, hi gainsboro, sh darkgrey, \
 	TiledPixmap themes/Metal3/metal3.png
-ColorSet 42 fg grey15, bg silver, hi grey75, sh grey40, \
+ColorSet 2 fg grey15, bg silver, hi grey75, sh grey40, \
 	TiledPixmap themes/Metal3/metal3.png
-ColorSet 43 fg grey15, bg silver, hi gainsboro, sh grey40, \
+ColorSet 3 fg grey15, bg silver, hi gainsboro, sh grey40, \
 	TiledPixmap themes/Metal3/metal3.png
-ColorSet 44 fg grey15, bg slategrey, hi #C1C5CC, sh #495568
-ColorSet 45 fg grey40
-ColorSet 46 bg grey70
-ColorSet 47 bg #8899AA
-DefaultColorSet 42
+ColorSet 4 fg grey15, bg slategrey, hi #C1C5CC, sh #495568
+ColorSet 5 fg grey40
+ColorSet 6 bg grey70
+ColorSet 7 bg #8899AA
+DefaultColorSet 2
 
 # Title bar buttons
 Mouse 0	2 A Close
@@ -66,10 +66,10 @@ Style * UseDecor Metal3
 # Menus
 MenuStyle * Fvwm
 MenuStyle * PopupOffset -3 100
-MenuStyle * MenuColorSet 43
-MenuStyle * GreyedColorSet 45
+MenuStyle * MenuColorSet 3
+MenuStyle * GreyedColorSet 5
 MenuStyle * HilightBack
-MenuStyle * ActiveColorSet 44
+MenuStyle * ActiveColorSet 4
 MenuStyle * Font "xft:DejaVu Sans:size=10"
 MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
 MenuStyle * VerticalItemSpacing +2 +3

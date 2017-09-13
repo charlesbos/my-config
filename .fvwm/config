@@ -20,7 +20,7 @@ DefaultFont "xft:DejaVu Sans:size=9:condensed"
 Read themes/KDE1/theme
 
 # Default styles
-Style * ColorSet 41, HilightColorSet 40
+Style * ColorSet 1, HilightColorSet 0
 Style * DecorateTransient
 Style * MwmFunctions, MwmDecor, MwmButtons, HintOverride
 Style * UsePPosition
@@ -32,8 +32,8 @@ Style * Icon /usr/share/icons/gnome/48x48/status/image-missing.png
 Style * MiniIcon /usr/share/icons/gnome/16x16/status/image-missing.png
 Style * IconBox +140 -78 -0 -0, IconBox +8 +0 -0 -80, IconFill left bottom
 Style * IconSize 57 57
-Style * IconBackgroundColorset 43
-Style * IconTitleColorset 43, HilightIconTitleColorset 44
+Style * IconBackgroundColorset 3
+Style * IconTitleColorset 3, HilightIconTitleColorset 4
 Style * IconFont "xft:DejaVu Sans:size=8"
 Style * !StickyStippledTitle, !StickyStippledIconTitle
 
@@ -428,20 +428,20 @@ AddToFunc TileBottomRight
 # Modules
 # FvwmPager
 *MainPager: Font "xft:DejaVu Sans:size=9"
-*MainPager: ColorSet * 42
-*MainPager: HilightColorSet * 44
-*MainPager: WindowColorSets 46 47
+*MainPager: ColorSet * 2
+*MainPager: HilightColorSet * 4
+*MainPager: WindowColorSets 6 7
 *MainPager: Window3DBorders
 *MainPager: MiniIcons
 *MainPager: UseSkipList
 *MainPager: Balloons
-*MainPager: BalloonColorSet * 42
+*MainPager: BalloonColorSet * 2
 *MainPager: BalloonFont "xft:DejaVu Sans:size=9"
 
 # FvwmButtons
 *PagerFrame: Geometry 153x135-0+0
 *PagerFrame: BoxSize fixed
-*PagerFrame: ColorSet 42
+*PagerFrame: ColorSet 2
 *PagerFrame: Rows 135
 *PagerFrame: Columns 153
 *PagerFrame: Font "xft:DejaVu Sans:size=9"
@@ -462,7 +462,7 @@ AddToFunc TileBottomRight
 
 *WMakerApps: Geometry 128x64+0-0
 *WMakerApps: BoxSize fixed
-*WMakerApps: ColorSet 42
+*WMakerApps: ColorSet 2
 *WMakerApps: Font "xft:DejaVu Sans:size=9"
 *WMakerApps: Rows 1
 *WMakerApps: Columns 2
@@ -472,8 +472,8 @@ AddToFunc TileBottomRight
 # FvwmForm
 *InputForm: GrabServer
 *InputForm: WarpPointer
-*InputForm: ColorSet 42
-*InputForm: ItemColorSet 42
+*InputForm: ColorSet 2
+*InputForm: ItemColorSet 2
 *InputForm: Font "xft:DejaVu Sans:size=10"
 *InputForm: ButtonFont "xft:DejaVu Sans:size=9"
 *InputForm: InputFont "xft:DejaVu Sans:size=9"
@@ -489,8 +489,8 @@ AddToFunc TileBottomRight
 
 *ConfirmForm: GrabServer
 *ConfirmForm: WarpPointer
-*ConfirmForm: ColorSet 42
-*ConfirmForm: ItemColorSet 42
+*ConfirmForm: ColorSet 2
+*ConfirmForm: ItemColorSet 2
 *ConfirmForm: Font "xft:DejaVu Sans:size=10"
 *ConfirmForm: ButtonFont "xft:DejaVu Sans:size=9"
 *ConfirmForm: Command Beep

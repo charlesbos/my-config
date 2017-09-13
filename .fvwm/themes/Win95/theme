@@ -2,23 +2,23 @@
 # Here we set the decor, colorsets, titlebar buttons and menus
 
 # Colorsets
-# 40 is for active windows
-# 41 is for inactive windows
-# 42 is for modules
-# 43 is for icons and menus
-# 44 is for pager, icon title and menu hilights
-# 45 is for greyed menu items
-# 46 is for inactive windows in the pager
-# 47 is for active windows in the pager
-ColorSet 40 fg white, bg #C3C8CB
-ColorSet 41 fg #C3C6CB, bg #C3C6CB
-ColorSet 42 fg black, bg #C3C6CB
-ColorSet 43 fg black, bg #C3C6CB
-ColorSet 44 fg white, bg #010081
-ColorSet 45 fg grey40
-ColorSet 46 bg #C3C8CB
-ColorSet 47 bg grey90, hi white
-DefaultColorSet 42
+# 0 is for active windows
+# 1 is for inactive windows
+# 2 is for modules
+# 3 is for icons and menus
+# 4 is for pager, icon title and menu hilights
+# 5 is for greyed menu items
+# 6 is for inactive windows in the pager
+# 7 is for active windows in the pager
+ColorSet 0 fg white, bg #C3C8CB
+ColorSet 1 fg #C3C6CB, bg #C3C6CB
+ColorSet 2 fg black, bg #C3C6CB
+ColorSet 3 fg black, bg #C3C6CB
+ColorSet 4 fg white, bg #010081
+ColorSet 5 fg grey40
+ColorSet 6 bg #C3C8CB
+ColorSet 7 bg grey90, hi white
+DefaultColorSet 2
 
 # Title bar buttons
 Mouse 0	2 A Close
@@ -73,10 +73,10 @@ Style * UseDecor Win95
 
 # Menus
 MenuStyle * Win
-MenuStyle * MenuColorSet 43
-MenuStyle * GreyedColorSet 45
+MenuStyle * MenuColorSet 3
+MenuStyle * GreyedColorSet 5
 MenuStyle * HilightBack
-MenuStyle * ActiveColorSet 44
+MenuStyle * ActiveColorSet 4
 MenuStyle * Font "xft:DejaVu Sans:size=10"
 MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
 MenuStyle * VerticalItemSpacing +3 +4
