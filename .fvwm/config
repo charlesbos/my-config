@@ -169,7 +169,7 @@ AddToFunc StartFunction
 + I Exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
 + I Exec nm-applet > /dev/null 2>&1 &
 + I Exec cbatticon -c "xmessage -center 'Power is critically low. \
-Please take action.'" -r 5 > /dev/null 2>&1 &
+Please take action.' -title Warning" -r 5 > /dev/null 2>&1 &
 + I Exec volumeicon > /dev/null 2>&1 &
 + I Exec blueman-applet > /dev/null 2>&1 &
 + I Exec xscreensaver -nosplash > /dev/null 2>&1 &
@@ -338,13 +338,13 @@ DestroyFunc ToggleEdgeScroll
 AddToFunc ToggleEdgeScroll
 + I Test (EnvMatch infostore.edge_scroll on) EdgeScroll 0 0
 + I Test (EnvMatch infostore.edge_scroll on) Exec xmessage -center \
-	"Paging is now disabled."
+	"Paging is now disabled." -title Info
 + I Test (EnvMatch infostore.edge_scroll on) Exec \
 	$FVWM_USERDIR/update-configs.sh 2 "0 0" "100 100" "off" "on"
 + I Test (EnvMatch infostore.edge_scroll on) InfoStoreAdd edge_scroll off
 + I TestRc (Match) Break
 + I EdgeScroll 100 100
-+ I Exec xmessage -center "Paging is now enabled."
++ I Exec xmessage -center "Paging is now enabled." -title Info
 + I Exec $FVWM_USERDIR/update-configs.sh 2 "100 100" "0 0" "on" "off"
 + I InfoStoreAdd edge_scroll on
 
@@ -356,14 +356,14 @@ AddToFunc ToggleFocusMethod
 	Exec $FVWM_USERDIR/update-configs.sh 1 ClickToFocus SloppyFocus \
 	click_focus sloppy_focus
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
-	Exec xmessage -center "Focus policy is now ClickToFocus."
+	Exec xmessage -center "Focus policy is now ClickToFocus." -title Info
 + I Test (EnvMatch infostore.focus_method sloppy_focus) \
 	InfoStoreAdd focus_method click_focus
 + I TestRc (Match) Break
 + I Test (EnvMatch infostore.focus_method click_focus) \
 	ChangeFocusPolicy MouseFocus
 + I Test (EnvMatch infostore.focus_method click_focus) \
-	Exec xmessage -center "Focus policy is now MouseFocus."
+	Exec xmessage -center "Focus policy is now MouseFocus." -title Info
 + I Test (EnvMatch infostore.focus_method click_focus) \
 	Exec $FVWM_USERDIR/update-configs.sh 1 MouseFocus ClickToFocus \
 	mouse_focus click_focus
@@ -371,7 +371,7 @@ AddToFunc ToggleFocusMethod
 	InfoStoreAdd focus_method mouse_focus
 + I TestRc (Match) Break
 + I ChangeFocusPolicy SloppyFocus
-+ I Exec xmessage -center "Focus policy is now SloppyFocus."
++ I Exec xmessage -center "Focus policy is now SloppyFocus." -title Info
 + I Exec $FVWM_USERDIR/update-configs.sh 1 SloppyFocus MouseFocus sloppy_focus \
 	mouse_focus
 + I InfoStoreAdd focus_method sloppy_focus
