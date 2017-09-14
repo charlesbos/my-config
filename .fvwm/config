@@ -511,4 +511,7 @@ AddToFunc TileBottomRight
 # FvwmEvent
 *FvwmEvent: new_desk Focus-Previous
 
+# FvwmIdent
+*FvwmIdent: ColorSet 2
+
 # vim: ts=8 sts=8 sw=8 noet
