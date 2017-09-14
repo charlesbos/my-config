@@ -159,6 +159,7 @@ AddToFunc StartFunction
 + I Module FvwmPager MainPager *
 + I Module FvwmButtons PagerFrame
 + I Module FvwmButtons WMakerApps
++ I Module FvwmEvent
 + I Test (!Init) Break
 # Run mwmmenu on startup to avoid a slow firstrun
 + I Exec mwmmenu > /dev/null 2>&1 &
@@ -326,6 +327,11 @@ DestroyFunc Resize-or-Raise
 AddToFunc Resize-or-Raise 
 + I Raise
 + M Resize
+
+DestroyFunc Focus-Previous
+AddtoFunc Focus-Previous
++ I All (CurrentDesk, Focused) FlipFocus
++ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus) FlipFocus
 
 # Toggle functions
 DestroyFunc ToggleEdgeScroll
@@ -501,5 +507,8 @@ AddToFunc TileBottomRight
 *ConfirmForm: Command $COMMAND
 *ConfirmForm: Button quit "Cancel" ^[
 *ConfirmForm: Command Nop
+
+# FvwmEvent
+*FvwmEvent: new_desk Focus-Previous
 
 # vim: ts=8 sts=8 sw=8 noet
