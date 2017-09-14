@@ -93,7 +93,7 @@ copyconfigs() {
         echo "Changed: $HOME/$x"
       elif [ "$1" ] && [ "$1" == "display" ]; then
         echo "Changed: $HOME/$x"
-        echo "$(diff -Nur $HOME/Devel/GitHub/my-config/$x $HOME/$x)"
+        diff -Nur "$HOME/Devel/GitHub/my-config/$x" "$HOME/$x"
       else
         echo "Copying: $HOME/$x"
         if [ -f "$x" ]; then 
