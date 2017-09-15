@@ -433,6 +433,7 @@ AddToFunc TileBottomRight
 
 # Modules
 # FvwmPager
+*MainPager: Geometry -0+0
 *MainPager: Font "xft:DejaVu Sans:size=9"
 *MainPager: ColorSet * 2
 *MainPager: HilightColorSet * 4
