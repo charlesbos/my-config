@@ -75,7 +75,7 @@ AddToDecor Win98
 # Some decor related styles
 Style * !MwmBorder
 Style * HandleWidth 5, BorderWidth 5
-Style * Font "xft:DejaVu Sans:size=9:bold"
+Style * Font "xft:$[infostore.font_name]:size=9:bold"
 
 # Set the decor
 Style * UseDecor Win98
@@ -86,8 +86,8 @@ MenuStyle * MenuColorSet 3
 MenuStyle * GreyedColorSet 5
 MenuStyle * HilightBack
 MenuStyle * ActiveColorSet 4
-MenuStyle * Font "xft:DejaVu Sans:size=10"
-MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
+MenuStyle * Font "xft:$[infostore.font_name]:size=10"
+MenuStyle * TitleFont "xft:$[infostore.font_name]:size=10"
 MenuStyle * VerticalItemSpacing +3 +4
 MenuStyle * VerticalTitleSpacing +3 +2
 

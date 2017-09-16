@@ -37,7 +37,7 @@ AddToDecor FVWM2
 # Some decor related styles
 Style * !MwmBorder
 Style * HandleWidth 7, BorderWidth 7
-Style * Font "xft:DejaVu Sans:size=9"
+Style * Font "xft:$[infostore.font_name]:size=9"
 
 # Set the decor
 Style * UseDecor FVWM2
@@ -47,8 +47,8 @@ MenuStyle * Fvwm
 MenuStyle * MenuColorSet 3
 MenuStyle * GreyedColorSet 5
 MenuStyle * ActiveColorSet 4
-MenuStyle * Font "xft:DejaVu Sans:size=10"
-MenuStyle * TitleFont "xft:DejaVu Sans:size=10"
+MenuStyle * Font "xft:$[infostore.font_name]:size=10"
+MenuStyle * TitleFont "xft:$[infostore.font_name]:size=10"
 MenuStyle * VerticalItemSpacing +2 +3
 MenuStyle * VerticalTitleSpacing +3 +2
 

@@ -4,6 +4,7 @@
 InfoStoreAdd edge_scroll on
 InfoStoreAdd focus_method sloppy_focus
 InfoStoreAdd icon_path "/usr/share/icons/gnome"
+InfoStoreAdd font_name "DejaVu Sans"
 
 # Commands
 EdgeResistance 0
@@ -15,7 +16,7 @@ IgnoreModifiers L25
 Emulate Mwm
 CursorStyle WAIT left_ptr
 BusyCursor * off
-DefaultFont "xft:DejaVu Sans:size=9:condensed"
+DefaultFont "xft:$[infostore.font_name]:size=9:condensed"
 
 # External files
 Read themes/KDE1/theme
@@ -35,7 +36,7 @@ Style * IconBox +140 -78 -0 -0, IconBox +8 +0 -0 -80, IconFill left bottom
 Style * IconSize 57 57
 Style * IconBackgroundColorset 3
 Style * IconTitleColorset 3, HilightIconTitleColorset 4
-Style * IconFont "xft:DejaVu Sans:size=8"
+Style * IconFont "xft:$[infostore.font_name]:size=8"
 Style * !StickyStippledTitle, !StickyStippledIconTitle
 
 # Module styles
@@ -439,7 +440,7 @@ AddToFunc TileBottomRight
 # Modules
 # FvwmPager
 *MainPager: Geometry -0+0
-*MainPager: Font "xft:DejaVu Sans:size=9"
+*MainPager: Font "xft:$[infostore.font_name]:size=9"
 *MainPager: ColorSet * 2
 *MainPager: HilightColorSet * 4
 *MainPager: WindowColorSets 6 7
@@ -448,7 +449,7 @@ AddToFunc TileBottomRight
 *MainPager: UseSkipList
 *MainPager: Balloons
 *MainPager: BalloonColorSet * 2
-*MainPager: BalloonFont "xft:DejaVu Sans:size=9"
+*MainPager: BalloonFont "xft:$[infostore.font_name]:size=9"
 
 # FvwmButtons
 *PagerFrame: Geometry 153x135-0+0
@@ -456,7 +457,7 @@ AddToFunc TileBottomRight
 *PagerFrame: ColorSet 2
 *PagerFrame: Rows 135
 *PagerFrame: Columns 153
-*PagerFrame: Font "xft:DejaVu Sans:size=9"
+*PagerFrame: Font "xft:$[infostore.font_name]:size=9"
 *PagerFrame: (153x119, Container)
 *PagerFrame: (Frame 1, Swallow(UseOld, NoClose) "MainPager" Nop)
 *PagerFrame: (End)
@@ -475,7 +476,7 @@ AddToFunc TileBottomRight
 *WMakerApps: Geometry 128x64+0-0
 *WMakerApps: BoxSize fixed
 *WMakerApps: ColorSet 2
-*WMakerApps: Font "xft:DejaVu Sans:size=9"
+*WMakerApps: Font "xft:$[infostore.font_name]:size=9"
 *WMakerApps: Rows 1
 *WMakerApps: Columns 2
 *WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmclock" Nop)
@@ -486,9 +487,9 @@ AddToFunc TileBottomRight
 *InputForm: WarpPointer
 *InputForm: ColorSet 2
 *InputForm: ItemColorSet 2
-*InputForm: Font "xft:DejaVu Sans:size=10"
-*InputForm: ButtonFont "xft:DejaVu Sans:size=9"
-*InputForm: InputFont "xft:DejaVu Sans:size=9"
+*InputForm: Font "xft:$[infostore.font_name]:size=10"
+*InputForm: ButtonFont "xft:$[infostore.font_name]:size=9"
+*InputForm: InputFont "xft:$[infostore.font_name]:size=9"
 *InputForm: Command Beep
 *InputForm: Line left
 *InputForm: Text "$ITEM:"
@@ -503,8 +504,8 @@ AddToFunc TileBottomRight
 *ConfirmForm: WarpPointer
 *ConfirmForm: ColorSet 2
 *ConfirmForm: ItemColorSet 2
-*ConfirmForm: Font "xft:DejaVu Sans:size=10"
-*ConfirmForm: ButtonFont "xft:DejaVu Sans:size=9"
+*ConfirmForm: Font "xft:$[infostore.font_name]:size=10"
+*ConfirmForm: ButtonFont "xft:$[infostore.font_name]:size=9"
 *ConfirmForm: Command Beep
 *ConfirmForm: Line center
 *ConfirmForm: Text "$ACTION?"
@@ -516,6 +517,6 @@ AddToFunc TileBottomRight
 
 # FvwmIdent
 *FvwmIdent: ColorSet 2
-*FvwmIdent: Font "xft:DejaVu Sans:size=10"
+*FvwmIdent: Font "xft:$[infostore.font_name]:size=10"
 
 # vim: ts=8 sts=8 sw=8 noet
