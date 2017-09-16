@@ -46,7 +46,7 @@ Style "FvwmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
 	CirculateSkip, !Iconifiable, !Maximizable, !Closable
 
 # Program styles
-Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement center
+Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement undermouse
 Style Nitrogen !UsePPosition, PositionPlacement center
 Style Thunderbird PositionPlacement center
 Style Chromium !UsePPosition, PositionPlacement center
