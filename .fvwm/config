@@ -28,7 +28,7 @@ Style * MwmFunctions, MwmDecor, MwmButtons, HintOverride
 Style * UsePPosition
 Style * SloppyFocus
 Style * MinOverlapPlacement
-Style * FPLenient, FPSortWindowlistByFocus
+Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
 Style * ResizeHintOverride
 Style * Icon $[infostore.icon_path]/48x48/status/image-missing.png
 Style * MiniIcon $[infostore.icon_path]/16x16/status/image-missing.png
@@ -58,7 +58,7 @@ Style "Display Selector" PositionPlacement center
 Style "Take Screenshot" PositionPlacement center
 Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
 	MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png
-Style xmessage Sticky, FPGrabFocus
+Style xmessage Sticky
 
 # Key bindings
 # Window menu, <Alt>tab dialogue and window cycling
@@ -385,11 +385,10 @@ AddToFunc ChangeFocusPolicy
 + I Style * $0
 # Setting Style * <focus_policy> isn't enough as that will override
 # all conflicting styles. Thus we reset all focus related styles here.
-+ I Style * FPLenient, FPSortWindowlistByFocus
++ I Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
 # Application specific settings
 + I Style "FvwmPager" NeverFocus
 + I Style "FvwmButtons" NeverFocus
-+ I Style xmessage FPGrabFocus
 
 DestroyFunc SetTheme
 AddToFunc SetTheme
