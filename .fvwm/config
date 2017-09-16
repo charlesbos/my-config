@@ -516,5 +516,6 @@ AddToFunc TileBottomRight
 
 # FvwmIdent
 *FvwmIdent: ColorSet 2
+*FvwmIdent: Font "xft:DejaVu Sans:size=10"
 
 # vim: ts=8 sts=8 sw=8 noet
