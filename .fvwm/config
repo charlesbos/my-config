@@ -3,6 +3,7 @@
 # Infostore variables
 InfoStoreAdd edge_scroll on
 InfoStoreAdd focus_method sloppy_focus
+InfoStoreAdd icon_path "/usr/share/icons/gnome"
 
 # Commands
 EdgeResistance 0
@@ -28,8 +29,8 @@ Style * SloppyFocus
 Style * MinOverlapPlacement
 Style * FPLenient, FPSortWindowlistByFocus
 Style * ResizeHintOverride
-Style * Icon /usr/share/icons/gnome/48x48/status/image-missing.png
-Style * MiniIcon /usr/share/icons/gnome/16x16/status/image-missing.png
+Style * Icon $[infostore.icon_path]/48x48/status/image-missing.png
+Style * MiniIcon $[infostore.icon_path]/16x16/status/image-missing.png
 Style * IconBox +140 -78 -0 -0, IconBox +8 +0 -0 -80, IconFill left bottom
 Style * IconSize 57 57
 Style * IconBackgroundColorset 3
@@ -54,8 +55,8 @@ Style libreoffice !UsePPosition, PositionPlacement center
 Style "Set GTK+ theme" PositionPlacement center
 Style "Display Selector" PositionPlacement center
 Style "Take Screenshot" PositionPlacement center
-Style urxvt Icon /usr/share/icons/gnome/48x48/apps/terminal.png, \
-	MiniIcon /usr/share/icons/gnome/16x16/apps/terminal.png
+Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
+	MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png
 Style xmessage Sticky, FPGrabFocus
 
 # Key bindings
