@@ -86,6 +86,7 @@ Key F12 A 1 Stick
 # Some <Shift><Alt>F* bindings, for modified versions of 
 # the <Alt>F* actions
 Key F2 A S1 Exec urxvt -geometry 110x34
+Key F3 A S1 RaiseLower
 Key F4 A S1 Destroy
 
 # Lock session, end session and restart the window manager
