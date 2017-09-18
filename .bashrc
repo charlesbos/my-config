@@ -14,6 +14,7 @@ stty -ixon
 #My aliases
 alias pkgcount='pacman -Q | wc -l'
 alias reset='reset -Q'
+alias tree='tree -C'
 
 #My functions
 psrch() { 
