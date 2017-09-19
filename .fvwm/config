@@ -88,8 +88,8 @@ Key F12 A 1 Stick
 Key F2 A S1 Exec urxvt -geometry 110x34
 Key F3 A S1 RaiseLower
 Key F4 A S1 Destroy
-Key F7 A S1 FvwmForm InputForm ITEM="Window location" COMMAND="Move"
-Key F8 A S1 FvwmForm InputForm ITEM="Window size" COMMAND="Resize"
+Key F7 A S1 ThisWindow FvwmForm InputForm ITEM="Window location" COMMAND="Move"
+Key F8 A S1 ThisWindow FvwmForm InputForm ITEM="Window size" COMMAND="Resize"
 
 # Lock session, end session and restart the window manager
 Key L A C1 Exec loginctl lock-session
