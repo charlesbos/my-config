@@ -54,7 +54,7 @@ Style Thunderbird PositionPlacement center
 Style Chromium !UsePPosition, PositionPlacement center
 Style libreoffice !UsePPosition, PositionPlacement center
 Style "Set GTK+ theme" PositionPlacement center
-Style "Display Selector" PositionPlacement center
+Style "Display Conf Tool" PositionPlacement center
 Style "Take Screenshot" PositionPlacement center
 Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
 	MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png
@@ -137,7 +137,7 @@ Key W A 4 NoWindow Module FvwmIdent
 # Multimedia and screenshot
 Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
 Key XF86MonBrightnessDown A N Exec xbacklight -dec 10
-Key XF86Display A N Exec display-selector.py
+Key XF86Display A N Exec display-conf-tool.py
 Key Print A N Exec scrot -e 'xdg-open $f'
 Key Print A S Exec tkscrot.py
 
@@ -195,7 +195,7 @@ AddToFunc CreateRootMenu
 + I AddToMenu RootMenu "" Nop
 + I AddToMenu RootMenu "GTK+ Settings" Exec setgtktheme.py
 + I AddToMenu RootMenu "Set Background" Exec nitrogen
-+ I AddToMenu RootMenu "Select Display" Exec display-selector.py
++ I AddToMenu RootMenu "Displays" Exec display-conf-tool.py
 + I AddToMenu RootMenu "Fvwm Menu" PopUp FvwmMenu
 + I AddToMenu RootMenu "" Nop
 + I AddToMenu RootMenu "Session" PopUp Session
