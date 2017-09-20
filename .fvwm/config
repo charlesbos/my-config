@@ -46,6 +46,9 @@ Style "FvwmButtons" !Title, Sticky, WindowListSkip, HandleWidth 3, \
 	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "FvwmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
 	CirculateSkip, !Iconifiable, !Maximizable, !Closable
+# When the FvwmIdent window is initially mapped, the fonts are bolded and
+# blurred. Moving the window after it has been mapped seems to correct this.
+Style "FvwmIdent" InitialMapCommand Move w-1 w-1
 
 # Program styles
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement undermouse
@@ -519,7 +522,6 @@ AddToFunc TileBottomRight
 
 # FvwmIdent
 *FvwmIdent: ColorSet 2
-# For some reason, xft fonts are bolded and blurred until the window is moved
-# *FvwmIdent: Font "xft:$[infostore.font_name]:size=10"
+*FvwmIdent: Font "xft:$[infostore.font_name]:size=10"
 
 # vim: ts=8 sts=8 sw=8 noet
