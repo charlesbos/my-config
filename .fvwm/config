@@ -48,7 +48,7 @@ Style "FvwmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
 	CirculateSkip, !Iconifiable, !Maximizable, !Closable
 # When the FvwmIdent window is initially mapped, the fonts are bolded and
 # blurred. Moving the window after it has been mapped seems to correct this.
-Style "FvwmIdent" InitialMapCommand Move w-1 w-1
+Style "FvwmIdent" InitialMapCommand Move w-1 w-1, !Maximizable, FixedSize
 
 # Program styles
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement undermouse
