@@ -1,14 +1,14 @@
 # Charles' Fvwm configuration file
 
 # Infostore variables
-InfoStoreAdd edge_scroll on
+InfoStoreAdd edge_scroll off
 InfoStoreAdd focus_method sloppy_focus
 InfoStoreAdd icon_path "/usr/share/icons/gnome"
 InfoStoreAdd font_name "DejaVu Sans"
 
 # Commands
 EdgeResistance 0
-EdgeScroll 100 100
+EdgeScroll 0 0
 EdgeThickness 1
 ClickTime 750
 DesktopSize 3x3
