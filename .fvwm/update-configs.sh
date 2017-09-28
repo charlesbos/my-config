@@ -1,5 +1,8 @@
 #!/bin/sh
-# Simple script to make changes to the Fvwm config file on the go
+# A script to be called from within the FVWM config file. This serves to hide
+# the sed calls we use for editing the config from FVWM's command processing. 
+# Calling the bare sed commands from within the config file itself can 
+# sometimes lead to difficulties and/or unexpected results
 
 usage() {
   echo "update-configs.sh task-number [ARGS]
