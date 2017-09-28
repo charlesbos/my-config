@@ -14,8 +14,7 @@ ClickTime 750
 DesktopSize 3x3
 IgnoreModifiers L25
 Emulate Mwm
-CursorStyle WAIT left_ptr
-BusyCursor * off
+BusyCursor Read False
 DefaultFont "xft:$[infostore.font_name]:size=9:condensed"
 
 # External files
