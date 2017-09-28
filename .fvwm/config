@@ -282,7 +282,7 @@ AddToFunc CreateThemesMenu
 + I DestroyMenu recreate Themes
 + I AddToMenu Themes "Select Theme" Title
 + I PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} \
-	SetTheme ${x}; done'
+	ChangeTheme ${x}; done'
 
 DestroyMenu FvwmMenu
 AddToMenu FvwmMenu
@@ -344,7 +344,7 @@ AddToFunc WindowListFunc
 + I Raise
 + I WarpToWindow 50 50
 
-# Toggle functions
+# Config change functions
 DestroyFunc ToggleEdgeScroll
 AddToFunc ToggleEdgeScroll
 + I Test (EnvMatch infostore.edge_scroll on) EdgeScroll 0 0
@@ -397,8 +397,8 @@ AddToFunc ChangeFocusPolicy
 + I Style "FvwmPager" NeverFocus
 + I Style "FvwmButtons" NeverFocus
 
-DestroyFunc SetTheme
-AddToFunc SetTheme
+DestroyFunc ChangeTheme
+AddToFunc ChangeTheme
 + I Exec $FVWM_USERDIR/update-configs.sh 3 $0
 + I Restart
 
