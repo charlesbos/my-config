@@ -112,6 +112,17 @@ Key Right A S1 MoveToPage +1w +0w
 Key Up A S1 MoveToPage +0w -1w
 Key Down A S1 MoveToPage +0w +1w
 
+# Moving window to specific page
+Key 0 A S1 MoveToPage 0 0
+Key 1 A S1 MoveToPage 1 0
+Key 2 A S1 MoveToPage 2 0
+Key 3 A S1 MoveToPage 0 1
+Key 4 A S1 MoveToPage 1 1
+Key 5 A S1 MoveToPage 2 1
+Key 6 A S1 MoveToPage 0 2
+Key 7 A S1 MoveToPage 1 2
+Key 8 A S1 MoveToPage 2 2
+
 # Desk switching
 Key Up A C4 GoToDesk -1
 Key Down A C4 GoToDesk +1
