@@ -57,6 +57,8 @@ xscreensaver*newLoginCommand:
 
 XClock*minuteColor:			steelblue3
 XClock*hourColor:			red
+XClock*face:				xft:DejaVu Sans Mono:size=10
+XClock*strftime:			%b %d, %R
 
 !!
 !! xmessage resources
