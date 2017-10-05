@@ -16,6 +16,7 @@ IgnoreModifiers L25
 Emulate Mwm
 BusyCursor Read False
 DefaultFont "xft:$[infostore.font_name]:size=9:condensed"
+OpaqueMoveSize 0
 
 # External files
 Read themes/KDE1/theme
