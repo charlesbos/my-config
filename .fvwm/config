@@ -107,6 +107,17 @@ Key Right A C1 GoToPage +1p +0p
 Key Up A C1 GoToPage +0p -1p
 Key Down A C1 GoToPage +0p +1p
 
+# Page switching to specific page
+Key 0 A C1 GoToPage 0 0
+Key 1 A C1 GoToPage 1 0
+Key 2 A C1 GoToPage 2 0
+Key 3 A C1 GoToPage 0 1
+Key 4 A C1 GoToPage 1 1
+Key 5 A C1 GoToPage 2 1
+Key 6 A C1 GoToPage 0 2
+Key 7 A C1 GoToPage 1 2
+Key 8 A C1 GoToPage 2 2
+
 # Moving window to page
 Key Left A S1 MoveToPage -1w +0w
 Key Right A S1 MoveToPage +1w +0w
