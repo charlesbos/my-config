@@ -15,7 +15,7 @@ DesktopSize 3x3
 IgnoreModifiers L25
 Emulate Mwm
 BusyCursor Read False
-DefaultFont "xft:$[infostore.font_name]:size=9:condensed"
+DefaultFont "xft:$[infostore.font_name]:size=8.5"
 OpaqueMoveSize 0
 
 # External files
