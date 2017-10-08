@@ -32,11 +32,11 @@ Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
 Style * ResizeHintOverride
 Style * Icon $[infostore.icon_path]/48x48/status/image-missing.png
 Style * MiniIcon $[infostore.icon_path]/16x16/status/image-missing.png
-Style * IconBox +140 -78 -0 -0, IconBox +8 +0 -0 -80, IconFill left bottom
+Style * IconBox +140 -79 -0 -0, IconBox +8 +0 -0 -82, IconFill left bottom
 Style * IconSize 57 57
 Style * IconBackgroundColorset 3
 Style * IconTitleColorset 3, HilightIconTitleColorset 4
-Style * IconFont "xft:$[infostore.font_name]:size=8"
+Style * IconFont "xft:$[infostore.font_name]:size=8.5"
 Style * !StickyStippledTitle, !StickyStippledIconTitle
 
 # Module styles
