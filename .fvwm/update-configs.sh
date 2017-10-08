@@ -23,7 +23,7 @@ For more information see your config file: $FVWM_USERDIR/config"
 case $1 in 
   1)
     sed -i "s/^Style \* $3\b/Style \* $2/g" $FVWM_USERDIR/config
-    sed -i "s/^InfoStoreAdd focus_method $5\b/InfoStoreAdd focus_method $4/g" \
+    sed -i "s/^InfoStoreAdd focus_policy $5\b/InfoStoreAdd focus_policy $4/g" \
       $FVWM_USERDIR/config
     ;;
   2)

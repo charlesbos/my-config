@@ -2,7 +2,7 @@
 
 # Infostore variables
 InfoStoreAdd edge_scroll off
-InfoStoreAdd focus_method sloppy_focus
+InfoStoreAdd focus_policy sloppy_focus
 InfoStoreAdd icon_path "/usr/share/icons/gnome"
 InfoStoreAdd font_name "DejaVu Sans"
 
@@ -157,7 +157,7 @@ Key End A 4 TileBottomLeft
 Key Next A 4 TileBottomRight
 
 # The <Super>* bindings - for misc actions
-Key F A 4 ToggleFocusMethod
+Key F A 4 ToggleFocusPolicy
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
 Key P A 4 ToggleEdgeScroll
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
@@ -319,7 +319,7 @@ AddToFunc CreateFvwmMenu
 + I AddToMenu FvwmMenu "Themes" PopUp Themes
 + I AddToMenu FvwmMenu "Identify Window" Module FvwmIdent
 + I AddToMenu FvwmMenu "Toggle Paging" ToggleEdgeScroll
-+ I AddToMenu FvwmMenu "Toggle Focus" ToggleFocusMethod
++ I AddToMenu FvwmMenu "Toggle Focus" ToggleFocusPolicy
 + I AddToMenu FvwmMenu "Fvwm Console" Module FvwmConsole
 + I AddToMenu FvwmMenu "Refresh Windows" Refresh
 + I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center \
@@ -383,33 +383,33 @@ AddToFunc ToggleEdgeScroll
 + I Exec $FVWM_USERDIR/update-configs.sh 2 "100 100" "0 0" "on" "off"
 + I InfoStoreAdd edge_scroll on
 
-DestroyFunc ToggleFocusMethod
-AddToFunc ToggleFocusMethod
-+ I Test (EnvMatch infostore.focus_method sloppy_focus) \
+DestroyFunc ToggleFocusPolicy
+AddToFunc ToggleFocusPolicy
++ I Test (EnvMatch infostore.focus_policy sloppy_focus) \
 	ChangeFocusPolicy ClickToFocus
-+ I Test (EnvMatch infostore.focus_method sloppy_focus) \
++ I Test (EnvMatch infostore.focus_policy sloppy_focus) \
 	Exec $FVWM_USERDIR/update-configs.sh 1 ClickToFocus SloppyFocus \
 	click_focus sloppy_focus
-+ I Test (EnvMatch infostore.focus_method sloppy_focus) \
++ I Test (EnvMatch infostore.focus_policy sloppy_focus) \
 	Exec xmessage -center "Focus policy is now ClickToFocus." -title Info
-+ I Test (EnvMatch infostore.focus_method sloppy_focus) \
-	InfoStoreAdd focus_method click_focus
++ I Test (EnvMatch infostore.focus_policy sloppy_focus) \
+	InfoStoreAdd focus_policy click_focus
 + I TestRc (Match) Break
-+ I Test (EnvMatch infostore.focus_method click_focus) \
++ I Test (EnvMatch infostore.focus_policy click_focus) \
 	ChangeFocusPolicy MouseFocus
-+ I Test (EnvMatch infostore.focus_method click_focus) \
++ I Test (EnvMatch infostore.focus_policy click_focus) \
 	Exec xmessage -center "Focus policy is now MouseFocus." -title Info
-+ I Test (EnvMatch infostore.focus_method click_focus) \
++ I Test (EnvMatch infostore.focus_policy click_focus) \
 	Exec $FVWM_USERDIR/update-configs.sh 1 MouseFocus ClickToFocus \
 	mouse_focus click_focus
-+ I Test (EnvMatch infostore.focus_method click_focus) \
-	InfoStoreAdd focus_method mouse_focus
++ I Test (EnvMatch infostore.focus_policy click_focus) \
+	InfoStoreAdd focus_policy mouse_focus
 + I TestRc (Match) Break
 + I ChangeFocusPolicy SloppyFocus
 + I Exec xmessage -center "Focus policy is now SloppyFocus." -title Info
 + I Exec $FVWM_USERDIR/update-configs.sh 1 SloppyFocus MouseFocus sloppy_focus \
 	mouse_focus
-+ I InfoStoreAdd focus_method sloppy_focus
++ I InfoStoreAdd focus_policy sloppy_focus
 
 DestroyFunc ChangeFocusPolicy
 AddToFunc ChangeFocusPolicy
