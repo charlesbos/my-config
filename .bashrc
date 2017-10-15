@@ -15,6 +15,7 @@ stty -ixon
 alias pkgcount='pacman -Q | wc -l'
 alias reset='reset -Q'
 alias tree='tree -C'
+alias less='less -M'
 
 #My functions
 psrch() { 
