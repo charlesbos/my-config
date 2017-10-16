@@ -303,7 +303,7 @@ AddToMenu RecentFiles
 DestroyFunc CreateRecentFilesMenu
 AddToFunc CreateRecentFilesMenu
 + I DestroyMenu recreate RecentFiles
-+ I PipeRead "$FVWM_USERDIR/recent-files.py"
++ I PipeRead '$FVWM_USERDIR/scripts/recent-files.py'
 
 DestroyMenu Themes
 AddToMenu Themes
@@ -385,12 +385,12 @@ AddToFunc ToggleEdgeScroll
 + I Test (EnvMatch infostore.edge_scroll on) Exec xmessage -center \
 	"Paging is now disabled." -title Info
 + I Test (EnvMatch infostore.edge_scroll on) Exec \
-	$FVWM_USERDIR/update-configs.sh 2 "0 0" "100 100" "off" "on"
+	$FVWM_USERDIR/scripts/update-configs.sh 2 "0 0" "100 100" "off" "on"
 + I Test (EnvMatch infostore.edge_scroll on) InfoStoreAdd edge_scroll off
 + I TestRc (Match) Break
 + I EdgeScroll 100 100
 + I Exec xmessage -center "Paging is now enabled." -title Info
-+ I Exec $FVWM_USERDIR/update-configs.sh 2 "100 100" "0 0" "on" "off"
++ I Exec $FVWM_USERDIR/scripts/update-configs.sh 2 "100 100" "0 0" "on" "off"
 + I InfoStoreAdd edge_scroll on
 
 DestroyFunc ToggleFocusPolicy
@@ -398,8 +398,8 @@ AddToFunc ToggleFocusPolicy
 + I Test (EnvMatch infostore.focus_policy sloppy_focus) \
 	ChangeFocusPolicy ClickToFocus
 + I Test (EnvMatch infostore.focus_policy sloppy_focus) \
-	Exec $FVWM_USERDIR/update-configs.sh 1 ClickToFocus SloppyFocus \
-	click_focus sloppy_focus
+	Exec $FVWM_USERDIR/scripts/update-configs.sh 1 \
+	ClickToFocus SloppyFocus click_focus sloppy_focus
 + I Test (EnvMatch infostore.focus_policy sloppy_focus) \
 	Exec xmessage -center "Focus policy is now ClickToFocus." -title Info
 + I Test (EnvMatch infostore.focus_policy sloppy_focus) \
@@ -410,15 +410,15 @@ AddToFunc ToggleFocusPolicy
 + I Test (EnvMatch infostore.focus_policy click_focus) \
 	Exec xmessage -center "Focus policy is now MouseFocus." -title Info
 + I Test (EnvMatch infostore.focus_policy click_focus) \
-	Exec $FVWM_USERDIR/update-configs.sh 1 MouseFocus ClickToFocus \
+	Exec $FVWM_USERDIR/scripts/update-configs.sh 1 MouseFocus ClickToFocus \
 	mouse_focus click_focus
 + I Test (EnvMatch infostore.focus_policy click_focus) \
 	InfoStoreAdd focus_policy mouse_focus
 + I TestRc (Match) Break
 + I ChangeFocusPolicy SloppyFocus
 + I Exec xmessage -center "Focus policy is now SloppyFocus." -title Info
-+ I Exec $FVWM_USERDIR/update-configs.sh 1 SloppyFocus MouseFocus sloppy_focus \
-	mouse_focus
++ I Exec $FVWM_USERDIR/scripts/update-configs.sh 1 SloppyFocus MouseFocus \
+	sloppy_focus mouse_focus
 + I InfoStoreAdd focus_policy sloppy_focus
 
 DestroyFunc ChangeFocusPolicy
@@ -433,7 +433,7 @@ AddToFunc ChangeFocusPolicy
 
 DestroyFunc ChangeTheme
 AddToFunc ChangeTheme
-+ I Exec $FVWM_USERDIR/update-configs.sh 3 $0
++ I Exec $FVWM_USERDIR/scripts/update-configs.sh 3 $0
 + I Restart
 
 # Tiling functions
