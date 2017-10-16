@@ -222,9 +222,9 @@ AddToFunc CreateRootMenu
 + I AddToMenu RootMenu "Thunderbird" Exec thunderbird
 + I AddToMenu RootMenu "LibreOffice" Exec libreoffice
 + I AddToMenu RootMenu "" Nop
-+ I AddToMenu RootMenu "GTK+ Settings" Exec setgtktheme.py
 + I AddToMenu RootMenu "Set Background" Exec nitrogen
 + I AddToMenu RootMenu "Displays" Exec display-conf-tool.py
++ I AddToMenu RootMenu "Recent Files" PopUp RecentFiles
 + I AddToMenu RootMenu "Fvwm Menu" PopUp FvwmMenu
 + I AddToMenu RootMenu "" Nop
 + I AddToMenu RootMenu "Session" PopUp Session
@@ -294,6 +294,16 @@ AddToMenu TileWindow
 + "Top Right"			TileTopRight
 + "Bottom Left"			TileBottomLeft
 + "Bottom Right"		TileBottomRight
+
+DestroyMenu RecentFiles
+AddToMenu RecentFiles
++ DynamicPopUpAction Function CreateRecentFilesMenu
++ DynamicPopDownAction DestroyMenu recreate RecentFiles
+
+DestroyFunc CreateRecentFilesMenu
+AddToFunc CreateRecentFilesMenu
++ I DestroyMenu recreate RecentFiles
++ I PipeRead "$FVWM_USERDIR/recent-files.py"
 
 DestroyMenu Themes
 AddToMenu Themes
