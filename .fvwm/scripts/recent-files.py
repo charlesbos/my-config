@@ -39,8 +39,11 @@ for x in recentFileLines :
 		files[-1].append(app)
 files = sorted(files, key = operator.itemgetter(0), reverse = True)
 
-print("DestroyMenu recreate RecentFiles")
-print("AddToMenu RecentFiles \"Recent Files\" Title")
-for x in files[:10] :
-	print("+ \"" + os.path.basename(x[1]) + "\" Exec " + \
-	x[2] + " \"" + x[1] + "\"")
+if len(files) > 0 :
+	print("DestroyMenu recreate RecentFiles")
+	print("AddToMenu RecentFiles \"Recent Files\" Title")
+	for x in files[:10] :
+		print("+ \"" + os.path.basename(x[1]) + "\" Exec " + \
+		x[2] + " \"" + x[1] + "\"")
+	print('+ "" Nop')
+	print("+ \"Clear List\" Exec rm " + recentFile)
