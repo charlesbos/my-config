@@ -4,6 +4,8 @@
 
 import os
 import operator
+import html
+import urllib.parse
 
 recentFile = os.path.expanduser("~") + "/.local/share/recently-used.xbel"
 file = open(recentFile, "r")
@@ -29,13 +31,15 @@ for x in recentFileLines :
 		tStamps = [added, modified, visited]
 		tStamps = sorted(tStamps, reverse = True)
 		filename = \
-		x.partition("file://")[2].split(" ")[0] \
-		.replace("%20", " ").replace("&apos;", "'").strip('"')
+		x.partition("file://")[2].split(" ")[0]
+		filename = html.unescape(filename)
+		filename = urllib.parse.unquote(filename)
+		filename = filename.strip('"')
 		files.append([tStamps[0], filename])
 	if x.find("<bookmark:application ") != -1 :
 		app = x[x.find("exec") + 5:x.find(" ", x.find("exec"))]
 		if app.find("%") != -1 : app = app[0:app.find("%")]
-		app = app.replace("&apos;", "").strip("'").strip('"')
+		app = html.unescape(app).strip('"').strip("'")
 		files[-1].append(app)
 files = sorted(files, key = operator.itemgetter(0), reverse = True)
 
