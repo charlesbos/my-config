@@ -8,9 +8,11 @@ import html
 import urllib.parse
 
 recentFile = os.path.expanduser("~") + "/.local/share/recently-used.xbel"
-file = open(recentFile, "r")
-recentFileText = file.read()
-file.close()
+recentFileText = ""
+if os.path.exists(recentFile) :
+	file = open(recentFile, "r")
+	recentFileText = file.read()
+	file.close()
 recentFileLines = recentFileText.split("\n")
 
 files = []
@@ -43,9 +45,9 @@ for x in recentFileLines :
 		files[-1].append(app)
 files = sorted(files, key = operator.itemgetter(0), reverse = True)
 
+print("DestroyMenu recreate RecentFiles")
+print("AddToMenu RecentFiles \"Recent Files\" Title")
 if len(files) > 0 :
-	print("DestroyMenu recreate RecentFiles")
-	print("AddToMenu RecentFiles \"Recent Files\" Title")
 	for x in files[:10] :
 		print("+ \"" + os.path.basename(x[1]) + "\" Exec " + \
 		x[2] + " \"" + x[1] + "\"")
