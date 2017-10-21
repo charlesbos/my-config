@@ -16,7 +16,7 @@ IgnoreModifiers L25
 Emulate Mwm
 BusyCursor Read False
 DefaultFont "xft:$[infostore.font_name]:size=8.5"
-OpaqueMoveSize 0
+OpaqueMoveSize unlimited
 
 # External files
 Read themes/KDE1/theme
@@ -29,7 +29,7 @@ Style * UsePPosition
 Style * SloppyFocus
 Style * MinOverlapPlacement
 Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
-Style * ResizeHintOverride
+Style * ResizeHintOverride, ResizeOpaque
 Style * Icon $[infostore.icon_path]/48x48/status/image-missing.png
 Style * MiniIcon $[infostore.icon_path]/16x16/status/image-missing.png
 Style * IconBox +140 -79 -0 -0, IconBox +8 +0 -0 -82, IconFill left bottom
