@@ -16,6 +16,8 @@ if os.path.exists(recentFile) :
 recentFileLines = recentFileText.split("\n")
 
 files = []
+apps = []
+addApps = False
 for x in recentFileLines :
 	if x.find("href") != -1 :
 		added = ""
@@ -38,11 +40,18 @@ for x in recentFileLines :
 		filename = urllib.parse.unquote(filename)
 		filename = filename.strip('"')
 		files.append([tStamps[0], filename])
-	if x.find("<bookmark:application ") != -1 :
+		addApps = True
+	if x.find("<bookmark:application ") != -1 and addApps == True :
 		app = x[x.find("exec") + 5:x.find(" ", x.find("exec"))]
 		if app.find("%") != -1 : app = app[0:app.find("%")]
 		app = html.unescape(app).strip('"').strip("'")
-		files[-1].append(app)
+		tStamp = x[x.find("modified") + 9:x.find(" ", x.find("modified"))]
+		apps.append((tStamp,app))
+	if x.find("</bookmark:applications>") != -1 and addApps == True :
+		apps = sorted(apps, key = operator.itemgetter(0), reverse = True)
+		files[-1].append(apps)
+		apps = []
+		addApps = False
 files = sorted(files, key = operator.itemgetter(0), reverse = True)
 
 print("DestroyMenu recreate RecentFiles")
@@ -50,6 +59,6 @@ print("AddToMenu RecentFiles \"Recent Files\" Title")
 if len(files) > 0 :
 	for x in files[:10] :
 		print("+ \"" + os.path.basename(x[1]) + "\" Exec " + \
-		x[2] + " \"" + x[1] + "\"")
+		x[2][0][1] + " \"" + x[1] + "\"")
 	print('+ "" Nop')
 	print("+ \"Clear List\" Exec rm " + recentFile)
