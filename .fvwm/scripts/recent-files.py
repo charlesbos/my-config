@@ -61,7 +61,9 @@ if len(files) > 0 :
 	for x in files :
 		if counter < 10 :
 			if os.path.exists(x[1]) :
-				print("+ \"" + os.path.basename(x[1]) + "\" Exec " + \
+				filename = os.path.basename(x[1])
+				if len(filename) > 25 : filename = filename[:22] + "..."
+				print("+ \"" + filename + "\" Exec " + \
 				x[2][0][1] + " \"" + x[1] + "\"")
 				counter += 1
 		else : break
