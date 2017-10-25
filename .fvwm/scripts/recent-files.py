@@ -54,11 +54,16 @@ for x in recentFileLines :
 		addApps = False
 files = sorted(files, key = operator.itemgetter(0), reverse = True)
 
+counter = 0
 print("DestroyMenu recreate RecentFiles")
 print("AddToMenu RecentFiles \"Recent Files\" Title")
 if len(files) > 0 :
-	for x in files[:10] :
-		print("+ \"" + os.path.basename(x[1]) + "\" Exec " + \
-		x[2][0][1] + " \"" + x[1] + "\"")
+	for x in files :
+		if counter < 10 :
+			if os.path.exists(x[1]) :
+				print("+ \"" + os.path.basename(x[1]) + "\" Exec " + \
+				x[2][0][1] + " \"" + x[1] + "\"")
+				counter += 1
+		else : break
 	print('+ "" Nop')
 	print("+ \"Clear List\" Exec rm " + recentFile)
