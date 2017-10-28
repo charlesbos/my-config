@@ -30,6 +30,7 @@ Style * SloppyFocus
 Style * MinOverlapPlacement
 Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
 Style * ResizeHintOverride, ResizeOpaque
+Style * SnapAttraction 5 All ScreenAll
 Style * Icon $[infostore.icon_path]/48x48/status/image-missing.png
 Style * MiniIcon $[infostore.icon_path]/16x16/status/image-missing.png
 Style * IconBox +140 -79 -0 -0, IconBox +8 +0 -0 -82, IconFill left bottom
