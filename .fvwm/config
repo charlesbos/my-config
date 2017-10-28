@@ -1,12 +1,12 @@
 # Charles' Fvwm configuration file
 
-# Infostore variables
+##### Infostore variables #####
 InfoStoreAdd edge_scroll off
 InfoStoreAdd focus_policy sloppy_focus
 InfoStoreAdd icon_path "/usr/share/icons/gnome"
 InfoStoreAdd font_name "DejaVu Sans"
 
-# Commands
+##### Commands #####
 EdgeResistance 0
 EdgeScroll 0 0
 EdgeThickness 1
@@ -18,10 +18,10 @@ BusyCursor Read False
 DefaultFont "xft:$[infostore.font_name]:size=8.5"
 OpaqueMoveSize unlimited
 
-# External files
+##### External files #####
 Read themes/KDE1/theme
 
-# Default styles
+##### Default styles #####
 Style * ColorSet 1, HilightColorSet 0
 Style * DecorateTransient
 Style * MwmFunctions, MwmDecor, MwmButtons, HintOverride
@@ -39,7 +39,7 @@ Style * IconTitleColorset 3, HilightIconTitleColorset 4
 Style * IconFont "xft:$[infostore.font_name]:size=8.5"
 Style * !StickyStippledTitle, !StickyStippledIconTitle
 
-# Module styles
+##### Module styles #####
 Style "FvwmPager" !Title, Sticky, WindowListSkip, HandleWidth 3, \
 	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "FvwmButtons" !Title, Sticky, WindowListSkip, HandleWidth 3, \
@@ -50,7 +50,7 @@ Style "FvwmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
 # blurred. Moving the window after it has been mapped seems to correct this.
 Style "FvwmIdent" InitialMapCommand Move w-1 w-1, !Maximizable, FixedSize
 
-# Program styles
+##### Program styles #####
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement undermouse
 Style Nitrogen !UsePPosition, PositionPlacement center
 Style Thunderbird PositionPlacement center
@@ -63,16 +63,16 @@ Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
 	MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png
 Style xmessage Sticky
 
-# Key bindings
-# Window menu, <Alt>tab dialogue and window cycling
+##### Key bindings #####
+### Window menu, <Alt>tab dialogue and window cycling
 Key Escape A C WindowList Root c c NoGeometryWithInfo, IconifiedAtEnd
 Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, \
 	CurrentAtEnd, IconifiedAtEnd
 Key Next A SCM Next (AcceptsFocus) Focus
 Key Prior A SCM Prev (AcceptsFocus) Focus
 
-# The <Alt>F* bindings, primarily for window controls
-# We mostly use MWM's defaults here
+### The <Alt>F* bindings, primarily for window controls
+### We mostly use MWM's defaults here
 Key F1 A 1 Menu RootMenu Nop
 Key F2 A 1 Exec urxvt
 Key F3 A 1 Lower
@@ -86,8 +86,8 @@ Key F10 A 1 Maximize
 Key F11 A 1 Menu Window-Ops Nop
 Key F12 A 1 Stick
 
-# Some <Shift><Alt>F* bindings, for modified versions of 
-# the <Alt>F* actions
+### Some <Shift><Alt>F* bindings, for modified versions of
+### the <Alt>F* actions
 Key F2 A S1 Exec urxvt -geometry 110x34
 Key F3 A S1 RaiseLower
 Key F4 A S1 Destroy
@@ -96,18 +96,18 @@ Key F7 A S1 ThisWindow (CurrentPage, Focused) \
 Key F8 A S1 ThisWindow (CurrentPage, Focused) \
 	FvwmForm InputForm ITEM="Window size" COMMAND="Resize"
 
-# Lock session, end session and restart the window manager
+### Lock session, end session and restart the window manager
 Key L A C1 Exec loginctl lock-session
 Key Delete A C1 FvwmForm ConfirmForm ACTION="Quit Fvwm" COMMAND="Quit"
 Key R A C1 Restart
 
-# Page switching
+### Page switching
 Key Left A C1 GoToPage -1p +0p
 Key Right A C1 GoToPage +1p +0p
 Key Up A C1 GoToPage +0p -1p
 Key Down A C1 GoToPage +0p +1p
 
-# Page switching to specific page
+### Page switching to specific page
 Key 0 A C1 GoToPage 0 0
 Key 1 A C1 GoToPage 1 0
 Key 2 A C1 GoToPage 2 0
@@ -118,13 +118,13 @@ Key 6 A C1 GoToPage 0 2
 Key 7 A C1 GoToPage 1 2
 Key 8 A C1 GoToPage 2 2
 
-# Moving window to page
+### Moving window to page
 Key Left A S1 MoveToPage -1w +0w
 Key Right A S1 MoveToPage +1w +0w
 Key Up A S1 MoveToPage +0w -1w
 Key Down A S1 MoveToPage +0w +1w
 
-# Moving window to specific page
+### Moving window to specific page
 Key 0 A S1 MoveToPage 0 0
 Key 1 A S1 MoveToPage 1 0
 Key 2 A S1 MoveToPage 2 0
@@ -135,18 +135,18 @@ Key 6 A S1 MoveToPage 0 2
 Key 7 A S1 MoveToPage 1 2
 Key 8 A S1 MoveToPage 2 2
 
-# Desk switching
+### Desk switching
 Key Up A C4 GoToDesk-and-Focus -1
 Key Down A C4 GoToDesk-and-Focus +1
 Key G A C1 FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk-and-Focus 0"
 
-# Moving window to desk
+### Moving window to desk
 Key Up A S4 MoveToDesk -1
 Key Down A S4 MoveToDesk +1
 Key M A C1 ThisWindow (CurrentPage, Focused) FvwmForm InputForm \
 	ITEM="Move to desk" COMMAND="MoveToDesk 0"
 
-# Window tiling
+### Window tiling
 Key Left A 4 TileLeft
 Key Right A 4 TileRight
 Key Up A 4 TileTop
@@ -156,27 +156,27 @@ Key Prior A 4 TileTopRight
 Key End A 4 TileBottomLeft
 Key Next A 4 TileBottomRight
 
-# The <Super>* bindings - for misc actions
+### The <Super>* bindings - for misc actions
 Key F A 4 ToggleFocusPolicy
 Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
 Key P A 4 ToggleEdgeScroll
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 Key W A 4 NoWindow Module FvwmIdent
 
-# Multimedia and screenshot
+### Multimedia and screenshot
 Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
 Key XF86MonBrightnessDown A N Exec xbacklight -dec 10
 Key XF86Display A N Exec display-conf-tool.py
 Key Print A N Exec scrot -e 'xdg-open $f'
 Key Print A S Exec tkscrot.py
 
-# Mouse bindings
-# Root window
+##### Mouse bindings #####
+### Root window
 Mouse 1 R A Menu RootMenu Nop
 Mouse 2 R A -
 Mouse 3 R A -
 
-# Windows/borders/icons
+### Windows/borders/icons
 Mouse 1	F A Resize-or-Raise
 Mouse 1	TS A Move-or-Raise
 Mouse 1	I A Move-or-Iconify
@@ -185,7 +185,7 @@ Mouse 2	I A Iconify
 Mouse 2	FST A RaiseLower
 Mouse 3	TSIF A Menu Window-Ops Nop
 
-# Initialisation
+##### Initialisation #####
 DestroyFunc StartFunction
 AddToFunc StartFunction
 + I Module FvwmPager MainPager *
@@ -207,7 +207,7 @@ Please take action.' -title Warning" -r 5 > /dev/null 2>&1 &
 + I Exec xscreensaver -nosplash > /dev/null 2>&1 &
 + I Exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1 &
 
-# Menus
+##### Menus #####
 DestroyMenu RootMenu
 AddToMenu RootMenu
 + DynamicPopUpAction Function CreateRootMenu
@@ -353,8 +353,8 @@ AddToMenu Session "Session" Title
 + "Poweroff"			FvwmForm ConfirmForm ACTION="Poweroff" \
 					COMMAND="Exec systemctl poweroff"
 
-# Functions
-# Basic functions
+##### Functions #####
+### Basic functions
 DestroyFunc Move-or-Raise
 AddToFunc Move-or-Raise 
 + I Raise
@@ -376,7 +376,7 @@ AddtoFunc Focus-Previous
 + I All (CurrentDesk, Focused, !InputForm) FlipFocus
 + I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus, !InputForm) FlipFocus
 
-# Builtin overrides and wrapper functions for commands
+### Builtin overrides and wrapper functions for commands
 DestroyFunc WindowListFunc
 AddToFunc WindowListFunc
 + I Iconify off
@@ -400,7 +400,7 @@ AddToFunc GoToDesk-and-Focus
 + I Test (EnvMatch infostore.focus_policy mouse_focus) \
 	ChangeFocusPolicy MouseFocus
 
-# Config change functions
+### Config change functions
 DestroyFunc ToggleEdgeScroll
 AddToFunc ToggleEdgeScroll
 + I Test (EnvMatch infostore.edge_scroll on) EdgeScroll 0 0
@@ -458,7 +458,7 @@ AddToFunc ChangeTheme
 + I Exec $FVWM_USERDIR/scripts/update-configs.sh 3 $0
 + I Restart
 
-# Tiling functions
+### Tiling functions
 DestroyFunc TileLeft
 AddToFunc TileLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
@@ -499,8 +499,8 @@ AddToFunc TileBottomRight
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 50
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
 
-# Modules
-# FvwmPager
+##### Modules #####
+### FvwmPager
 *MainPager: Geometry -0+0
 *MainPager: Font "xft:$[infostore.font_name]:size=9"
 *MainPager: ColorSet * 2
@@ -513,7 +513,7 @@ AddToFunc TileBottomRight
 *MainPager: BalloonColorSet * 2
 *MainPager: BalloonFont "xft:$[infostore.font_name]:size=9"
 
-# FvwmButtons
+### FvwmButtons
 *PagerFrame: Geometry 153x135-0+0
 *PagerFrame: BoxSize fixed
 *PagerFrame: ColorSet 2
@@ -544,7 +544,7 @@ AddToFunc TileBottomRight
 *WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmclock" Nop)
 *WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmsystemtray" Nop)
 
-# FvwmForm
+### FvwmForm
 *InputForm: GrabServer
 *InputForm: WarpPointer
 *InputForm: ColorSet 2
@@ -577,7 +577,7 @@ AddToFunc TileBottomRight
 *ConfirmForm: Button quit "Cancel" ^[
 *ConfirmForm: Command Nop
 
-# FvwmIdent
+### FvwmIdent
 *FvwmIdent: ColorSet 2
 *FvwmIdent: Font "xft:$[infostore.font_name]:size=10"
 
