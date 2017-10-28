@@ -381,7 +381,13 @@ AddtoFunc Focus-Previous
 DestroyFunc WindowListFunc
 AddToFunc WindowListFunc
 + I Iconify off
-+ I FlipFocus
++ I GoToDesk 0 $[w.desk]
+# This is a workaround for when using Compton. With slow applications like
+# Chromium, the compositor cannot handle a desk switch and page switch
+# happening in rapid succession meaning we get artifacts. So we introduce a
+# slight delay between the desk switch and page switch to give the compositor
+# time to catch up
++ I PipeRead 'sleep 0.05 && echo FlipFocus'
 + I Raise
 + I WarpToWindow 50 50
 
@@ -394,7 +400,8 @@ AddToFunc GoToDesk-and-Focus
 # passing over a window in the new desk does not change the focus order
 + I ChangeFocusPolicy ClickToFocus
 + I GoToDesk $*
-+ I Focus-Previous
+# Workaround for Compton. See comment in WindowListFunc for details
++ I PipeRead 'sleep 0.05 && echo Focus-Previous'
 # If we're not using ClickToFocus, switch back to our preferred focus policy
 + I Test (EnvMatch infostore.focus_policy sloppy_focus) \
 	ChangeFocusPolicy SloppyFocus
