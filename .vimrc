@@ -22,3 +22,6 @@ set noexpandtab
 
 "Show lines of context whilst scrolling
 set scrolloff=5
+
+"Print final line that doesn't fit in window
+set display=lastline
