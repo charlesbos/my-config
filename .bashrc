@@ -5,17 +5,20 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 #Disable flow control
 stty -ixon
 
 #My aliases
+alias ls='ls --color=auto -h'
 alias pkgcount='pacman -Q | wc -l'
 alias reset='reset -Q'
 alias tree='tree -C'
 alias less='less -M'
+alias grep='grep --color=auto'
+alias du='du -h'
+alias df='df -h'
 
 #My functions
 psrch() { 
