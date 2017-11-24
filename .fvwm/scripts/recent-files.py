@@ -15,7 +15,7 @@ def getExec(desktop) :
 	for x in contents :
 		if x[:5] == "Exec=" : 
 			if x.find("%") != -1 : return x[x.find("=") + 1:x.find(" %")]
-			else : return x[x.find("=" + 1):]
+			else : return x[x.find("=") + 1:]
 	return None
 
 def getDesktopPath(desktop) :
