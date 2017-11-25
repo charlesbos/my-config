@@ -112,3 +112,10 @@ copyconfigs() {
   done
   unset sync_files
 }
+
+tbird-backup() {
+  dstamp=$(date "+%Y-%m-%d")
+  tar -C ~ -cf thunderbird-conf-${dstamp}.tar .thunderbird
+  unset dstamp
+}
+
