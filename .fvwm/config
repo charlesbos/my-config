@@ -137,9 +137,9 @@ Key 7 A S1 MoveToPage 1 2
 Key 8 A S1 MoveToPage 2 2
 
 ### Desk switching
-Key Up A C4 GoToDesk-and-Focus -1
-Key Down A C4 GoToDesk-and-Focus +1
-Key G A C1 FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk-and-Focus 0"
+Key Up A C4 GoToDesk -1
+Key Down A C4 GoToDesk +1
+Key G A C1 FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk 0"
 
 ### Moving window to desk
 Key Up A S4 MoveToDesk -1
@@ -373,41 +373,13 @@ AddToFunc Resize-or-Raise
 + I Raise
 + M Resize
 
-DestroyFunc Focus-Previous
-AddtoFunc Focus-Previous
-+ I All (CurrentDesk, Focused, !InputForm) FlipFocus
-+ I TestRc (NoMatch) Prev (CurrentDesk, AcceptsFocus, !InputForm) FlipFocus
-
-### Builtin overrides and wrapper functions for commands
+### Builtin overrides
 DestroyFunc WindowListFunc
 AddToFunc WindowListFunc
 + I Iconify off
-+ I GoToDesk 0 $[w.desk]
-# This is a workaround for when using Compton. With slow applications like
-# Chromium, the compositor cannot handle a desk switch and page switch
-# happening in rapid succession meaning we get artifacts. So we introduce a
-# slight delay between the desk switch and page switch to give the compositor
-# time to catch up
-+ I PipeRead 'sleep 0.05 && echo FlipFocus'
++ I FlipFocus
 + I Raise
 + I WarpToWindow 50 50
-
-# Wrapper function for the GoToDesk command. This will switch desks and then 
-# transfer focus to the previously focused window in that desk, warping to that
-# window's page if necessary
-DestroyFunc GoToDesk-and-Focus
-AddToFunc GoToDesk-and-Focus
-# We have to use ClickToFocus when switching desks to ensure that the pointer 
-# passing over a window in the new desk does not change the focus order
-+ I ChangeFocusPolicy ClickToFocus
-+ I GoToDesk $*
-# Workaround for Compton. See comment in WindowListFunc for details
-+ I PipeRead 'sleep 0.05 && echo Focus-Previous'
-# If we're not using ClickToFocus, switch back to our preferred focus policy
-+ I Test (EnvMatch infostore.focus_policy sloppy_focus) \
-	ChangeFocusPolicy SloppyFocus
-+ I Test (EnvMatch infostore.focus_policy mouse_focus) \
-	ChangeFocusPolicy MouseFocus
 
 ### Config change functions
 DestroyFunc ToggleEdgeScroll
@@ -533,15 +505,15 @@ AddToFunc TileBottomRight
 *PagerFrame: (Frame 1, Swallow(UseOld, NoClose) "MainPager" Nop)
 *PagerFrame: (End)
 *PagerFrame: (41x16, Container)
-*PagerFrame: (Frame 1, Title "←", Action (Mouse 1) GoToDesk-and-Focus -1)
+*PagerFrame: (Frame 1, Title "←", Action (Mouse 1) GoToDesk -1)
 *PagerFrame: (End)
 *PagerFrame: (71x16, Container)
 *PagerFrame: (Frame 1, Title "...", Action (Mouse 1) FvwmForm InputForm \
-	ITEM="Go to desk" COMMAND="GoToDesk-and-Focus 0", Action (Mouse 3) \
-	PipeRead 'echo GoToDesk-and-Focus 0 0')
+	ITEM="Go to desk" COMMAND="GoToDesk 0", Action (Mouse 3) \
+	PipeRead 'echo GoToDesk 0 0')
 *PagerFrame: (End)
 *PagerFrame: (41x16, Container)
-*PagerFrame: (Frame 1, Title "→", Action (Mouse 1) GoToDesk-and-Focus +1)
+*PagerFrame: (Frame 1, Title "→", Action (Mouse 1) GoToDesk +1)
 *PagerFrame: (End)
 
 *WMakerApps: Geometry 128x64+0-0
