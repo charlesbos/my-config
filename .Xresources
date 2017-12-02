@@ -71,5 +71,3 @@ XClock*strftime:			%b %d, %R
 xmessage*baseTranslations:#augment\
 	<Key>Return:exit()\n\
 	<Key>Escape:exit()
-
-!! vim: ts=8 sts=8 sw=8 noet

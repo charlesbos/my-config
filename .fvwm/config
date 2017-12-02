@@ -552,5 +552,3 @@ AddToFunc TileBottomRight
 ### FvwmIdent
 *FvwmIdent: ColorSet 2
 *FvwmIdent: Font "xft:$[infostore.font_name]:size=10"
-
-# vim: ts=8 sts=8 sw=8 noet

@@ -90,5 +90,3 @@ MenuStyle * Font "xft:$[infostore.font_name]:size=10"
 MenuStyle * TitleFont "xft:$[infostore.font_name]:size=10"
 MenuStyle * VerticalItemSpacing +3 +4
 MenuStyle * VerticalTitleSpacing +3 +2
-
-# vim: ts=8 sts=8 sw=8 noet
