@@ -65,7 +65,7 @@ Style xmessage Sticky
 
 ##### Key bindings #####
 ### Window menu, <Alt>tab dialogue and window cycling
-Key Escape A C WindowList Root c c NoGeometryWithInfo, IconifiedAtEnd
+Key Escape A C WindowList NoGeometryWithInfo, IconifiedAtEnd
 Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, \
 	CurrentAtEnd, IconifiedAtEnd
 Key Next A SCM Next (AcceptsFocus) Focus
