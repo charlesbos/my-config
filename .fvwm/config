@@ -162,8 +162,8 @@ Key Print A S Exec tkscrot.py
 ##### Mouse bindings #####
 ### Root window
 Mouse 1 R A Menu RootMenu Nop
-Mouse 2 R A -
-Mouse 3 R A -
+Mouse 2 R A Menu Window-Ops Nop
+Mouse 3 R A WindowList NoGeometryWithInfo, IconifiedAtEnd
 
 ### Windows/borders/icons
 Mouse 1	F A Resize-or-Raise
