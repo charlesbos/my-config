@@ -427,7 +427,7 @@ AddToFunc ChangeFocusPolicy
 
 DestroyFunc ChangeTheme
 AddToFunc ChangeTheme
-+ I Exec $FVWM_USERDIR/scripts/update-configs.sh 3 $0
++ I Exec sed -i "s@^Read themes/.*@Read themes/$0/theme@g" -i $FVWM_USERDIR/config
 + I Restart
 
 ### Tiling functions
