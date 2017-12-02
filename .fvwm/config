@@ -368,6 +368,10 @@ AddToFunc WindowListFunc
 + I Raise
 + I WarpToWindow 50 50
 
+DestroyFunc UrgencyFunc
+
+DestroyFunc UrgencyDoneFunc
+
 ### Config change functions
 DestroyFunc ToggleEdgeScroll
 AddToFunc ToggleEdgeScroll
