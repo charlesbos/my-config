@@ -73,7 +73,6 @@ Key Next A SCM Next (AcceptsFocus) Focus
 Key Prior A SCM Prev (AcceptsFocus) Focus
 
 ### The <Alt>F* bindings, primarily for window controls
-### We mostly use MWM's defaults here
 Key F1 A 1 Menu RootMenu Nop
 Key F2 A 1 Exec urxvt
 Key F3 A 1 Lower
@@ -87,28 +86,18 @@ Key F10 A 1 Maximize
 Key F11 A 1 Menu Window-Ops Nop
 Key F12 A 1 Stick
 
-### Some <Shift><Alt>F* bindings, for modified versions of
-### the <Alt>F* actions
-Key F2 A S1 Exec urxvt -geometry 110x34
-Key F3 A S1 RaiseLower
-Key F4 A S1 Destroy
-Key F7 A S1 ThisWindow (CurrentPage, Focused) \
-	FvwmForm InputForm ITEM="Window location" COMMAND="Move"
-Key F8 A S1 ThisWindow (CurrentPage, Focused) \
-	FvwmForm InputForm ITEM="Window size" COMMAND="Resize"
-
 ### Lock session, end session and restart the window manager
 Key L A C1 Exec loginctl lock-session
 Key Delete A C1 FvwmForm ConfirmForm ACTION="Quit Fvwm" COMMAND="Quit"
 Key R A C1 Restart
 
-### Page switching
+### Page switching to relative page
 Key Left A C1 GoToPage -1p +0p
 Key Right A C1 GoToPage +1p +0p
 Key Up A C1 GoToPage +0p -1p
 Key Down A C1 GoToPage +0p +1p
 
-### Page switching to specific page
+### Page switching to absolute page
 Key 0 A C1 GoToPage 0 0
 Key 1 A C1 GoToPage 1 0
 Key 2 A C1 GoToPage 2 0
@@ -119,13 +108,13 @@ Key 6 A C1 GoToPage 0 2
 Key 7 A C1 GoToPage 1 2
 Key 8 A C1 GoToPage 2 2
 
-### Moving window to page
+### Moving window to relative page
 Key Left A S1 MoveToPage -1w +0w
 Key Right A S1 MoveToPage +1w +0w
 Key Up A S1 MoveToPage +0w -1w
 Key Down A S1 MoveToPage +0w +1w
 
-### Moving window to specific page
+### Moving window to absolute page
 Key 0 A S1 MoveToPage 0 0
 Key 1 A S1 MoveToPage 1 0
 Key 2 A S1 MoveToPage 2 0
@@ -136,12 +125,12 @@ Key 6 A S1 MoveToPage 0 2
 Key 7 A S1 MoveToPage 1 2
 Key 8 A S1 MoveToPage 2 2
 
-### Desk switching
+### Desk switching (relative and absolute)
 Key Up A C4 GoToDesk -1
 Key Down A C4 GoToDesk +1
 Key G A C1 FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk 0"
 
-### Moving window to desk
+### Moving window to desk (relative and absolute)
 Key Up A S4 MoveToDesk -1
 Key Down A S4 MoveToDesk +1
 Key M A C1 ThisWindow (CurrentPage, Focused) FvwmForm InputForm \
@@ -159,7 +148,6 @@ Key Next A 4 TileBottomRight
 
 ### The <Super>* bindings - for misc actions
 Key F A 4 ToggleFocusPolicy
-Key I A 4 All (CurrentPage, Iconifiable, AcceptsFocus) Iconify True
 Key P A 4 ToggleEdgeScroll
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 Key W A 4 NoWindow Module FvwmIdent
