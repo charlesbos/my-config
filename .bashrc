@@ -13,7 +13,7 @@ stty -ixon
 #My aliases
 alias ls='ls --color=auto -h'
 alias pkgcount='pacman -Q | wc -l'
-alias reset='reset -Q'
+alias reset='reset -Q; stty -ixon'
 alias tree='tree -C'
 alias less='less -M'
 alias grep='grep --color=auto'
