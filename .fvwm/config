@@ -369,7 +369,7 @@ DestroyFunc UrgencyDoneFunc
 ### Config change functions
 DestroyFunc ChangeTheme
 AddToFunc ChangeTheme
-+ I Exec sed -i "s@^Read themes/.*@Read themes/$0/theme@g" -i $FVWM_USERDIR/config
++ I Exec sed -i "s@^Read themes/.*@Read themes/$0/theme@g" $FVWM_USERDIR/config
 + I Restart
 
 ### Tiling functions
