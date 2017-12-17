@@ -19,6 +19,7 @@ alias less='less -M'
 alias grep='grep --color=auto'
 alias du='du -h'
 alias df='df -h'
+alias cp='cp --preserve'
 
 #My functions
 psrch() { 
