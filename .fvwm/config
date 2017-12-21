@@ -24,7 +24,7 @@ Style * DecorateTransient
 Style * MwmFunctions, MwmDecor, MwmButtons, HintOverride
 Style * UsePPosition
 Style * SloppyFocus
-Style * MinOverlapPlacement
+Style * PositionPlacement center
 Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
 Style * ResizeHintOverride, ResizeOpaque
 Style * SnapAttraction 5 All ScreenAll
@@ -50,16 +50,14 @@ Style "FvwmIdent" InitialMapCommand Move w-1 w-1, !Maximizable, FixedSize
 
 ##### Program styles #####
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement undermouse
-Style Nitrogen !UsePPosition, PositionPlacement center
-Style Thunderbird PositionPlacement center
-Style Chromium !UsePPosition, PositionPlacement center
-Style libreoffice !UsePPosition, PositionPlacement center
-Style Gnote PositionPlacement center
-Style "Set GTK+ theme" PositionPlacement center
-Style "Display Conf Tool" PositionPlacement center
-Style "Take Screenshot" PositionPlacement center
 Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
-	MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png
+	MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png, \
+	MinOverlapPlacement
+Style xterm MinOverlapPlacement
+Style Toplevel MinOverlapPlacement
+Style galculator MinOverlapPlacement
+Style chromium !UsePPosition
+Style libreoffice !UsePPosition
 Style xmessage Sticky
 
 ##### Key bindings #####
