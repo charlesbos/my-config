@@ -54,6 +54,7 @@ Style Nitrogen !UsePPosition, PositionPlacement center
 Style Thunderbird PositionPlacement center
 Style Chromium !UsePPosition, PositionPlacement center
 Style libreoffice !UsePPosition, PositionPlacement center
+Style Gnote PositionPlacement center
 Style "Set GTK+ theme" PositionPlacement center
 Style "Display Conf Tool" PositionPlacement center
 Style "Take Screenshot" PositionPlacement center
