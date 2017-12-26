@@ -22,7 +22,7 @@ Read themes/KDE1/theme
 Style * ColorSet 1, HilightColorSet 0
 Style * DecorateTransient
 Style * MwmFunctions, MwmDecor, MwmButtons, HintOverride
-Style * UsePPosition
+Style * UsePPosition, UseTransientPPosition
 Style * SloppyFocus
 Style * PositionPlacement center
 Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
