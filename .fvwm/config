@@ -222,7 +222,7 @@ AddToMenu Applications
 DestroyFunc CreateAppsMenu
 AddToFunc CreateAppsMenu
 + I DestroyMenu recreate Applications
-+ I PipeRead 'mwmmenu -fvwm_dynamic'
++ I PipeRead 'mwmmenu --fvwm-dynamic'
 
 DestroyMenu Window-Ops
 AddToMenu Window-Ops
