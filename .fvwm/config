@@ -56,8 +56,10 @@ Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
 Style xterm MinOverlapPlacement
 Style Toplevel MinOverlapPlacement
 Style galculator MinOverlapPlacement
-Style chromium !UsePPosition
-Style libreoffice !UsePPosition
+Style NoClass !UsePPosition, !UseTransientPPosition
+Style chromium !UsePPosition, !UseTransientPPosition
+Style libreoffice !UsePPosition, !UseTransientPPosition
+Style soffice !UsePPosition, !UseTransientPPosition
 Style xmessage Sticky
 
 ##### Key bindings #####
