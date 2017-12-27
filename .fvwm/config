@@ -24,7 +24,7 @@ Style * DecorateTransient
 Style * MwmFunctions, MwmDecor, MwmButtons, HintOverride
 Style * UsePPosition, UseTransientPPosition
 Style * SloppyFocus
-Style * PositionPlacement center
+Style * MinOverlapPlacement
 Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
 Style * ResizeHintOverride, ResizeOpaque
 Style * SnapAttraction 5 All ScreenAll
@@ -51,15 +51,13 @@ Style "FvwmIdent" InitialMapCommand Move w-1 w-1, !Maximizable, FixedSize
 ##### Program styles #####
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement undermouse
 Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
-	MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png, \
-	MinOverlapPlacement
-Style xterm MinOverlapPlacement
-Style Toplevel MinOverlapPlacement
-Style galculator MinOverlapPlacement
-Style NoClass !UsePPosition, !UseTransientPPosition
-Style chromium !UsePPosition, !UseTransientPPosition
-Style libreoffice !UsePPosition, !UseTransientPPosition
-Style soffice !UsePPosition, !UseTransientPPosition
+	MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png
+Style NoClass !UsePPosition, !UseTransientPPosition, PositionPlacement center
+Style chromium !UsePPosition, !UseTransientPPosition, PositionPlacement center
+Style libreoffice !UsePPosition, !UseTransientPPosition, PositionPlacement center
+Style soffice !UsePPosition, !UseTransientPPosition, PositionPlacement center
+Style Tk PositionPlacement center
+Style Thunderbird PositionPlacement center
 Style xmessage Sticky
 
 ##### Key bindings #####
