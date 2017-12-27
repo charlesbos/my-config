@@ -1,13 +1,14 @@
+#Workaround for no menu borders with Adwaita
+#Requires gtk-engine-murrine
+style "menu" {
+    engine "murrine" {
+        menustyle = 0
+    }
+}
+
 gtk-theme-name = "Adwaita"
 gtk-font-name = "Sans 10"
 gtk-icon-theme-name = "gnome"
 gtk-cursor-theme-name = "Adwaita"
 gtk-button-images = 1
 gtk-menu-images = 1
-#Workaround for no menu borders with Adwaita
-#Requires gtk-engine-murrine
-style "menu" {
-	engine "murrine" {
-		menustyle = 0
-	}
-}
