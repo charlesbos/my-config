@@ -144,6 +144,7 @@ Key Next A 4 TileBottomRight
 
 ### The <Super>* bindings - for misc actions
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
+Key P A 4 ThisWindow (!Iconic, !Shaded) PlaceAgain
 Key W A 4 NoWindow Module FvwmIdent
 
 ### Multimedia and screenshot
