@@ -12,7 +12,7 @@
 # 7 is for active windows in the pager
 ColorSet 0 fg grey15, bg silver, hi grey75, sh grey40, \
 	TiledPixmap themes/Metal3/metal3.png
-ColorSet 1 fg grey60, bg silver, hi gainsboro, sh darkgrey, \
+ColorSet 1 fg grey45, bg silver, hi grey85, sh grey55, \
 	TiledPixmap themes/Metal3/metal3.png
 ColorSet 2 fg grey15, bg silver, hi grey75, sh grey40, \
 	TiledPixmap themes/Metal3/metal3.png
