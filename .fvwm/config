@@ -364,8 +364,6 @@ AddToFunc WindowListFunc
 
 DestroyFunc UrgencyFunc
 
-DestroyFunc UrgencyDoneFunc
-
 ### Config change functions
 DestroyFunc ChangeTheme
 AddToFunc ChangeTheme
