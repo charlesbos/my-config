@@ -120,3 +120,25 @@ tbird-backup() {
   unset dstamp
 }
 
+batch_copy() {
+  if [ ! $1 ] || [ ! -f $1 ]; then echo "List file not found"; return; fi
+  if [ ! $2 ] || [ ! -d $2 ]; then echo "Dest dir not found"; return; fi
+  IFS_ORIG=$IFS
+  IFS=$'\n'
+  for x in $(cat $1); do
+    echo "Copying $x"
+    #fat_copy.sh is part of my-scripts
+    fat_copy.sh $x $2
+  done
+  IFS=$IFS_ORIG
+  unset IFS_ORIG
+}
+
+batch_size() {
+  if [ ! $1 ] || [ ! -f $1 ]; then echo "List file not found"; return; fi
+  IFS_ORIG=$IFS
+  IFS=$'\n'
+  du $(cat $1) -h -c -s
+  IFS=$IFS_ORIG
+  unset IFS_ORIG
+}
