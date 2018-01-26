@@ -167,7 +167,8 @@ Mouse 1	I A Move-or-Iconify
 Mouse 1 W 1 Move-or-Raise
 Mouse 2	I A Iconify
 Mouse 2	FST A RaiseLower
-Mouse 3	TSIF A Menu Window-Ops Nop
+Mouse 3	T A Menu Window-Ops Nop
+Mouse 3	I A Menu Window-Ops Icon 0m -100m Nop
 
 ##### Initialisation #####
 DestroyFunc StartFunction
