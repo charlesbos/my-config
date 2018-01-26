@@ -142,3 +142,7 @@ batch_size() {
   IFS=$IFS_ORIG
   unset IFS_ORIG
 }
+
+dircount() {
+  expr $(ls -a | wc -l) - 2
+}
