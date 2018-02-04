@@ -49,6 +49,6 @@ MenuStyle * GreyedColorSet 5
 MenuStyle * ActiveColorSet 4
 MenuStyle * Font "xft:$[infostore.font_name]:size=10"
 MenuStyle * TitleFont "xft:$[infostore.font_name]:size=10"
-MenuStyle * VerticalItemSpacing +2 +3
-MenuStyle * VerticalTitleSpacing +3 +2
+MenuStyle * VerticalItemSpacing +3 +3
+MenuStyle * VerticalTitleSpacing +3 +3
 MenuStyle * ItemFormat "%.4s%.2|%.5i%.5l%.5l%.5r%.5i%2.3>%2|"
