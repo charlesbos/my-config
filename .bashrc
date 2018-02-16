@@ -144,11 +144,11 @@ batch_size() {
 }
 
 dircount() {
-  if [ $1 ] && [ -d $1 ]; then 
-    target=$1
+  if [ "$1" ] && [ -d "$1" ]; then 
+    target="$1"
   else
-    target=$PWD
+    target="$PWD"
   fi
-  expr $(ls -a $target | wc -l) - 2
+  expr $(ls -a "$target" | wc -l) - 2
   unset target
 }
