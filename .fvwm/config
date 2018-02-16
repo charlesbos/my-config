@@ -39,11 +39,11 @@ Style * !StickyStippledTitle, !StickyStippledIconTitle
 
 ##### Module styles #####
 Style "FvwmPager" !Title, Sticky, WindowListSkip, HandleWidth 3, \
-	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+    BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "FvwmButtons" !Title, Sticky, WindowListSkip, HandleWidth 3, \
-	BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
+    BorderWidth 3, CirculateSkipIcon, CirculateSkip, NeverFocus, Layer 2
 Style "FvwmForm" !Title, Sticky, WindowListSkip, CirculateSkipIcon, \
-	CirculateSkip, !Iconifiable, !Maximizable, !Closable
+    CirculateSkip, !Iconifiable, !Maximizable, !Closable
 # When the FvwmIdent window is initially mapped, the fonts are bolded and
 # blurred. Moving the window after it has been mapped seems to correct this.
 Style "FvwmIdent" InitialMapCommand Move w-1 w-1, !Maximizable, FixedSize
@@ -51,8 +51,8 @@ Style "FvwmIdent" InitialMapCommand Move w-1 w-1, !Maximizable, FixedSize
 ##### Program styles #####
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement undermouse
 Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
-	MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png, \
-	MinOverlapPlacement
+    MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png, \
+    MinOverlapPlacement
 Style xterm MinOverlapPlacement
 Style Toplevel MinOverlapPlacement
 Style NoClass !UsePPosition, !UseTransientPPosition
@@ -65,7 +65,7 @@ Style xmessage Sticky
 ### Window menu, <Alt>tab dialogue and window cycling
 Key Escape A C WindowList NoGeometryWithInfo, IconifiedAtEnd
 Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, \
-	CurrentAtEnd, IconifiedAtEnd
+    CurrentAtEnd, IconifiedAtEnd
 Key Next A SCM Next (AcceptsFocus) Focus
 Key Prior A SCM Prev (AcceptsFocus) Focus
 
@@ -131,7 +131,7 @@ Key G A C1 FvwmForm InputForm ITEM="Go to desk" COMMAND="GoToDesk 0"
 Key Up A S4 MoveToDesk -1
 Key Down A S4 MoveToDesk +1
 Key M A C1 ThisWindow (CurrentPage, Focused) FvwmForm InputForm \
-	ITEM="Move to desk" COMMAND="MoveToDesk 0"
+    ITEM="Move to desk" COMMAND="MoveToDesk 0"
 
 ### Window tiling
 Key Left A 4 TileLeft
@@ -162,14 +162,14 @@ Mouse 2 R A Menu Window-Ops Nop
 Mouse 3 R A WindowList NoGeometryWithInfo, IconifiedAtEnd
 
 ### Windows/borders/icons
-Mouse 1	F A Resize-or-Raise
-Mouse 1	TS A Move-or-Raise
-Mouse 1	I A Move-or-Iconify
+Mouse 1 F A Resize-or-Raise
+Mouse 1 TS A Move-or-Raise
+Mouse 1 I A Move-or-Iconify
 Mouse 1 W 1 Move-or-Raise
-Mouse 2	I A Iconify
-Mouse 2	FST A RaiseLower
-Mouse 3	T A Menu Window-Ops Nop
-Mouse 3	I A Menu Window-Ops Icon 0m -100m Nop
+Mouse 2 I A Iconify
+Mouse 2 FST A RaiseLower
+Mouse 3 T A Menu Window-Ops Nop
+Mouse 3 I A Menu Window-Ops Icon 0m -100m Nop
 
 ##### Initialisation #####
 DestroyFunc StartFunction
@@ -229,59 +229,59 @@ AddToFunc CreateAppsMenu
 
 DestroyMenu Window-Ops
 AddToMenu Window-Ops
-+ "Move"			Move
-+ "Resize"			Resize
-+ "Raise"			Raise
-+ "Lower"			Lower
-+ ""				Nop
-+ "Iconify"			Iconify
-+ "Stick"			Stick
-+ "Maximize"			Maximize
-+ "Shade"			WindowShade
-+ ""				Nop
-+ "Tile Window"			PopUp TileWindow
-+ "Send To"			PopUp SendTo
-+ ""				Nop
-+ "Close"			Close
++ "Move"                Move
++ "Resize"              Resize
++ "Raise"               Raise
++ "Lower"               Lower
++ ""                    Nop
++ "Iconify"             Iconify
++ "Stick"               Stick
++ "Maximize"            Maximize
++ "Shade"               WindowShade
++ ""                    Nop
++ "Tile Window"         PopUp TileWindow
++ "Send To"             PopUp SendTo
++ ""                    Nop
++ "Close"               Close
 
 DestroyMenu SendTo
 AddToMenu SendTo
-+ "Page Left"			MoveToPage -1p +0p
-+ "Page Right"			MoveToPage +1p +0p
-+ "Page Up"			MoveToPage +0p -1p
-+ "Page Down"			MoveToPage +0p +1p
-+ ""				Nop
-+ "Page..."			PopUp SendToPageNumber
-+ ""				Nop
-+ "Desk Prev"			MoveToDesk -1
-+ "Desk Next"			MoveToDesk +1
-+ ""				Nop
-+ "Desk..."			FvwmForm InputForm ITEM="Move to desk" \
-					COMMAND="MoveToDesk 0"
++ "Page Left"           MoveToPage -1p +0p
++ "Page Right"          MoveToPage +1p +0p
++ "Page Up"             MoveToPage +0p -1p
++ "Page Down"           MoveToPage +0p +1p
++ ""                    Nop
++ "Page..."             PopUp SendToPageNumber
++ ""                    Nop
++ "Desk Prev"           MoveToDesk -1
++ "Desk Next"           MoveToDesk +1
++ ""                    Nop
++ "Desk..."             FvwmForm InputForm ITEM="Move to desk" \
+                            COMMAND="MoveToDesk 0"
 
 DestroyMenu SendToPageNumber
 AddToMenu SendToPageNumber
-+ "Page 0"			MoveToPage 0 0
-+ "Page 1"			MoveToPage 1 0
-+ "Page 2"			MoveToPage 2 0
-+ "Page 3"			MoveToPage 0 1
-+ "Page 4"			MoveToPage 1 1
-+ "Page 5"			MoveToPage 2 1
-+ "Page 6"			MoveToPage 0 2
-+ "Page 7"			MoveToPage 1 2
-+ "Page 8"			MoveToPage 2 2
++ "Page 0"              MoveToPage 0 0
++ "Page 1"              MoveToPage 1 0
++ "Page 2"              MoveToPage 2 0
++ "Page 3"              MoveToPage 0 1
++ "Page 4"              MoveToPage 1 1
++ "Page 5"              MoveToPage 2 1
++ "Page 6"              MoveToPage 0 2
++ "Page 7"              MoveToPage 1 2
++ "Page 8"              MoveToPage 2 2
 
 DestroyMenu TileWindow
 AddToMenu TileWindow
-+ "Left Half"			TileLeft
-+ "Right Half"			TileRight
-+ "Top Half"			TileTop
-+ "Bottom Half"			TileBottom
-+ ""				Nop
-+ "Top Left"			TileTopLeft
-+ "Top Right"			TileTopRight
-+ "Bottom Left"			TileBottomLeft
-+ "Bottom Right"		TileBottomRight
++ "Left Half"           TileLeft
++ "Right Half"          TileRight
++ "Top Half"            TileTop
++ "Bottom Half"         TileBottom
++ ""                    Nop
++ "Top Left"            TileTopLeft
++ "Top Right"           TileTopRight
++ "Bottom Left"         TileBottomLeft
++ "Bottom Right"        TileBottomRight
 
 DestroyMenu RecentFiles
 AddToMenu RecentFiles
@@ -303,7 +303,7 @@ AddToFunc CreateThemesMenu
 + I DestroyMenu recreate Themes
 + I AddToMenu Themes "Select Theme" Title
 + I PipeRead 'for x in $(ls $FVWM_USERDIR/themes); do echo + ${x} \
-	ChangeTheme ${x}; done'
+    ChangeTheme ${x}; done'
 
 DestroyMenu FvwmMenu
 AddToMenu FvwmMenu
@@ -319,24 +319,24 @@ AddToFunc CreateFvwmMenu
 + I AddToMenu FvwmMenu "Fvwm Console" Module FvwmConsole
 + I AddToMenu FvwmMenu "Refresh Windows" Refresh
 + I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center \
-	"$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
+    "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
 
 DestroyMenu Session
 AddToMenu Session "Session" Title
-+ "Quit Fvwm"			FvwmForm ConfirmForm ACTION="Quit Fvwm" \
-					COMMAND="Quit"
-+ "Restart Fvwm"		Restart
-+ ""				Nop
-+ "Lock Screen"			Exec loginctl lock-session
-+ ""				Nop
-+ "Suspend"			FvwmForm ConfirmForm ACTION="Suspend" \
-					COMMAND="Exec systemctl suspend"
-+ "Hibernate"			FvwmForm ConfirmForm ACTION="Hibernate" \
-					COMMAND="Exec safehibernate.sh"
-+ "Reboot"			FvwmForm ConfirmForm ACTION="Reboot" \
-					COMMAND="Exec systemctl reboot"
-+ "Poweroff"			FvwmForm ConfirmForm ACTION="Poweroff" \
-					COMMAND="Exec systemctl poweroff"
++ "Quit Fvwm"           FvwmForm ConfirmForm ACTION="Quit Fvwm" \
+                            COMMAND="Quit"
++ "Restart Fvwm"        Restart
++ ""                    Nop
++ "Lock Screen"         Exec loginctl lock-session
++ ""                    Nop
++ "Suspend"             FvwmForm ConfirmForm ACTION="Suspend" \
+                            COMMAND="Exec systemctl suspend"
++ "Hibernate"           FvwmForm ConfirmForm ACTION="Hibernate" \
+                            COMMAND="Exec safehibernate.sh"
++ "Reboot"              FvwmForm ConfirmForm ACTION="Reboot" \
+                            COMMAND="Exec systemctl reboot"
++ "Poweroff"            FvwmForm ConfirmForm ACTION="Poweroff" \
+                            COMMAND="Exec systemctl poweroff"
 
 ##### Functions #####
 ### Basic functions
@@ -442,8 +442,8 @@ AddToFunc TileBottomRight
 *PagerFrame: (End)
 *PagerFrame: (71x16, Container)
 *PagerFrame: (Frame 1, Title "...", Action (Mouse 1) FvwmForm InputForm \
-	ITEM="Go to desk" COMMAND="GoToDesk 0", Action (Mouse 3) \
-	PipeRead 'echo GoToDesk 0 0')
+    ITEM="Go to desk" COMMAND="GoToDesk 0", Action (Mouse 3) \
+    PipeRead 'echo GoToDesk 0 0')
 *PagerFrame: (End)
 *PagerFrame: (41x16, Container)
 *PagerFrame: (Frame 1, Title "→", Action (Mouse 1) GoToDesk +1)

@@ -11,13 +11,13 @@
 # 6 is for inactive windows in the pager
 # 7 is for active windows in the pager
 ColorSet 0 fg grey15, bg silver, hi grey75, sh grey40, \
-	TiledPixmap themes/Metal3/metal3.png
+    TiledPixmap themes/Metal3/metal3.png
 ColorSet 1 fg grey45, bg silver, hi grey85, sh grey55, \
-	TiledPixmap themes/Metal3/metal3.png
+    TiledPixmap themes/Metal3/metal3.png
 ColorSet 2 fg grey15, bg silver, hi grey75, sh grey40, \
-	TiledPixmap themes/Metal3/metal3.png
+    TiledPixmap themes/Metal3/metal3.png
 ColorSet 3 fg grey15, bg silver, hi gainsboro, sh grey40, \
-	TiledPixmap themes/Metal3/metal3.png
+    TiledPixmap themes/Metal3/metal3.png
 ColorSet 4 fg grey15, bg slategrey, hi #C1C5CC, sh #495568
 ColorSet 5 fg grey40
 ColorSet 6 bg grey70
@@ -25,9 +25,9 @@ ColorSet 7 bg #8899AA
 DefaultColorSet 2
 
 # Title bar buttons
-Mouse 0	2 A Close
-Mouse 0	4 A Maximize
-Mouse 0	6 A Iconify
+Mouse 0 2 A Close
+Mouse 0 4 A Maximize
+Mouse 0 6 A Iconify
 
 # Decor
 DestroyDecor Metal3
@@ -42,14 +42,14 @@ AddToDecor Metal3
 + BorderStyle InActive TiledPixmap themes/Metal3/metal3-faded.png
 + BorderStyle -- HiddenHandles NoInset
 + ButtonStyle 2 16 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 \
-	80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
+    80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
 + ButtonStyle 4 8 40x80@1 40x50@1 20x50@1 50x20@1 80x50@0 60x50@0 60x80@0 \
-	40x80@0
+    40x80@0
 + ButtonStyle 6 8 40x20@1 40x50@1 20x50@1 50x80@1 80x50@0 60x50@0 60x20@0 \
-	40x20@1
+    40x20@1
 + ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) \
-	InactiveUp (-- Flat) InActiveDown (-- Raised) \
-	ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
+    InactiveUp (-- Flat) InActiveDown (-- Raised) \
+    ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
 + ButtonStyle All -- UseTitleStyle
 + ButtonStyle All - Clear
 + ButtonStyle 4 - MwmDecorMax

@@ -22,8 +22,8 @@ DefaultColorSet 2
 
 # Title bar buttons
 Mouse 0 1 A Menu Window-Ops Close
-Mouse 0	2 A Maximize
-Mouse 0	4 A Iconify
+Mouse 0 2 A Maximize
+Mouse 0 4 A Iconify
 
 # Decor
 DestroyDecor Solaris10

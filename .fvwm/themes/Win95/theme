@@ -21,9 +21,9 @@ ColorSet 7 bg grey90, hi white
 DefaultColorSet 2
 
 # Title bar buttons
-Mouse 0	2 A Close
-Mouse 0	4 A Maximize
-Mouse 0	6 A Iconify
+Mouse 0 2 A Close
+Mouse 0 4 A Maximize
+Mouse 0 6 A Iconify
 
 # Decor
 DestroyDecor Win95
@@ -48,16 +48,16 @@ AddToDecor Win95
 + ButtonStyle 4 InactiveDown Pixmap themes/Win95/maximize_pressed.png -- Left
 + ButtonStyle 4 ToggledActiveUp Pixmap themes/Win95/restore.png -- Left
 + ButtonStyle 4 ToggledActiveDown Pixmap themes/Win95/restore_pressed.png \
-	-- Left
+    -- Left
 + ButtonStyle 4 ToggledInactiveUp Pixmap themes/Win95/restore.png -- Left
 + ButtonStyle 4 ToggledInactiveDown Pixmap themes/Win95/restore_pressed.png \
-	-- Left
+    -- Left
 + ButtonStyle 6 ActiveUp Pixmap themes/Win95/minimize.png
 + ButtonStyle 6 ActiveDown Pixmap themes/Win95/minimize_pressed.png
 + ButtonStyle 6 InactiveUp Pixmap themes/Win95/minimize.png
 + ButtonStyle 6 InactiveDown Pixmap themes/Win95/minimize_pressed.png
 + ButtonStyle All Active (-- Flat) Inactive (-- Flat) \
-	ToggledActive (-- Flat) ToggledInactive (-- Flat)
+    ToggledActive (-- Flat) ToggledInactive (-- Flat)
 + ButtonStyle All -- UseTitleStyle
 + ButtonStyle All - Clear
 + ButtonStyle 4 - MwmDecorMax

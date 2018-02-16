@@ -23,9 +23,9 @@ DefaultColorSet 2
 # Title bar buttons
 Mouse 0 1 A Menu Window-Ops Nop
 Mouse 0 3 A Stick
-Mouse 0	2 A Close
-Mouse 0	4 A Maximize
-Mouse 0	6 A Iconify
+Mouse 0 2 A Close
+Mouse 0 4 A Maximize
+Mouse 0 6 A Iconify
 
 # Decor
 DestroyDecor KDE1
@@ -44,7 +44,7 @@ AddToDecor KDE1
 + ButtonStyle 4 Pixmap themes/KDE1/maximize.xpm
 + ButtonStyle 6 Pixmap themes/KDE1/iconify.xpm
 + ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) InactiveUp \
-	(-- Flat) InActiveDown (-- Raised)
+    (-- Flat) InActiveDown (-- Raised)
 + ButtonStyle 3 ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
 + ButtonStyle 4 ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
 + ButtonStyle All - Clear

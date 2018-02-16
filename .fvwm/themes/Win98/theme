@@ -22,9 +22,9 @@ DefaultColorSet 2
 
 # Title bar buttons
 Mouse 0 1 A Menu Window-Ops Nop
-Mouse 0	2 A Close
-Mouse 0	4 A Maximize
-Mouse 0	6 A Iconify
+Mouse 0 2 A Close
+Mouse 0 4 A Maximize
+Mouse 0 6 A Iconify
 
 # Decor
 DestroyDecor Win98
@@ -54,19 +54,20 @@ AddToDecor Win98
 + AddButtonStyle 4 ActiveUp Pixmap themes/Win98/maximize.png -- Left
 + AddButtonStyle 4 ActiveDown Pixmap themes/Win98/maximize_pressed.png -- Left
 + AddButtonStyle 4 InactiveUp Pixmap themes/Win98/maximize.png -- Left
-+ AddButtonStyle 4 InactiveDown Pixmap themes/Win98/maximize_pressed.png -- Left
++ AddButtonStyle 4 InactiveDown Pixmap themes/Win98/maximize_pressed.png 
+    -- Left
 + AddButtonStyle 4 ToggledActiveUp Pixmap themes/Win98/restore.png -- Left
 + AddButtonStyle 4 ToggledActiveDown Pixmap themes/Win98/restore_pressed.png \
-	-- Left
+    -- Left
 + AddButtonStyle 4 ToggledInactiveUp Pixmap themes/Win98/restore.png -- Left
-+ AddButtonStyle 4 ToggledInactiveDown Pixmap themes/Win98/restore_pressed.png \
-	-- Left
++ AddButtonStyle 4 ToggledInactiveDown Pixmap \
+    themes/Win98/restore_pressed.png -- Left
 + AddButtonStyle 6 ActiveUp Pixmap themes/Win98/minimize.png
 + AddButtonStyle 6 ActiveDown Pixmap themes/Win98/minimize_pressed.png
 + AddButtonStyle 6 InactiveUp Pixmap themes/Win98/minimize.png
 + AddButtonStyle 6 InactiveDown Pixmap themes/Win98/minimize_pressed.png
-+ ButtonStyle All Active (-- Flat) Inactive (-- Flat) ToggledActive (-- Flat) \
-	ToggledInactive (-- Flat)
++ ButtonStyle All Active (-- Flat) Inactive (-- Flat) ToggledActive \
+    (-- Flat) ToggledInactive (-- Flat)
 + ButtonStyle All - Clear
 + ButtonStyle 1 - MwmDecorMenu
 + ButtonStyle 4 - MwmDecorMax
