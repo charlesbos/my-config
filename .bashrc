@@ -121,8 +121,9 @@ tbird-backup() {
 }
 
 batch_copy() {
-  if [ ! $1 ] || [ ! -f $1 ]; then echo "List file not found"; return; fi
-  if [ ! $2 ] || [ ! -d $2 ]; then echo "Dest dir not found"; return; fi
+  if [ ! "$1" ] || [ ! -f "$1" ]; then echo "List file not found"; return; fi
+  if [ ! "$2" ] || [ ! -d "$2" ]; then echo "Dest dir not found"; return; fi
+  if [ ! $(cat "$1") ]; then echo "List file is empty"; return; fi
   IFS_ORIG=$IFS
   IFS=$'\n'
   for x in $(cat $1); do
@@ -135,7 +136,8 @@ batch_copy() {
 }
 
 batch_size() {
-  if [ ! $1 ] || [ ! -f $1 ]; then echo "List file not found"; return; fi
+  if [ ! "$1" ] || [ ! -f "$1" ]; then echo "List file not found"; return; fi
+  if [ ! $(cat "$1") ]; then echo "List file is empty"; return; fi
   IFS_ORIG=$IFS
   IFS=$'\n'
   du $(cat $1) -h -c -s
