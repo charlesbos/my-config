@@ -1,0 +1,91 @@
+# Adwaita themefile
+# Here we set the decor, colorsets, titlebar buttons and menus
+
+# Colorsets
+# 0 is for active windows
+# 1 is for inactive windows
+# 2 is for modules
+# 3 is for icons and menus
+# 4 is for pager, icon title and menu hilights
+# 5 is for greyed menu items
+# 6 is for inactive windows in the pager
+# 7 is for active windows in the pager
+ColorSet 0 fg #5b6061, bg #e8e8e7, hi #fafafa, sh grey55
+ColorSet 1 fg #c3c6cb, bg #e8e8e7, hi #fafafa, sh grey55
+ColorSet 2 fg #383e3f, bg #e8e8e7, hi #fafafa, sh grey55
+ColorSet 3 fg #383e3f, bg #e8e8e7, hi #fafafa, sh grey55
+ColorSet 4 fg white, bg #4a90d9
+ColorSet 5 fg #abadae
+ColorSet 6 bg #d5d5e0, hi white, sh grey55
+ColorSet 7 bg #7aa0fa, hi grey85, sh grey40
+DefaultColorSet 2
+
+# Title bar buttons
+Mouse 0 1 A Menu Window-Ops Nop
+Mouse 0 2 A Close
+Mouse 0 4 A Maximize
+Mouse 0 6 A Iconify
+
+# Decor
+DestroyDecor Adwaita
+AddToDecor Adwaita
++ TitleStyle Active VGradient 128 #fdfdfd #e8e8e7
++ TitleStyle Inactive Solid #e8e8e7
++ TitleStyle ToggledActive VGradient 128 #fdfdfd #e8e8e7
++ TitleStyle ToggledInactive Solid #e8e8e7
++ TitleStyle Height 27
++ TitleStyle -- Flat
++ BorderStyle Active VGradient 128 #fdfdfd #e8e8e7
++ BorderStyle InActive Solid #e8e8e7
++ BorderStyle -- HiddenHandles NoInset
++ ButtonStyle All Active VGradient 128 #fdfdfd #e8e8e7
++ ButtonStyle All ToggledActive vGradient 128 #fdfdfd #e8e8e7
++ ButtonStyle All Inactive Solid #e8e8e7
++ ButtonStyle All ToggledInactive Solid #e8e8e7
++ ButtonStyle 1 Active VGradient 128 #fdfdfd #e8e8e7
++ ButtonStyle 1 Inactive Solid #e8e8e7
++ AddButtonStyle 1 Active MiniIcon
++ AddButtonStyle 1 Inactive MiniIcon
++ AddButtonStyle 2 ActiveUp Pixmap themes/Adwaita/close.png
++ AddButtonStyle 2 ActiveDown Pixmap themes/Adwaita/close_pressed.png
++ AddButtonStyle 2 InactiveUp Pixmap themes/Adwaita/close.png
++ AddButtonStyle 2 InactiveDown Pixmap themes/Adwaita/close_pressed.png
++ AddButtonStyle 4 ActiveUp Pixmap themes/Adwaita/maximize.png
++ AddButtonStyle 4 ActiveDown Pixmap themes/Adwaita/maximize_pressed.png
++ AddButtonStyle 4 InactiveUp Pixmap themes/Adwaita/maximize.png
++ AddButtonStyle 4 InactiveDown Pixmap themes/Adwaita/maximize_pressed.png
++ AddButtonStyle 4 ToggledActiveUp Pixmap themes/Adwaita/restore.png
++ AddButtonStyle 4 ToggledActiveDown Pixmap themes/Adwaita/restore_pressed.png
++ AddButtonStyle 4 ToggledInactiveUp Pixmap themes/Adwaita/restore.png
++ AddButtonStyle 4 ToggledInactiveDown Pixmap \
+    themes/Adwaita/restore_pressed.png
++ AddButtonStyle 6 ActiveUp Pixmap themes/Adwaita/minimize.png
++ AddButtonStyle 6 ActiveDown Pixmap themes/Adwaita/minimize_pressed.png
++ AddButtonStyle 6 InactiveUp Pixmap themes/Adwaita/minimize.png
++ AddButtonStyle 6 InactiveDown Pixmap themes/Adwaita/minimize_pressed.png
++ ButtonStyle All Active (-- Flat) Inactive (-- Flat) ToggledActive \
+    (-- Flat) ToggledInactive (-- Flat)
++ ButtonStyle All - Clear
++ ButtonStyle 1 - MwmDecorMenu
++ ButtonStyle 4 - MwmDecorMax
++ ButtonStyle 6 - MwmDecorMin
+
+# Some decor related styles
+Style * !MwmBorder
+Style * HandleWidth 2, BorderWidth 2
+Style * Font "xft:$[infostore.font_name]:size=9:bold"
+
+# Set the decor
+Style * UseDecor Adwaita
+
+# Menus
+MenuStyle * Win
+MenuStyle * MenuColorSet 3
+MenuStyle * GreyedColorSet 5
+MenuStyle * HilightBack
+MenuStyle * ActiveColorSet 4
+MenuStyle * Font "xft:$[infostore.font_name]:size=10"
+MenuStyle * TitleFont "xft:$[infostore.font_name]:size=10"
+MenuStyle * VerticalItemSpacing +4 +4
+MenuStyle * VerticalTitleSpacing +3 +3
+MenuStyle * ItemFormat "%.4s%.3|%.5i%.5l%.5l%.5r%.5i%2.3>%3|"

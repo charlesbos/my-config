@@ -16,7 +16,7 @@ DefaultFont "xft:$[infostore.font_name]:size=8.5"
 OpaqueMoveSize unlimited
 
 ##### External files #####
-Read themes/KDE1/theme
+Read themes/Adwaita/theme
 
 ##### Default styles #####
 Style * ColorSet 1, HilightColorSet 0
