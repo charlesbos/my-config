@@ -344,6 +344,7 @@ DestroyFunc Move-or-Raise
 AddToFunc Move-or-Raise 
 + I Raise
 + M Move
++ D Maximize
 
 DestroyFunc Move-or-Iconify
 AddToFunc Move-or-Iconify 
