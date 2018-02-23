@@ -18,6 +18,8 @@ ColorSet 4 fg white, bg #b24f86
 ColorSet 5 fg grey40
 ColorSet 6 bg #aeb8d5
 ColorSet 7 bg hotpink3
+
+# Geometry feedback window
 DefaultColorSet 2
 
 # Title bar buttons

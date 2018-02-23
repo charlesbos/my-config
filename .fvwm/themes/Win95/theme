@@ -18,7 +18,10 @@ ColorSet 4 fg white, bg #010081
 ColorSet 5 fg grey40
 ColorSet 6 bg #C3C8CB
 ColorSet 7 bg grey90, hi white
+
+# Geometry feedback window
 DefaultColorSet 2
+HideGeometryWindow
 
 # Title bar buttons
 Mouse 0 2 A Close

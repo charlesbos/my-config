@@ -18,6 +18,8 @@ ColorSet 4 fg white, bg palevioletred
 ColorSet 5 fg grey40
 ColorSet 6 bg grey50
 ColorSet 7 bg grey60
+
+# Geometry feedback window
 DefaultColorSet 1
 
 # Title bar buttons
