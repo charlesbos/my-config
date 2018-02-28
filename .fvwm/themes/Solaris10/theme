@@ -21,6 +21,7 @@ ColorSet 7 bg hotpink3
 
 # Geometry feedback window
 DefaultColorSet 2
+Emulate MWM
 
 # Title bar buttons
 Mouse 0 1 A Menu Window-Ops Close
