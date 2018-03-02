@@ -24,7 +24,6 @@ DefaultColorSet 2
 HideGeometryWindow
 
 # Title bar buttons
-Mouse 0 1 A Menu Window-Ops Nop
 Mouse 0 2 A Close
 Mouse 0 4 A Maximize
 Mouse 0 6 A Iconify
@@ -45,10 +44,6 @@ AddToDecor Adwaita
 + ButtonStyle All ToggledActive vGradient 512 #fdfdfd #e8e8e7
 + ButtonStyle All Inactive Solid #e8e8e7
 + ButtonStyle All ToggledInactive Solid #e8e8e7
-+ ButtonStyle 1 Active VGradient 512 #fdfdfd #e8e8e7
-+ ButtonStyle 1 Inactive Solid #e8e8e7
-+ AddButtonStyle 1 Active MiniIcon
-+ AddButtonStyle 1 Inactive MiniIcon
 + AddButtonStyle 2 ActiveUp Pixmap themes/Adwaita/close.png
 + AddButtonStyle 2 ActiveDown Pixmap themes/Adwaita/close.png
 + AddButtonStyle 2 InactiveUp Pixmap themes/Adwaita/close_inactive.png
@@ -71,7 +66,6 @@ AddToDecor Adwaita
     ToggledActiveDown (-- Raised) ToggledInactiveUp (-- Flat) \
     ToggledInactiveDown (-- Raised)
 + ButtonStyle All - Clear
-+ ButtonStyle 1 - MwmDecorMenu
 + ButtonStyle 4 - MwmDecorMax
 + ButtonStyle 6 - MwmDecorMin
 
