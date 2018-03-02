@@ -50,24 +50,26 @@ AddToDecor Adwaita
 + AddButtonStyle 1 Active MiniIcon
 + AddButtonStyle 1 Inactive MiniIcon
 + AddButtonStyle 2 ActiveUp Pixmap themes/Adwaita/close.png
-+ AddButtonStyle 2 ActiveDown Pixmap themes/Adwaita/close_pressed.png
-+ AddButtonStyle 2 InactiveUp Pixmap themes/Adwaita/close.png
-+ AddButtonStyle 2 InactiveDown Pixmap themes/Adwaita/close_pressed.png
++ AddButtonStyle 2 ActiveDown Pixmap themes/Adwaita/close.png
++ AddButtonStyle 2 InactiveUp Pixmap themes/Adwaita/close_inactive.png
++ AddButtonStyle 2 InactiveDown Pixmap themes/Adwaita/close_inactive.png
 + AddButtonStyle 4 ActiveUp Pixmap themes/Adwaita/maximize.png
-+ AddButtonStyle 4 ActiveDown Pixmap themes/Adwaita/maximize_pressed.png
-+ AddButtonStyle 4 InactiveUp Pixmap themes/Adwaita/maximize.png
-+ AddButtonStyle 4 InactiveDown Pixmap themes/Adwaita/maximize_pressed.png
++ AddButtonStyle 4 ActiveDown Pixmap themes/Adwaita/maximize.png
++ AddButtonStyle 4 InactiveUp Pixmap themes/Adwaita/maximize_inactive.png
++ AddButtonStyle 4 InactiveDown Pixmap themes/Adwaita/maximize_inactive.png
 + AddButtonStyle 4 ToggledActiveUp Pixmap themes/Adwaita/restore.png
-+ AddButtonStyle 4 ToggledActiveDown Pixmap themes/Adwaita/restore_pressed.png
-+ AddButtonStyle 4 ToggledInactiveUp Pixmap themes/Adwaita/restore.png
++ AddButtonStyle 4 ToggledActiveDown Pixmap themes/Adwaita/restore.png
++ AddButtonStyle 4 ToggledInactiveUp Pixmap themes/Adwaita/restore_inactive.png
 + AddButtonStyle 4 ToggledInactiveDown Pixmap \
-    themes/Adwaita/restore_pressed.png
+    themes/Adwaita/restore_inactive.png
 + AddButtonStyle 6 ActiveUp Pixmap themes/Adwaita/minimize.png
-+ AddButtonStyle 6 ActiveDown Pixmap themes/Adwaita/minimize_pressed.png
-+ AddButtonStyle 6 InactiveUp Pixmap themes/Adwaita/minimize.png
-+ AddButtonStyle 6 InactiveDown Pixmap themes/Adwaita/minimize_pressed.png
-+ ButtonStyle All Active (-- Flat) Inactive (-- Flat) ToggledActive \
-    (-- Flat) ToggledInactive (-- Flat)
++ AddButtonStyle 6 ActiveDown Pixmap themes/Adwaita/minimize.png
++ AddButtonStyle 6 InactiveUp Pixmap themes/Adwaita/minimize_inactive.png
++ AddButtonStyle 6 InactiveDown Pixmap themes/Adwaita/minimize_inactive.png
++ ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) \
+    InactiveUp (-- Flat) InactiveDown (-- Raised) ToggledActiveUp (-- Flat) \
+    ToggledActiveDown (-- Raised) ToggledInactiveUp (-- Flat) \
+    ToggledInactiveDown (-- Raised)
 + ButtonStyle All - Clear
 + ButtonStyle 1 - MwmDecorMenu
 + ButtonStyle 4 - MwmDecorMax
