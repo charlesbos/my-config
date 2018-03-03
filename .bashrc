@@ -100,8 +100,11 @@ copyconfigs() {
         diff -Nur "$HOME/Devel/GitHub/my-config/$x" "$HOME/$x"
       else
         echo "Copying: $HOME/$x"
-        if [ -f "$x" ]; then 
-          cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config/$x"
+        if [ -f "$x" ]; then
+          if [ ! -d "$HOME/Devel/GitHub/my-config/$(dirname $x)" ]; then
+            mkdir -p "$HOME/Devel/GitHub/my-config/$(dirname $x)"
+          fi
+          cp "$HOME/$x" "$HOME/Devel/GitHub/my-config/$x"
         else
           rm -rf "$HOME/Devel/GitHub/my-config/$x"
           cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config"
