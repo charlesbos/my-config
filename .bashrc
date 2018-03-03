@@ -112,9 +112,10 @@ copyconfigs() {
   unset sync_files
 }
 
-tbird-backup() {
+oimap-backup() {
   dstamp=$(date "+%Y-%m-%d")
-  tar -C ~ -cf thunderbird-conf-${dstamp}.tar .thunderbird
+  tar -C ~ -cf offlineimap-backup-${dstamp}.tar .offlineimap .offlineimaprc \
+    .imapmail
   unset dstamp
 }
 
