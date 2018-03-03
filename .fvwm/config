@@ -207,7 +207,7 @@ AddToFunc CreateRootMenu
 + I AddToMenu RootMenu "Applications" PopUp Applications
 + I AddToMenu RootMenu "urxvt" Exec urxvt
 + I AddToMenu RootMenu "Chromium" Exec chromium
-+ I AddToMenu RootMenu "Thunderbird" Exec thunderbird
++ I AddToMenu RootMenu "VLC" Exec vlc
 + I AddToMenu RootMenu "LibreOffice" Exec libreoffice
 + I AddToMenu RootMenu "" Nop
 + I AddToMenu RootMenu "Set Background" Exec nitrogen
