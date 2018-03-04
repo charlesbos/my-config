@@ -144,6 +144,7 @@ Key End A 4 TileBottomLeft
 Key Next A 4 TileBottomRight
 
 ### The <Super>* bindings - for misc actions
+Key D A 4 ThisWindow UndecorateWin
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 Key P A 4 ThisWindow (!Iconic, !Shaded) PlaceAgain
 Key W A 4 NoWindow Module FvwmIdent
@@ -237,6 +238,7 @@ AddToMenu Window-Ops
 + "Stick"               Stick
 + "Maximize"            Maximize
 + "Shade"               WindowShade
++ "Undecorate"          UndecorateWin
 + ""                    Nop
 + "Tile Window"         PopUp TileWindow
 + "Send To"             PopUp SendTo
@@ -371,6 +373,13 @@ DestroyFunc ChangeTheme
 AddToFunc ChangeTheme
 + I Exec sed -i "s@^Read themes/.*@Read themes/$0/theme@g" $FVWM_USERDIR/config
 + I Restart
+
+### Runtime config change functions
+DestroyFunc UndecorateWin
+AddToFunc UndecorateWin
++ I ThisWindow (HasHandles) WindowStyle !Title, !Borders
++ I TestRc (Match) Break
++ I ThisWindow (!HasHandles) WindowStyle Title, Borders
 
 ### Tiling functions
 DestroyFunc TileLeft
