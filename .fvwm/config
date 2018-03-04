@@ -190,7 +190,6 @@ AddToFunc StartFunction
 + I Exec cbatticon -c "xmessage -center 'Power is critically low. \
 Please take action.' -title Warning" -r 5 > /dev/null 2>&1 &
 + I Exec volumeicon > /dev/null 2>&1 &
-+ I Exec blueman-applet > /dev/null 2>&1 &
 + I Exec xscreensaver -nosplash > /dev/null 2>&1 &
 + I Exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1 &
 
