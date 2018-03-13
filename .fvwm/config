@@ -374,11 +374,10 @@ AddToFunc ChangeTheme
 + I Exec sed -i "s@^Read themes/.*@Read themes/$0/theme@g" $FVWM_USERDIR/config
 + I Restart
 
-### Runtime config change functions
+### Misc window functions
 DestroyFunc UndecorateWin
 AddToFunc UndecorateWin
 + I ThisWindow (HasHandles) WindowStyle !Title, !Borders
-+ I TestRc (Match) Break
 + I ThisWindow (!HasHandles) WindowStyle Title, Borders
 
 ### Tiling functions
