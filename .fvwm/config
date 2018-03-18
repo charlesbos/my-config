@@ -59,6 +59,7 @@ Style NoClass !UsePPosition, !UseTransientPPosition
 Style chromium !UsePPosition, !UseTransientPPosition
 Style libreoffice !UsePPosition, !UseTransientPPosition
 Style soffice !UsePPosition, !UseTransientPPosition
+Style Skype !UsePPosition, !UseTransientPPosition
 Style xmessage Sticky
 
 ##### Key bindings #####
