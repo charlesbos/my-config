@@ -319,7 +319,6 @@ AddToFunc CreateFvwmMenu
 + I AddToMenu FvwmMenu "Themes" PopUp Themes
 + I AddToMenu FvwmMenu "Identify Window" Module FvwmIdent
 + I AddToMenu FvwmMenu "Fvwm Console" Module FvwmConsole
-+ I AddToMenu FvwmMenu "Refresh Windows" Refresh
 + I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center \
     "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
 
