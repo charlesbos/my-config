@@ -10,11 +10,11 @@
 # 5 is for greyed menu items
 # 6 is for inactive windows in the pager
 # 7 is for active windows in the pager
-ColorSet 0 fg #5b6061, bg #e8e8e7, hi #fafafa, sh grey55
-ColorSet 1 fg #c3c6cb, bg #e8e8e7, hi #fafafa, sh grey55
-ColorSet 2 fg #383e3f, bg #e8e8e7, hi #fafafa, sh grey55
-ColorSet 3 fg #383e3f, bg #e8e8e7, hi #fafafa, sh grey55
-ColorSet 4 fg white, bg #4a90d9
+ColorSet 0 fg #5b6061, bg #e8e8e7, hi #fcfcfc, sh grey70
+ColorSet 1 fg #c3c6cb, bg #e8e8e7, hi #fcfcfc, sh grey70
+ColorSet 2 fg #383e3f, bg #e8e8e7, hi #fcfcfc, sh grey65
+ColorSet 3 fg #383e3f, bg #e8e8e7, hi #fcfcfc, sh grey65
+ColorSet 4 fg white, bg #4a90d9, sh #3d5377
 ColorSet 5 fg #abadae
 ColorSet 6 bg #d5d5e0, hi white, sh grey55
 ColorSet 7 bg #7aa0fa, hi grey85, sh grey40
@@ -88,3 +88,4 @@ MenuStyle * TitleFont "xft:$[infostore.font_name]:size=10"
 MenuStyle * VerticalItemSpacing +4 +4
 MenuStyle * VerticalTitleSpacing +3 +3
 MenuStyle * ItemFormat "%.4s%.3|%.5i%.5l%.5l%.5r%.5i%2.3>%3|"
+MenuStyle * SeparatorsLong
