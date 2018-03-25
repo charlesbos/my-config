@@ -87,6 +87,19 @@ setperms() {
   unset perm_level
 }
 
+setdperms() {
+  if [ ! "$1" ] || [ ! -d "$1" ]; then
+    echo "Invalid directory"
+    return
+  fi
+  perm_level=755
+  if [ "$2" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
+    perm_level="$2"
+  fi
+  find "$1" -type d -exec chmod "$perm_level" {} \;
+  unset perm_level
+}
+
 copyconfigs() {
   sync_files=('.bash_profile' '.bashrc' '.compton.conf' 
               '.config/gtk-3.0/gtk.css' '.config/gtk-3.0/settings.ini' '.fvwm' 
