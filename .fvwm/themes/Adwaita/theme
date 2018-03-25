@@ -31,17 +31,17 @@ Mouse 0 6 A Iconify
 # Decor
 DestroyDecor Adwaita
 AddToDecor Adwaita
-+ TitleStyle Active VGradient 128 #fdfdfd #e8e8e7
++ TitleStyle Active VGradient 128 white #e8e8e7
 + TitleStyle Inactive Solid #e8e8e7
-+ TitleStyle ToggledActive VGradient 128 #fdfdfd #e8e8e7
++ TitleStyle ToggledActive VGradient 128 white #e8e8e7
 + TitleStyle ToggledInactive Solid #e8e8e7
 + TitleStyle Height 27
 + TitleStyle -- Flat
-+ BorderStyle Active VGradient 128 #fdfdfd #e8e8e7
++ BorderStyle Active VGradient 128 white #e8e8e7
 + BorderStyle InActive Solid #e8e8e7
 + BorderStyle -- HiddenHandles NoInset
-+ ButtonStyle All Active VGradient 128 #fdfdfd #e8e8e7
-+ ButtonStyle All ToggledActive vGradient 128 #fdfdfd #e8e8e7
++ ButtonStyle All Active VGradient 128 white #e8e8e7
++ ButtonStyle All ToggledActive vGradient 128 white #e8e8e7
 + ButtonStyle All Inactive Solid #e8e8e7
 + ButtonStyle All ToggledInactive Solid #e8e8e7
 + AddButtonStyle 2 ActiveUp Pixmap themes/Adwaita/close.png
