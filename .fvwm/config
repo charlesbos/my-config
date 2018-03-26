@@ -30,7 +30,7 @@ Style * ResizeHintOverride, ResizeOpaque
 Style * SnapAttraction 5 All ScreenAll
 Style * Icon $[infostore.icon_path]/48x48/status/image-missing.png
 Style * MiniIcon $[infostore.icon_path]/16x16/status/image-missing.png
-Style * IconBox +140 -79 -0 -0, IconBox +8 +0 -0 -82, IconFill left bottom
+Style * IconBox +75 -79 -0 -0, IconBox +9 +0 -0 -82, IconFill left bottom
 Style * IconSize 57 57
 Style * IconBackgroundColorset 3
 Style * IconTitleColorset 3, HilightIconTitleColorset 4
@@ -154,6 +154,9 @@ Key W A 4 NoWindow Module FvwmIdent
 Key XF86MonBrightnessUp A N Exec xbacklight -inc 10
 Key XF86MonBrightnessDown A N Exec xbacklight -dec 10
 Key XF86Display A N Exec display-conf-tool.py
+Key XF86AudioRaiseVolume A N Exec volume-change.sh up
+Key XF86AudioLowerVolume A N Exec volume-change.sh down
+Key XF86AudioMute A N Exec volume-change.sh toggle
 Key Print A N Exec scrot -e 'xdg-open $f'
 Key Print A S Exec tkscrot.py
 
@@ -186,12 +189,7 @@ AddToFunc StartFunction
 + I Exec fvwm-recent-files.py -i > /dev/null 2>&1 &
 # Pause needed otherwise background not set (race condition??)
 + I Exec sleep 0.3 && nitrogen --restore > /dev/null 2>&1 &
-+ I Exec wmsystemtray --non-wmaker > /dev/null 2>&1 &
 + I Exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
-+ I Exec nm-applet > /dev/null 2>&1 &
-+ I Exec cbatticon -c "xmessage -center 'Power is critically low. \
-Please take action.' -title Warning" -r 5 > /dev/null 2>&1 &
-+ I Exec volumeicon > /dev/null 2>&1 &
 + I Exec xscreensaver -nosplash > /dev/null 2>&1 &
 + I Exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1 &
 
@@ -457,14 +455,13 @@ AddToFunc TileBottomRight
 *PagerFrame: (Frame 1, Title "→", Action (Mouse 1) GoToDesk +1)
 *PagerFrame: (End)
 
-*WMakerApps: Geometry 128x64+0-0
+*WMakerApps: Geometry 64x64+0-0
 *WMakerApps: BoxSize fixed
 *WMakerApps: ColorSet 2
 *WMakerApps: Font "xft:$[infostore.font_name]:size=9"
 *WMakerApps: Rows 1
-*WMakerApps: Columns 2
+*WMakerApps: Columns 1
 *WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmclock" Nop)
-*WMakerApps: (Frame 1, Swallow(UseOld, NoClose) "wmsystemtray" Nop)
 
 ### FvwmForm
 *InputForm: GrabServer
