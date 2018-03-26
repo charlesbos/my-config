@@ -169,3 +169,14 @@ dircount() {
   expr $(ls -a "$target" | wc -l) - 2
   unset target
 }
+
+batstatus() {
+  for x in $(ls /sys/class/power_supply | grep BAT); do
+    bat_status=$(cat /sys/class/power_supply/${x}/status)
+    cur_charge=$(cat /sys/class/power_supply/${x}/charge_now)
+    full_charge=$(cat /sys/class/power_supply/${x}/charge_full)
+    charge=$(bc <<< "scale=2; ${cur_charge} / ${full_charge} * 100")
+    echo Name=${x} : Status=${bat_status} : Charge=${charge}%
+  done
+  unset bat_status cur_charge full_charge charge
+}
