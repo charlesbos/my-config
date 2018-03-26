@@ -157,6 +157,7 @@ Key XF86Display A N Exec display-conf-tool.py
 Key XF86AudioRaiseVolume A N Exec volume-change.sh up
 Key XF86AudioLowerVolume A N Exec volume-change.sh down
 Key XF86AudioMute A N Exec volume-change.sh toggle
+Key XF86Launch1 A N Exec setgtktheme.py
 Key Print A N Exec scrot -e 'xdg-open $f'
 Key Print A S Exec tkscrot.py
 
