@@ -61,6 +61,12 @@ Style chromium !UsePPosition, !UseTransientPPosition
 Style libreoffice !UsePPosition, !UseTransientPPosition
 Style soffice !UsePPosition, !UseTransientPPosition
 Style Skype !UsePPosition, !UseTransientPPosition
+Style VirtualBox !UsePPosition, !UseTransientPPosition, !UseUSPosition, \
+    !UseTransientUSPosition, FixedPPosition
+Style "VirtualBox Manager" !UsePPosition, !UseTransientPPosition, \
+    !UseUSPosition, !UseTransientUSPosition
+Style vlc !UsePPosition, !UseTransientPPosition, !UseUSPosition, \
+    !UseTransientUSPosition, FixedPPosition
 Style xmessage Sticky
 
 ##### Key bindings #####
