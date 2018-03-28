@@ -3,6 +3,7 @@
 ##### Infostore variables #####
 InfoStoreAdd icon_path "/usr/share/icons/gnome"
 InfoStoreAdd font_name "DejaVu Sans"
+InfoStoreAdd wname_width 50
 
 ##### Commands #####
 EdgeResistance 0
@@ -64,9 +65,10 @@ Style xmessage Sticky
 
 ##### Key bindings #####
 ### Window menu, <Alt>tab dialogue and window cycling
-Key Escape A C WindowList NoGeometryWithInfo, IconifiedAtEnd
+Key Escape A C WindowList NoGeometryWithInfo, IconifiedAtEnd, \
+    MaxLabelWidth $[infostore.wname_width]
 Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, \
-    CurrentAtEnd, IconifiedAtEnd
+    CurrentAtEnd, IconifiedAtEnd, MaxLabelWidth $[infostore.wname_width]
 Key Next A SCM Next (AcceptsFocus) Focus
 Key Prior A SCM Prev (AcceptsFocus) Focus
 
@@ -165,7 +167,8 @@ Key Print A S Exec tkscrot.py
 ### Root window
 Mouse 1 R A Menu RootMenu Nop
 Mouse 2 R A Menu Window-Ops Nop
-Mouse 3 R A WindowList NoGeometryWithInfo, IconifiedAtEnd
+Mouse 3 R A WindowList NoGeometryWithInfo, IconifiedAtEnd, \
+    MaxLabelWidth $[infostore.wname_width]
 
 ### Windows/borders/icons
 Mouse 1 F A Resize-or-Raise
