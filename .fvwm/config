@@ -23,7 +23,6 @@ Read themes/Adwaita/theme
 Style * ColorSet 1, HilightColorSet 0
 Style * DecorateTransient
 Style * MwmFunctions, MwmDecor, MwmButtons, HintOverride
-Style * UsePPosition, UseTransientPPosition
 Style * SloppyFocus
 Style * PositionPlacement center
 Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
@@ -56,18 +55,15 @@ Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
     MinOverlapPlacement
 Style xterm MinOverlapPlacement
 Style Toplevel MinOverlapPlacement
+Style xmessage Sticky
 Style NoClass !UsePPosition, !UseTransientPPosition
 Style chromium !UsePPosition, !UseTransientPPosition
 Style libreoffice !UsePPosition, !UseTransientPPosition
 Style soffice !UsePPosition, !UseTransientPPosition
 Style Skype !UsePPosition, !UseTransientPPosition
-Style VirtualBox !UsePPosition, !UseTransientPPosition, !UseUSPosition, \
-    !UseTransientUSPosition, FixedPPosition
-Style "VirtualBox Manager" !UsePPosition, !UseTransientPPosition, \
-    !UseUSPosition, !UseTransientUSPosition
-Style vlc !UsePPosition, !UseTransientPPosition, !UseUSPosition, \
-    !UseTransientUSPosition, FixedPPosition
-Style xmessage Sticky
+Style VirtualBox !UseUSPosition, !UseTransientUSPosition, FixedPPosition
+Style "VirtualBox Manager" !UseUSPosition, !UseTransientUSPosition
+Style vlc !UseUSPosition, !UseTransientUSPosition, FixedPPosition
 
 ##### Key bindings #####
 ### Window menu, <Alt>tab dialogue and window cycling
