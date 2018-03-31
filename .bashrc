@@ -45,7 +45,7 @@ to-mp3() {
     lame "$path/$x" -b 320 --cbr
     rm "$path/$x"
   done
-  unset path
+  unset path x
 }
 
 um() {
@@ -125,7 +125,7 @@ copyconfigs() {
       fi
     fi
   done
-  unset sync_files
+  unset sync_files x
 }
 
 oimap-backup() {
@@ -145,7 +145,7 @@ batch_copy() {
     #fat_copy.sh is part of my-scripts
     fat_copy.sh $x $2
   done
-  unset IFS
+  unset IFS x
 }
 
 batch_size() {
@@ -178,5 +178,5 @@ batstatus() {
     charge=$(bc <<< "scale=2; ${cur_charge} / ${full_charge} * 100")
     echo Name=${x} : Status=${bat_status} : Charge=${charge}%
   done
-  unset bat_status cur_charge full_charge charge
+  unset bat_status cur_charge full_charge charge x
 }
