@@ -138,7 +138,7 @@ oimap-backup() {
 batch_copy() {
   if [ ! "$1" ] || [ ! -f "$1" ]; then echo "List file not found"; return; fi
   if [ ! "$2" ] || [ ! -d "$2" ]; then echo "Dest dir not found"; return; fi
-  if [ ! $(cat "$1") ]; then echo "List file is empty"; return; fi
+  if [ ! "$(cat $1)" ]; then echo "List file is empty"; return; fi
   IFS=$'\n'
   for x in $(cat $1); do
     echo "Copying $x"
@@ -150,7 +150,7 @@ batch_copy() {
 
 batch_size() {
   if [ ! "$1" ] || [ ! -f "$1" ]; then echo "List file not found"; return; fi
-  if [ ! $(cat "$1") ]; then echo "List file is empty"; return; fi
+  if [ ! "$(cat $1)" ]; then echo "List file is empty"; return; fi
   IFS=$'\n'
   du $(cat $1) -h -c -s
   unset IFS
