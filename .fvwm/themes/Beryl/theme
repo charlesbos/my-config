@@ -1,0 +1,92 @@
+# Beryl themefile
+# Here we set the decor, colorsets, titlebar buttons and menus
+
+# Colorsets
+# 0 is for active windows
+# 1 is for inactive windows
+# 2 is for modules
+# 3 is for icons and menus
+# 4 is for pager, icon title and menu hilights
+# 5 is for greyed menu items
+# 6 is for inactive windows in the pager
+# 7 is for active windows in the pager
+ColorSet 0 fg white, bg #b84154, Tint #b84154 70, bgTint #b84154 70, \
+    RootTransparent buffer
+ColorSet 1 fg grey25, bg lightgrey, hi #efefef, sh grey40, Tint lightgrey 70, \
+    bgTint lightgrey 70, RootTransparent
+ColorSet 2 fg grey25, bg lightgrey, hi #efefef, sh grey40, Tint lightgrey 70, \
+    bgTint lightgrey 70, RootTransparent
+ColorSet 3 fg grey25, bg lightgrey, hi #efefef, sh grey40, Tint lightgrey 70, \
+    bgTint lightgrey 70, RootTransparent
+ColorSet 4 fg white, bg steelblue
+ColorSet 5 fg grey40
+ColorSet 6 hi #efefef, Tint lightgrey 80, bgTint lightgrey 80, \
+    RootTransparent buffer
+ColorSet 7 Tint steelblue 80, bgTint steelblue 80, RootTransparent buffer
+
+# Geometry feedback window
+DefaultColorSet 2
+HideGeometryWindow
+
+# Title bar buttons
+Mouse 0 1 A Menu Window-Ops Nop
+Mouse 0 2 A Close
+Mouse 0 4 A Maximize
+Mouse 0 6 A Iconify
+
+# Decor
+DestroyDecor Beryl
+AddToDecor Beryl
++ TitleStyle Active ColorSet 0
++ TitleStyle Inactive ColorSet 1
++ TitleStyle ToggledActive ColorSet 0
++ TitleStyle ToggledInactive Colorset 1
++ TitleStyle Height 22
++ TitleStyle -- Flat
++ BorderStyle Active ColorSet 0
++ BorderStyle InActive ColorSet 1
++ BorderStyle -- HiddenHandles NoInset
++ ButtonStyle All Active Colorset 0
++ ButtonStyle All ToggledActive ColorSet 0
++ ButtonStyle All Inactive ColorSet 1
++ ButtonStyle All ToggledInactive ColorSet 1
++ AddButtonStyle 1 MiniIcon
++ AddButtonStyle 2 ActiveUp Pixmap themes/Beryl/close.png
++ AddButtonStyle 2 ActiveDown Pixmap themes/Beryl/close_pressed.png
++ AddButtonStyle 2 Inactive Pixmap themes/Beryl/close_pressed.png
++ AddButtonStyle 4 ActiveUp Pixmap themes/Beryl/maximize.png
++ AddButtonStyle 4 ActiveDown Pixmap themes/Beryl/maximize_pressed.png
++ AddButtonStyle 4 Inactive Pixmap themes/Beryl/maximize_pressed.png
++ AddButtonStyle 4 ToggledActiveUp Pixmap themes/Beryl/restore.png
++ AddButtonStyle 4 ToggledActiveDown Pixmap themes/Beryl/restore_pressed.png
++ AddButtonStyle 4 ToggledInactive Pixmap themes/Beryl/restore_pressed.png
++ AddButtonStyle 6 ActiveUp Pixmap themes/Beryl/minimize.png
++ AddButtonStyle 6 ActiveDown Pixmap themes/Beryl/minimize_pressed.png
++ AddButtonStyle 6 Inactive Pixmap themes/Beryl/minimize_pressed.png
++ ButtonStyle All Active (-- Flat) Inactive (-- Flat) \
+    ToggledActive (-- Flat) ToggledInactive (-- Flat)
++ ButtonStyle All - Clear
++ ButtonStyle 1 - MwmDecorMenu
++ ButtonStyle 4 - MwmDecorMax
++ ButtonStyle 6 - MwmDecorMin
+
+# Some decor related styles
+Style * !MwmBorder
+Style * HandleWidth 5, BorderWidth 5
+Style * Font "xft:$[infostore.font_name]:size=9:bold"
+
+# Set the decor
+Style * UseDecor Beryl
+
+# Menus
+MenuStyle * Win
+MenuStyle * MenuColorSet 3
+MenuStyle * GreyedColorSet 5
+MenuStyle * HilightBack
+MenuStyle * ActiveColorSet 4
+MenuStyle * Font "xft:$[infostore.font_name]:size=10"
+MenuStyle * TitleFont "xft:$[infostore.font_name]:size=10"
+MenuStyle * VerticalItemSpacing +4 +4
+MenuStyle * VerticalTitleSpacing +3 +3
+MenuStyle * ItemFormat "%.4s%.3|%.5i%.5l%.5l%.5r%.5i%2.3>%3|"
+MenuStyle * SeparatorsLong
