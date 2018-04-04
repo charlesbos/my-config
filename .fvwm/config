@@ -17,7 +17,7 @@ DefaultFont "xft:$[infostore.font_name]:size=8.5"
 OpaqueMoveSize unlimited
 
 ##### External files #####
-Read themes/Adwaita/theme
+Read themes/Beryl/theme
 
 ##### Default styles #####
 Style * ColorSet 1, HilightColorSet 0
