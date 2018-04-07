@@ -24,6 +24,7 @@ Style * ColorSet 1, HilightColorSet 0
 Style * DecorateTransient
 Style * MwmFunctions, MwmDecor, MwmButtons, HintOverride
 Style * SloppyFocus
+Style * UsePPosition, UseTransientPPosition
 Style * PositionPlacement center
 Style * FPLenient, FPSortWindowlistByFocus, FPGrabFocus
 Style * ResizeHintOverride, ResizeOpaque
