@@ -53,7 +53,7 @@ Style "FvwmIdent" InitialMapCommand Move w-1 w-1, !Maximizable, FixedSize
 Style Gsimplecal !MwmDecor, !UsePPosition, PositionPlacement undermouse
 Style urxvt Icon $[infostore.icon_path]/48x48/apps/utilities-terminal.png, \
     MiniIcon $[infostore.icon_path]/16x16/apps/utilities-terminal.png, \
-    MinOverlapPlacement
+    MinOverlapPlacement, InitialMapCommand URxvt-Size-Hack
 Style xterm MinOverlapPlacement
 Style Toplevel MinOverlapPlacement
 Style xmessage Sticky
@@ -385,6 +385,15 @@ DestroyFunc UndecorateWin
 AddToFunc UndecorateWin
 + I ThisWindow (HasHandles) WindowStyle !Title, !Borders
 + I ThisWindow (!HasHandles) WindowStyle Title, Borders
+
+### Hacks
+# URxvt window height is 4 pixels too small (for any geometry) when tabs
+# are enabled. This function resizes the window when first mapped and then
+# repositions it to ensure it is not offscreen
+DestroyFunc URxvt-Size-Hack
+AddToFunc URxvt-Size-Hack
++ I ThisWindow (urxvt) Resize w+4p w+4p
++ I ThisWindow (urxvt) PlaceAgain
 
 ### Tiling functions
 DestroyFunc TileLeft
