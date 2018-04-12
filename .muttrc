@@ -1,0 +1,7 @@
+set mbox_type=Maildir
+set folder=~/.imapmail
+set spoolfile=+"charlesbos1@gmail.com/INBOX"
+set header_cache=~/.cache/mutt
+set mailcap_path=~/.mutt/mailcap
+
+auto_view text/html
