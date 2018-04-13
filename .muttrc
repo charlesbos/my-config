@@ -3,5 +3,6 @@ set folder=~/.imapmail
 set spoolfile=+"charlesbos1@gmail.com/INBOX"
 set header_cache=~/.cache/mutt
 set mailcap_path=~/.mutt/mailcap
+set index_format="%4C %Z %[%Y-%m-%d %R] %-15.15L (%?l?%4l&%4c?) %s"
 
 auto_view text/html
