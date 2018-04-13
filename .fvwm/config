@@ -299,7 +299,7 @@ AddToMenu RecentFiles
 DestroyFunc CreateRecentFilesMenu
 AddToFunc CreateRecentFilesMenu
 + I DestroyMenu recreate RecentFiles
-+ I PipeRead 'fvwm-recent-files.py -i'
++ I PipeRead 'fvwm-recent-files.py -i --hotkeys'
 
 DestroyMenu Themes
 AddToMenu Themes
