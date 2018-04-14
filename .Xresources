@@ -13,6 +13,7 @@ XTerm*fastScroll:			true
 XTerm*termName:				xterm-256color
 XTerm*locale:				true
 XTerm*cursorBlink:			true
+XTerm*showMissingGlyphs:		true
 
 !!
 !! UXTerm resources
@@ -29,6 +30,7 @@ UXTerm*fastScroll:			true
 UXTerm*termName:			xterm-256color
 UXTerm*locale:				true
 UXTerm*cursorBlink:			true
+UXTerm*showMissingGlyphs:		true
 
 !!
 !! URxvt resources
