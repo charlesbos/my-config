@@ -26,6 +26,7 @@ ColorSet 7 Tint steelblue 80, bgTint steelblue 80, RootTransparent buffer
 
 # Geometry feedback window
 DefaultColorSet 2
+DefaultFont "xft:$[infostore.font_name]:size=8.5"
 HideGeometryWindow
 
 # Title bar buttons

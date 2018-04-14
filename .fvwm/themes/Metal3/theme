@@ -25,6 +25,7 @@ ColorSet 7 bg #8899AA
 
 # Geometry feedback window
 DefaultColorSet 2
+DefaultFont "xft:$[infostore.font_name]:size=8.5"
 
 # Title bar buttons
 Mouse 0 2 A Close

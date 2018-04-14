@@ -21,6 +21,7 @@ ColorSet 7 bg lightgrey
 
 # Geometry feedback window
 DefaultColorSet 0
+DefaultFont "xft:$[infostore.font_name]:size=8.5"
 Emulate MWM
 
 # Title bar buttons

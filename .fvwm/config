@@ -13,7 +13,6 @@ ClickTime 750
 DesktopSize 3x3
 IgnoreModifiers L25
 BusyCursor Read False
-DefaultFont "xft:$[infostore.font_name]:size=8.5"
 OpaqueMoveSize unlimited
 
 ##### External files #####
