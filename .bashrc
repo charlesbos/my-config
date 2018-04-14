@@ -176,7 +176,7 @@ batstatus() {
     cur_charge=$(cat /sys/class/power_supply/${x}/charge_now)
     full_charge=$(cat /sys/class/power_supply/${x}/charge_full)
     charge=$(bc <<< "scale=2; ${cur_charge} / ${full_charge} * 100")
-    echo Name=${x} : Status=${bat_status} : Charge=${charge}%
+    echo Name=${x} : Status=${bat_status} : Charge=${charge/.*/}%
   done
   unset bat_status cur_charge full_charge charge x
 }
