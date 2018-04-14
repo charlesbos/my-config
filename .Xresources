@@ -2,74 +2,74 @@
 !! XTerm resources
 !!
 
-XTerm*VT100*geometry:			80x24
-XTerm*selectToClipboard:		true
-XTerm*faceName:				DejaVu Sans Mono
-XTerm*faceSize:				10
-XTerm*activeIcon:			false
-XTerm*saveLines:			2048
-XTerm*jumpScroll:			true
-XTerm*fastScroll:			true
-XTerm*termName:				xterm-256color
-XTerm*locale:				true
-XTerm*cursorBlink:			true
-XTerm*showMissingGlyphs:		true
+XTerm.VT100.geometry:			80x24
+XTerm.VT100.selectToClipboard:		true
+XTerm.VT100.faceName:			DejaVu Sans Mono
+XTerm.VT100.faceSize:			10
+XTerm.VT100.activeIcon:			false
+XTerm.VT100.saveLines:			2048
+XTerm.VT100.jumpScroll:			true
+XTerm.VT100.fastScroll:			true
+XTerm.VT100.locale:			true
+XTerm.VT100.cursorBlink:		true
+XTerm.VT100.showMissingGlyphs:		true
+XTerm.termName:				xterm-256color
 
 !!
 !! UXTerm resources
 !!
 
-UXTerm*VT100*geometry:			80x24
-UXTerm*selectToClipboard:		true
-UXTerm*faceName:			DejaVu Sans Mono
-UXTerm*faceSize:			10
-UXTerm*activeIcon:			false
-UXTerm*saveLines:			2048
-UXTerm*jumpScroll:			true
-UXTerm*fastScroll:			true
-UXTerm*termName:			xterm-256color
-UXTerm*locale:				true
-UXTerm*cursorBlink:			true
-UXTerm*showMissingGlyphs:		true
+UXTerm.VT100.geometry:			80x24
+UXTerm.VT100.selectToClipboard:		true
+UXTerm.VT100.faceName:			DejaVu Sans Mono
+UXTerm.VT100.faceSize:			10
+UXTerm.VT100.activeIcon:		false
+UXTerm.VT100.saveLines:			2048
+UXTerm.VT100.jumpScroll:		true
+UXTerm.VT100.fastScroll:		true
+UXTerm.VT100.locale:			true
+UXTerm.VT100.cursorBlink:		true
+UXTerm.VT100.showMissingGlyphs:		true
+UXTerm.termName:			xterm-256color
 
 !!
 !! URxvt resources
 !!
 
-URxvt*geometry:				80x24
-URxvt*font:				xft:DejaVu Sans Mono:size=10:pixelsize=13
-URxvt*letterSpace:			-1
-URxvt*saveLines:			2048
-URxvt*jumpScroll:			true
-URxvt*cursorBlink:			true
-URxvt*scrollBar:			false
-URxvt*iso14755:				false
-URxvt*iso14755_52:			false
-URxvt*perl-ext-common:			default,matcher,selection-to-clipboard,tabbedex
-URxvt*url-launcher:			/usr/bin/xdg-open
-URxvt*matcher*button:			1
-URxvt*tabbed*autohide:			true
-URxvt*tabbed*title:			false
+URxvt.geometry:				80x24
+URxvt.font:				xft:DejaVu Sans Mono:size=10:pixelsize=13
+URxvt.letterSpace:			-1
+URxvt.saveLines:			2048
+URxvt.jumpScroll:			true
+URxvt.cursorBlink:			true
+URxvt.scrollBar:			false
+URxvt.iso14755:				false
+URxvt.iso14755_52:			false
+URxvt.perl-ext-common:			default,matcher,selection-to-clipboard,tabbedex
+URxvt.url-launcher:			/usr/bin/xdg-open
+URxvt.matcher.button:			1
+URxvt.tabbed.autohide:			true
+URxvt.tabbed.title:			false
 
 !!
 !! XScreenSaver resources
 !!
 
-xscreensaver*newLoginCommand:
+xscreensaver.newLoginCommand:
 
 !!
 !! XClock resources
 !!
 
-XClock*minuteColor:			steelblue3
-XClock*hourColor:			red
-XClock*face:				xft:DejaVu Sans Mono:size=10
-XClock*strftime:			%b %d, %R
+XClock.Clock.minuteColor:		steelblue3
+XClock.Clock.hourColor:			red
+XClock.Clock.face:			xft:DejaVu Sans Mono:size=10
+XClock.Clock.strftime:			%b %d, %R
 
 !!
 !! xmessage resources
 !!
 
-xmessage*baseTranslations:#augment\
+xmessage.Form.baseTranslations:#augment\
 	<Key>Return:exit()\n\
 	<Key>Escape:exit()
