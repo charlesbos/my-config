@@ -131,7 +131,7 @@ copyconfigs() {
 oimap-backup() {
   dstamp=$(date "+%Y-%m-%d")
   tar -C ~ -cf offlineimap-backup-${dstamp}.tar .offlineimap .offlineimaprc \
-    .imapmail
+    .mail
   unset dstamp
 }
 

@@ -1,5 +1,5 @@
 set mbox_type=Maildir
-set folder=~/.imapmail
+set folder=~/.mail
 set spoolfile=+"charlesbos1@gmail.com/INBOX"
 set header_cache=~/.cache/mutt
 set mailcap_path=~/.mutt/mailcap
