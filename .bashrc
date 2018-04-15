@@ -128,11 +128,24 @@ copyconfigs() {
   unset sync_files x
 }
 
-oimap-backup() {
+backup-tar() {
   dstamp=$(date "+%Y-%m-%d")
-  tar -C ~ -cf offlineimap-backup-${dstamp}.tar .offlineimap .offlineimaprc \
-    .mail
-  unset dstamp
+  case $1 in
+    mail)
+      backup_files=('.offlineimap' '.offlineimaprc' '.mail')
+      name='offlineimap'
+      ;;
+    auth)
+      backup_files=('.ssh' '.local/share/keyrings')
+      name='auth'
+      ;;
+    *)
+      ;;
+  esac
+  if [ ${backup_files} ]; then
+    tar -C ~ -cf ${name}-backup-${dstamp}.tar ${backup_files[@]}
+  fi
+  unset dstamp backup_files name
 }
 
 batch_copy() {
