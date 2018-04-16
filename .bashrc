@@ -193,3 +193,10 @@ batstatus() {
   done
   unset bat_status cur_charge full_charge charge x
 }
+
+nthash() {
+  if [ ! "$1" ]; then
+    return
+  fi
+  echo -n "$1" | iconv -t utf16le | openssl md4
+}
