@@ -1,6 +1,6 @@
 set mbox_type=Maildir
 set folder=~/.mail
-set spoolfile=+"charlesbos1@gmail.com/INBOX"
+set spoolfile=+"personal/INBOX"
 set header_cache=~/.cache/mutt
 set mailcap_path=~/.mutt/mailcap
 set index_format="%4C %Z %[%Y-%m-%d %R] %-15.15L (%?l?%4l&%4c?) %s"
