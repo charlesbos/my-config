@@ -18,6 +18,7 @@ alias du='du -h'
 alias df='df -h'
 alias cp='cp --preserve'
 alias mksrcinfo='makepkg --printsrcinfo > .SRCINFO'
+alias mpg123='mpg123 -b 2048'
 
 #My functions
 psrch() { 
