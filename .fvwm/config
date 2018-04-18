@@ -12,7 +12,7 @@ EdgeThickness 1
 ClickTime 750
 DesktopSize 3x3
 IgnoreModifiers L25
-BusyCursor Read False
+BusyCursor * False
 OpaqueMoveSize unlimited
 
 ##### External files #####
