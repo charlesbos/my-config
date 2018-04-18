@@ -63,8 +63,7 @@ Style soffice !UsePPosition, !UseTransientPPosition
 Style Skype !UsePPosition, !UseTransientPPosition
 Style VirtualBox !UseUSPosition, !UseTransientUSPosition, FixedPPosition
 Style "VirtualBox Manager" !UseUSPosition, !UseTransientUSPosition
-Style vlc !UseUSPosition, !UseTransientUSPosition, \
-    InitialMapCommand Vlc-NoFocusSlider-Hack
+Style vlc !UseUSPosition, InitialMapCommand Vlc-NoFocusSlider-Hack
 
 ##### Key bindings #####
 ### Windowlist, window controls, <Alt>tab dialogue and window cycling
