@@ -22,3 +22,6 @@ set display=lastline
 
 "Display right magin at 80 chars
 set colorcolumn=80
+
+"Increase max number of tabs
+set tabpagemax=30
