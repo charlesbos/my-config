@@ -199,6 +199,7 @@ AddToFunc StartFunction
 + I Exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
 + I Exec xscreensaver -nosplash > /dev/null 2>&1 &
 + I Exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1 &
++ I Exec /usr/lib/notify-osd/notify-osd > /dev/null 2>&1 &
 
 ##### Menus #####
 DestroyMenu RootMenu
