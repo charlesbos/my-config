@@ -13,11 +13,11 @@
 ColorSet 0 fg white, bg #b84154, Tint #b84154 70, bgTint #b84154 70, \
     RootTransparent buffer
 ColorSet 1 fg grey25, bg lightgrey, hi #efefef, sh grey40, Tint lightgrey 70, \
-    bgTint lightgrey 70, RootTransparent
+    bgTint lightgrey 70, RootTransparent buffer
 ColorSet 2 fg grey25, bg lightgrey, hi #efefef, sh grey40, Tint lightgrey 70, \
-    bgTint lightgrey 70, RootTransparent
+    bgTint lightgrey 70, RootTransparent buffer
 ColorSet 3 fg grey25, bg lightgrey, hi #efefef, sh grey40, Tint lightgrey 70, \
-    bgTint lightgrey 70, RootTransparent
+    bgTint lightgrey 70, RootTransparent buffer
 ColorSet 4 fg white, bg steelblue
 ColorSet 5 fg grey40
 ColorSet 6 hi #efefef, Tint lightgrey 80, bgTint lightgrey 80, \
