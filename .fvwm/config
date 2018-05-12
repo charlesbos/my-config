@@ -190,16 +190,16 @@ AddToFunc StartFunction
 + I Module FvwmButtons PagerFrame
 + I Module FvwmButtons WMakerApps
 + I Test (!Init) Break
-+ I Exec exec compton > /dev/null 2>&1 &
++ I Exec exec compton > /dev/null 2>&1
 # Run menu generators on startup to avoid a slow firstrun
-+ I Exec exec mwmmenu -t urxvt > /dev/null 2>&1 &
-+ I Exec exec fvwm-recent-files.py -i > /dev/null 2>&1 &
++ I Exec exec mwmmenu -t urxvt > /dev/null 2>&1
++ I Exec exec fvwm-recent-files.py -i > /dev/null 2>&1
 # Pause needed otherwise background not set (race condition??)
-+ I Exec exec sleep 0.3 && nitrogen --restore > /dev/null 2>&1 &
-+ I Exec exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
-+ I Exec exec xscreensaver -nosplash > /dev/null 2>&1 &
-+ I Exec exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1 &
-+ I Exec exec /usr/lib/notify-osd/notify-osd > /dev/null 2>&1 &
++ I Exec exec sh -c "sleep 0.3 && nitrogen --restore > /dev/null 2>&1"
++ I Exec exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1
++ I Exec exec xscreensaver -nosplash > /dev/null 2>&1
++ I Exec exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1
++ I Exec exec /usr/lib/notify-osd/notify-osd > /dev/null 2>&1
 
 ##### Menus #####
 DestroyMenu RootMenu
