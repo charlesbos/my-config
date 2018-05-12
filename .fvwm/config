@@ -77,7 +77,7 @@ Key Space A 1 Menu Window-Ops Nop
 
 ### The <Alt>F* bindings, primarily for window controls
 Key F1 A 1 Menu RootMenu Nop
-Key F2 A 1 Exec urxvt
+Key F2 A 1 Exec exec urxvt
 Key F3 A 1 Lower
 Key F4 A 1 Close
 Key F5 A 1 Raise
@@ -90,7 +90,7 @@ Key F11 A 1 Menu Window-Ops Nop
 Key F12 A 1 Stick
 
 ### Lock session, end session and restart the window manager
-Key L A C1 Exec loginctl lock-session
+Key L A C1 Exec exec loginctl lock-session
 Key Delete A C1 FvwmForm ConfirmForm ACTION="Quit Fvwm" COMMAND="Quit"
 Key R A C1 Restart
 
@@ -156,15 +156,15 @@ Key P A 4 ThisWindow (!Iconic, !Shaded) PlaceAgain
 Key W A 4 NoWindow Module FvwmIdent
 
 ### Multimedia and screenshot
-Key XF86MonBrightnessUp A N Exec backlight-change.sh up
-Key XF86MonBrightnessDown A N Exec backlight-change.sh down
-Key XF86Display A N Exec display-conf-tool.py
-Key XF86AudioRaiseVolume A N Exec volume-change.sh up
-Key XF86AudioLowerVolume A N Exec volume-change.sh down
-Key XF86AudioMute A N Exec volume-change.sh toggle
-Key XF86Launch1 A N Exec setgtktheme.py
-Key Print A N Exec scrot -e 'xdg-open $f'
-Key Print A S Exec tkscrot.py
+Key XF86MonBrightnessUp A N Exec exec backlight-change.sh up
+Key XF86MonBrightnessDown A N Exec exec backlight-change.sh down
+Key XF86Display A N Exec exec display-conf-tool.py
+Key XF86AudioRaiseVolume A N Exec exec volume-change.sh up
+Key XF86AudioLowerVolume A N Exec exec volume-change.sh down
+Key XF86AudioMute A N Exec exec volume-change.sh toggle
+Key XF86Launch1 A N Exec exec setgtktheme.py
+Key Print A N Exec exec scrot -e 'xdg-open $f'
+Key Print A S Exec exec tkscrot.py
 
 ##### Mouse bindings #####
 ### Root window
@@ -190,16 +190,16 @@ AddToFunc StartFunction
 + I Module FvwmButtons PagerFrame
 + I Module FvwmButtons WMakerApps
 + I Test (!Init) Break
-+ I Exec compton > /dev/null 2>&1 &
++ I Exec exec compton > /dev/null 2>&1 &
 # Run menu generators on startup to avoid a slow firstrun
-+ I Exec mwmmenu -t urxvt > /dev/null 2>&1 &
-+ I Exec fvwm-recent-files.py -i > /dev/null 2>&1 &
++ I Exec exec mwmmenu -t urxvt > /dev/null 2>&1 &
++ I Exec exec fvwm-recent-files.py -i > /dev/null 2>&1 &
 # Pause needed otherwise background not set (race condition??)
-+ I Exec sleep 0.3 && nitrogen --restore > /dev/null 2>&1 &
-+ I Exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
-+ I Exec xscreensaver -nosplash > /dev/null 2>&1 &
-+ I Exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1 &
-+ I Exec /usr/lib/notify-osd/notify-osd > /dev/null 2>&1 &
++ I Exec exec sleep 0.3 && nitrogen --restore > /dev/null 2>&1 &
++ I Exec exec wmclock -noblink -exe gsimplecal > /dev/null 2>&1 &
++ I Exec exec xscreensaver -nosplash > /dev/null 2>&1 &
++ I Exec exec xss-lock -- xscreensaver-command -lock > /dev/null 2>&1 &
++ I Exec exec /usr/lib/notify-osd/notify-osd > /dev/null 2>&1 &
 
 ##### Menus #####
 DestroyMenu RootMenu
@@ -212,13 +212,13 @@ AddToFunc CreateRootMenu
 + I DestroyMenu recreate RootMenu
 + I AddToMenu RootMenu "Root Menu" Title
 + I AddToMenu RootMenu "Applications" PopUp Applications
-+ I AddToMenu RootMenu "urxvt" Exec urxvt
-+ I AddToMenu RootMenu "Chromium" Exec chromium
-+ I AddToMenu RootMenu "VLC" Exec vlc
-+ I AddToMenu RootMenu "LibreOffice" Exec libreoffice
++ I AddToMenu RootMenu "urxvt" Exec exec urxvt
++ I AddToMenu RootMenu "Chromium" Exec exec chromium
++ I AddToMenu RootMenu "VLC" Exec exec vlc
++ I AddToMenu RootMenu "LibreOffice" Exec exec libreoffice
 + I AddToMenu RootMenu "" Nop
-+ I AddToMenu RootMenu "Set Background" Exec nitrogen
-+ I AddToMenu RootMenu "Displays" Exec display-conf-tool.py
++ I AddToMenu RootMenu "Set Background" Exec exec nitrogen
++ I AddToMenu RootMenu "Displays" Exec exec display-conf-tool.py
 + I AddToMenu RootMenu "Recent Files" PopUp RecentFiles
 + I AddToMenu RootMenu "Fvwm Menu" PopUp FvwmMenu
 + I AddToMenu RootMenu "" Nop
@@ -325,7 +325,7 @@ AddToFunc CreateFvwmMenu
 + I AddToMenu FvwmMenu "Themes" PopUp Themes
 + I AddToMenu FvwmMenu "Identify Window" Module FvwmIdent
 + I AddToMenu FvwmMenu "Fvwm Console" Module FvwmConsole
-+ I AddToMenu FvwmMenu "About Fvwm" Exec xmessage -center \
++ I AddToMenu FvwmMenu "About Fvwm" Exec exec xmessage -center \
     "$(fvwm -version | fold -w 80 -s)" -title "About Fvwm"
 
 DestroyMenu Session
@@ -334,16 +334,16 @@ AddToMenu Session "Session" Title
                             COMMAND="Quit"
 + "Restart Fvwm"        Restart
 + ""                    Nop
-+ "Lock Screen"         Exec loginctl lock-session
++ "Lock Screen"         Exec exec loginctl lock-session
 + ""                    Nop
 + "Suspend"             FvwmForm ConfirmForm ACTION="Suspend" \
-                            COMMAND="Exec systemctl suspend"
+                            COMMAND="Exec exec systemctl suspend"
 + "Hibernate"           FvwmForm ConfirmForm ACTION="Hibernate" \
-                            COMMAND="Exec safehibernate.sh"
+                            COMMAND="Exec exec safehibernate.sh"
 + "Reboot"              FvwmForm ConfirmForm ACTION="Reboot" \
-                            COMMAND="Exec systemctl reboot"
+                            COMMAND="Exec exec systemctl reboot"
 + "Poweroff"            FvwmForm ConfirmForm ACTION="Poweroff" \
-                            COMMAND="Exec systemctl poweroff"
+                            COMMAND="Exec exec systemctl poweroff"
 
 ##### Functions #####
 ### Basic functions
@@ -377,7 +377,7 @@ DestroyFunc UrgencyFunc
 ### Config change functions
 DestroyFunc ChangeTheme
 AddToFunc ChangeTheme
-+ I Exec sed -i "s@^Read themes/.*@Read themes/$0/theme@g" $FVWM_USERDIR/config
++ I Exec exec sed -i "s@^Read themes/.*@Read themes/$0/theme@g" $FVWM_USERDIR/config
 + I Restart
 
 ### Misc window functions
