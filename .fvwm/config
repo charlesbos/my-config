@@ -63,7 +63,6 @@ Style soffice !UsePPosition, !UseTransientPPosition
 Style Skype !UsePPosition, !UseTransientPPosition
 Style VirtualBox !UseUSPosition, !UseTransientUSPosition, FixedPPosition
 Style "VirtualBox Manager" !UseUSPosition, !UseTransientUSPosition
-Style vlc !UseUSPosition, FixedPSize, InitialMapCommand Vlc-NoFocusSlider-Hack
 
 ##### Key bindings #####
 ### Windowlist, window controls, <Alt>tab dialogue and window cycling
@@ -214,7 +213,7 @@ AddToFunc CreateRootMenu
 + I AddToMenu RootMenu "Applications" PopUp Applications
 + I AddToMenu RootMenu "urxvt" Exec exec urxvt
 + I AddToMenu RootMenu "Chromium" Exec exec chromium
-+ I AddToMenu RootMenu "VLC" Exec exec vlc
++ I AddToMenu RootMenu "Geeqie" Exec exec geeqie
 + I AddToMenu RootMenu "LibreOffice" Exec exec libreoffice
 + I AddToMenu RootMenu "" Nop
 + I AddToMenu RootMenu "Set Background" Exec exec nitrogen
@@ -394,16 +393,6 @@ DestroyFunc URxvt-Size-Hack
 AddToFunc URxvt-Size-Hack
 + I ThisWindow (urxvt) Resize w+4p w+4p
 + I ThisWindow (urxvt) PlaceAgain
-
-# In the new Qt5 version of Vlc, the time slider is implemented as a window 
-# which grabs focus. This function is run as an InitialMapCommand and detects
-# the time slider window as a transient window with no decor. Here, we stop it 
-# from grabbing focus and then we pass focus back to the previous window
-DestroyFunc Vlc-NoFocusSlider-Hack
-AddToFunc Vlc-NoFocusSlider-Hack
-+ I ThisWindow (vlc, !HasHandles, Transient) WindowStyle NeverFocus, \
-    WindowListSkip
-+ I TestRc (Match) Prev (vlc, AcceptsFocus) FlipFocus
 
 ### Tiling functions
 DestroyFunc TileLeft
