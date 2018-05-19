@@ -298,7 +298,7 @@ AddToMenu RecentFiles
 DestroyFunc CreateRecentFilesMenu
 AddToFunc CreateRecentFilesMenu
 + I DestroyMenu recreate RecentFiles
-+ I PipeRead 'fvwm-recent-files.py -i --hotkeys'
++ I PipeRead 'fvwm-recent-files.py -i --hotkeys --term urxvt'
 
 DestroyMenu Themes
 AddToMenu Themes
