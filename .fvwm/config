@@ -4,6 +4,7 @@
 InfoStoreAdd icon_path "/usr/share/icons/gnome"
 InfoStoreAdd font_name "DejaVu Sans"
 InfoStoreAdd wname_width 50
+InfoStoreAdd term "urxvt"
 
 ##### Commands #####
 EdgeResistance 0
@@ -76,7 +77,7 @@ Key Space A 1 Menu Window-Ops Nop
 
 ### The <Alt>F* bindings, primarily for window controls
 Key F1 A 1 Menu RootMenu Nop
-Key F2 A 1 Exec exec urxvt
+Key F2 A 1 Exec exec $[infostore.term]
 Key F3 A 1 Lower
 Key F4 A 1 Close
 Key F5 A 1 Raise
@@ -191,7 +192,7 @@ AddToFunc StartFunction
 + I Test (!Init) Break
 + I Exec exec compton > /dev/null 2>&1
 # Run menu generators on startup to avoid a slow firstrun
-+ I Exec exec mwmmenu -t urxvt > /dev/null 2>&1
++ I Exec exec mwmmenu -t $[infostore.term] > /dev/null 2>&1
 + I Exec exec fvwm-recent-files.py -i > /dev/null 2>&1
 # Pause needed otherwise background not set (race condition??)
 + I Exec exec sh -c "sleep 0.3 && nitrogen --restore > /dev/null 2>&1"
@@ -211,7 +212,7 @@ AddToFunc CreateRootMenu
 + I DestroyMenu recreate RootMenu
 + I AddToMenu RootMenu "Root Menu" Title
 + I AddToMenu RootMenu "Applications" PopUp Applications
-+ I AddToMenu RootMenu "urxvt" Exec exec urxvt
++ I AddToMenu RootMenu $[infostore.term] Exec exec $[infostore.term]
 + I AddToMenu RootMenu "Chromium" Exec exec chromium
 + I AddToMenu RootMenu "Geeqie" Exec exec geeqie
 + I AddToMenu RootMenu "LibreOffice" Exec exec libreoffice
@@ -231,7 +232,7 @@ AddToMenu Applications
 DestroyFunc CreateAppsMenu
 AddToFunc CreateAppsMenu
 + I DestroyMenu recreate Applications
-+ I PipeRead 'mwmmenu --fvwm-dynamic -t urxvt'
++ I PipeRead 'mwmmenu --fvwm-dynamic -t $[infostore.term]'
 
 DestroyMenu Window-Ops
 AddToMenu Window-Ops
@@ -298,7 +299,7 @@ AddToMenu RecentFiles
 DestroyFunc CreateRecentFilesMenu
 AddToFunc CreateRecentFilesMenu
 + I DestroyMenu recreate RecentFiles
-+ I PipeRead 'fvwm-recent-files.py -i --hotkeys --term urxvt'
++ I PipeRead 'fvwm-recent-files.py -i --hotkeys --term $[infostore.term]'
 
 DestroyMenu Themes
 AddToMenu Themes
