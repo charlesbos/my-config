@@ -214,7 +214,7 @@ AddToFunc CreateRootMenu
 + I AddToMenu RootMenu "Applications" PopUp Applications
 + I AddToMenu RootMenu $[infostore.term] Exec exec $[infostore.term]
 + I AddToMenu RootMenu "Chromium" Exec exec chromium
-+ I AddToMenu RootMenu "Geeqie" Exec exec geeqie
++ I AddToMenu RootMenu "VirtualBox" Exec exec VirtualBox
 + I AddToMenu RootMenu "LibreOffice" Exec exec libreoffice
 + I AddToMenu RootMenu "" Nop
 + I AddToMenu RootMenu "Set Background" Exec exec nitrogen
