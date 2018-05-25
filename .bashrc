@@ -75,7 +75,7 @@ mt() {
   udisksctl mount -b $1
 }
 
-setperms() {
+rperms() {
   if [ ! "$1" ] || [ ! -d "$1" ]; then
     echo "Invalid directory"
     return
@@ -88,7 +88,7 @@ setperms() {
   unset perm_level
 }
 
-setdperms() {
+rdperms() {
   if [ ! "$1" ] || [ ! -d "$1" ]; then
     echo "Invalid directory"
     return
