@@ -1,0 +1,37 @@
+[general]
+accounts = personal,university
+pythonfile = ~/Devel/GitHub/my-scripts/gkgetsecret.py
+
+[Account personal]
+localrepository = personal-local
+remoterepository = personal-remote
+
+[Account university]
+localrepository = university-local
+remoterepository = university-remote
+
+[Repository personal-local]
+type = Maildir
+localfolders = ~/.mail/personal
+
+[Repository personal-remote]
+type = IMAP
+remotehost = imap.gmail.com
+remoteusereval = get_val_from_attrs("user", "repo", "personal")
+remotepasseval = get_pw_from_attrs("repo", "personal")
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+createfolders = False
+
+[Repository university-local]
+type = Maildir
+localfolders = ~/.mail/university
+
+[Repository university-remote]
+type = IMAP
+remotehost = outlook.office365.com
+remoteusereval = get_val_from_attrs("user", "repo", "university")
+remotepasseval = get_pw_from_attrs("repo", "university")
+folderfilter = lambda foldername: foldername not in ['Calendar']
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+createfolders = False
