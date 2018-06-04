@@ -84,7 +84,7 @@ Key F7 A 1 Move
 Key F8 A 1 Resize
 Key F9 A 1 Iconify
 Key F10 A 1 Maximize
-Key F11 A 1 Menu Window-Ops Nop
+Key F11 A 1 Maximize Fullscreen
 Key F12 A 1 Stick
 
 ### Lock session, end session and restart the window manager
@@ -148,7 +148,6 @@ Key End A 4 TileBottomLeft
 Key Next A 4 TileBottomRight
 
 ### The <Super>* bindings - for misc actions
-Key F A 4 ThisWindow Maximize Fullscreen
 Key S A 4 ThisWindow (!Iconic, !Shaded) Move 50-50w 50-50w
 Key P A 4 ThisWindow (!Iconic, !Shaded) PlaceAgain
 Key W A 4 NoWindow Module FvwmIdent
