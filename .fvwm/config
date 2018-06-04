@@ -66,13 +66,11 @@ Style VirtualBox !UseUSPosition, !UseTransientUSPosition, FixedPPosition
 Style "VirtualBox Manager" !UseUSPosition, !UseTransientUSPosition
 
 ##### Key bindings #####
-### Windowlist, window controls, <Alt>tab dialogue and window cycling
+### Windowlist, window controls, <Alt>tab dialogue
 Key Escape A C WindowList NoGeometryWithInfo, IconifiedAtEnd, \
     MaxLabelWidth $[infostore.wname_width]
 Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, \
     CurrentAtEnd, IconifiedAtEnd, MaxLabelWidth $[infostore.wname_width]
-Key Next A SCM Next (AcceptsFocus) Focus
-Key Prior A SCM Prev (AcceptsFocus) Focus
 Key Space A 1 Menu Window-Ops Nop
 
 ### The <Alt>F* bindings, primarily for window controls
