@@ -22,6 +22,7 @@ ColorSet 7 bg grey60
 # Geometry feedback window
 DefaultColorSet 1
 DefaultFont "xft:$[infostore.font_name]:size=8.5"
+HideGeometryWindow
 
 # Title bar buttons
 Mouse 0 1 A Menu Window-Ops Close
@@ -31,7 +32,7 @@ Mouse 0 4 A Iconify
 # Decor
 DestroyDecor FVWM2
 AddToDecor FVWM2
-+ TitleStyle Height 20
++ TitleStyle Height 19
 + ButtonStyle All - Clear
 + ButtonStyle 1 - MwmDecorMenu
 + ButtonStyle 2 - MwmDecorMax
