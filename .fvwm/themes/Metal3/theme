@@ -10,15 +10,15 @@
 # 5 is for greyed menu items
 # 6 is for inactive windows in the pager
 # 7 is for active windows in the pager
-ColorSet 0 fg grey15, bg silver, hi grey75, sh grey40, \
+ColorSet 0 fg grey25, bg silver, hi grey75, sh grey40, \
     TiledPixmap themes/Metal3/metal3.png
-ColorSet 1 fg grey45, bg silver, hi grey85, sh grey55, \
+ColorSet 1 fg grey50, bg silver, hi grey85, sh grey55, \
     TiledPixmap themes/Metal3/metal3.png
-ColorSet 2 fg grey15, bg silver, hi grey75, sh grey40, \
+ColorSet 2 fg grey25, bg silver, hi grey75, sh grey40, \
     TiledPixmap themes/Metal3/metal3.png
-ColorSet 3 fg grey15, bg silver, hi gainsboro, sh grey40, \
+ColorSet 3 fg grey25, bg silver, hi gainsboro, sh grey40, \
     TiledPixmap themes/Metal3/metal3.png
-ColorSet 4 fg grey15, bg slategrey, hi #C1C5CC, sh #495568
+ColorSet 4 fg grey25, bg slategrey, hi #C1C5CC, sh #495568
 ColorSet 5 fg grey40
 ColorSet 6 bg grey70
 ColorSet 7 bg #8899AA
@@ -28,6 +28,7 @@ DefaultColorSet 2
 DefaultFont "xft:$[infostore.font_name]:size=8.5"
 
 # Title bar buttons
+Mouse 0 1 A Menu Window-Ops Nop
 Mouse 0 2 A Close
 Mouse 0 4 A Maximize
 Mouse 0 6 A Iconify
@@ -39,11 +40,12 @@ AddToDecor Metal3
 + TitleStyle InActive TiledPixmap themes/Metal3/metal3-faded.png
 + TitleStyle ToggledActive TiledPixmap themes/Metal3/metal3.png
 + TitleStyle ToggledInActive TiledPixmap themes/Metal3/metal3-faded.png
-+ TitleStyle Height 21
++ TitleStyle Height 22
 + TitleStyle -- Flat
 + BorderStyle Active TiledPixmap themes/Metal3/metal3.png
 + BorderStyle InActive TiledPixmap themes/Metal3/metal3-faded.png
 + BorderStyle -- HiddenHandles NoInset
++ ButtonStyle 1 MiniIcon
 + ButtonStyle 2 16 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 \
     80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
 + ButtonStyle 4 8 40x80@1 40x50@1 20x50@1 50x20@1 80x50@0 60x50@0 60x80@0 \
@@ -53,6 +55,7 @@ AddToDecor Metal3
 + ButtonStyle All ActiveUp (-- Flat) ActiveDown (-- Raised) \
     InactiveUp (-- Flat) InActiveDown (-- Raised) \
     ToggledActive (-- Sunk) ToggledInactive (-- Sunk)
++ ButtonStyle 1 Active (-- Flat) Inactive (-- Flat)
 + ButtonStyle All -- UseTitleStyle
 + ButtonStyle All - Clear
 + ButtonStyle 4 - MwmDecorMax
@@ -61,7 +64,7 @@ AddToDecor Metal3
 # Some decor related styles
 Style * !MwmBorder
 Style * HandleWidth 5, BorderWidth 5
-Style * Font "xft:$[infostore.font_name]:size=10"
+Style * Font "xft:$[infostore.font_name]:size=9:bold"
 
 # Set the decor
 Style * UseDecor Metal3
@@ -77,5 +80,4 @@ MenuStyle * Font "xft:$[infostore.font_name]:size=10"
 MenuStyle * TitleFont "xft:$[infostore.font_name]:size=10"
 MenuStyle * VerticalItemSpacing +3 +3
 MenuStyle * VerticalTitleSpacing +3 +3
-MenuStyle * SeparatorsLong
 MenuStyle * ItemFormat "%.4s%.2|%.5i%.5l%.5l%.5r%.5i%2.3>%2|"
