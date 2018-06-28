@@ -10,9 +10,9 @@
 # 5 is for greyed menu items
 # 6 is for inactive windows in the pager
 # 7 is for active windows in the pager
-ColorSet 0 fg black, bg palevioletred
+ColorSet 0 fg grey10, bg palevioletred
 ColorSet 1 fg lightgrey, bg dimgrey
-ColorSet 2 fg black, bg grey60
+ColorSet 2 fg grey10, bg grey60
 ColorSet 3 fg maroon, bg grey60
 ColorSet 4 fg white, bg palevioletred
 ColorSet 5 fg grey40

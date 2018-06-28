@@ -11,9 +11,9 @@
 # 6 is for inactive windows in the pager
 # 7 is for active windows in the pager
 ColorSet 0 fg white, bg cadetblue
-ColorSet 1 fg black, bg lightgrey
-ColorSet 2 fg black, bg lightgrey
-ColorSet 3 fg black, bg #c4c4c4
+ColorSet 1 fg grey10, bg lightgrey
+ColorSet 2 fg grey10, bg lightgrey
+ColorSet 3 fg grey10, bg #c4c4c4
 ColorSet 4 fg white, bg cadetblue
 ColorSet 5 fg grey40
 ColorSet 6 bg grey70
