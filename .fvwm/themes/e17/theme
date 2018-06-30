@@ -1,0 +1,88 @@
+# e17 themefile
+# Here we set the decor, colorsets, titlebar buttons and menus
+
+# Colorsets
+# 0 is for active windows
+# 1 is for inactive windows
+# 2 is for modules
+# 3 is for icons and menus
+# 4 is for pager, icon title and menu hilights
+# 5 is for greyed menu items
+# 6 is for inactive windows in the pager
+# 7 is for active windows in the pager
+ColorSet 0 fg white, bg #A0A0A0
+ColorSet 1 fg grey30, bg #A0A0A0
+ColorSet 2 fg grey10, bg #A0A0A0, Pixmap themes/e17/background.xpm
+ColorSet 3 fg grey10, bg #A0A0A0, Pixmap themes/e17/background.xpm
+ColorSet 4 fg white, bg #6D7F93
+ColorSet 5 fg grey35
+ColorSet 6 bg #A9A9B2
+ColorSet 7 bg #798B9F
+
+# Geometry feedback window
+DefaultColorSet 2
+DefaultFont "xft:$[infostore.font_name]:size=8.5"
+HideGeometryWindow
+
+# Title bar buttons
+Mouse 0 1 A Menu Window-Ops Nop
+Mouse 0 2 A Close
+Mouse 0 4 A Maximize
+Mouse 0 6 A Iconify
+
+# Decor
+DestroyDecor e17
+AddToDecor e17
++ TitleStyle Active MultiPixmap \
+    Main AdjustedPixmap themes/e17/title_active.xpm, \
+    LeftEnd AdjustedPixmap themes/e17/titleleft_active.xpm, \
+    RightEnd AdjustedPixmap themes/e17/titleright_active.xpm
++ TitleStyle Inactive MultiPixmap \
+    Main AdjustedPixmap themes/e17/title_inactive.xpm, \
+    LeftEnd AdjustedPixmap themes/e17/titleleft_inactive.xpm, \
+    RightEnd AdjustedPixmap themes/e17/titleright_inactive.xpm
++ TitleStyle LeftJustified
++ TitleStyle Height 17
++ TitleStyle -- Flat
++ BorderStyle -- HiddenHandles NoInset
++ ButtonStyle 1 ActiveUp Pixmap themes/e17/options_activeup.xpm
++ ButtonStyle 1 ActiveDown Pixmap themes/e17/options_activedown.xpm
++ ButtonStyle 2 ActiveUp Pixmap themes/e17/close_activeup.xpm
++ ButtonStyle 2 ActiveDown Pixmap themes/e17/close_activedown.xpm
++ ButtonStyle 4 ActiveUp Pixmap themes/e17/maximize_activeup.xpm
++ ButtonStyle 4 ActiveDown Pixmap themes/e17/maximize_activedown.xpm
++ ButtonStyle 4 ToggledActiveUp Pixmap themes/e17/maximize_activeup.xpm
++ ButtonStyle 4 ToggledActiveDown Pixmap themes/e17/maximize_activedown.xpm
++ ButtonStyle 6 ActiveUp Pixmap themes/e17/iconify_activeup.xpm
++ ButtonStyle 6 ActiveDown Pixmap themes/e17/iconify_activedown.xpm
++ ButtonStyle 1 Inactive Pixmap themes/e17/options_inactive.xpm
++ ButtonStyle 2 Inactive Pixmap themes/e17/close_inactive.xpm
++ ButtonStyle 4 Inactive Pixmap themes/e17/maximize_inactive.xpm
++ ButtonStyle 4 ToggledInactive Pixmap themes/e17/maximize_inactive.xpm
++ ButtonStyle 6 Inactive Pixmap themes/e17/iconify_inactive.xpm
++ ButtonStyle All Active (-- Flat) Inactive (-- Flat) ToggledActive (-- Flat) \
+    ToggledInactive (-- Flat)
++ ButtonStyle All - Clear
++ ButtonStyle 1 - MwmDecorMenu
++ ButtonStyle 4 - MwmDecorMax
++ ButtonStyle 6 - MwmDecorMin
+
+# Some decor related styles
+Style * !MwmBorder
+Style * HandleWidth 4, BorderWidth 4
+Style * Font "xft:$[infostore.font_name]:size=10"
+
+# Set the decor
+Style * UseDecor e17
+
+# Menus
+MenuStyle * Win
+MenuStyle * MenuColorSet 3
+MenuStyle * GreyedColorSet 5
+MenuStyle * HilightBack
+MenuStyle * ActiveColorSet 4
+MenuStyle * Font "xft:$[infostore.font_name]:size=10"
+MenuStyle * TitleFont "xft:$[infostore.font_name]:size=10"
+MenuStyle * VerticalItemSpacing +4 +4
+MenuStyle * VerticalTitleSpacing +3 +3
+MenuStyle * ItemFormat "%.4s%.3|%.5i%.5l%.5l%.5r%.5i%2.3>%3|"
