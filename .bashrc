@@ -103,8 +103,9 @@ rdperms() {
 
 copyconfigs() {
   sync_files=('.bash_profile' '.bashrc' '.compton.conf' 
-              '.config/gtk-3.0/gtk.css' '.config/gtk-3.0/settings.ini' '.fvwm' 
-              '.gtkrc-2.0' '.vimrc' '.xinitrc' '.Xresources')
+              '.config/gtk-3.0/gtk.css' '.config/gtk-3.0/settings.ini' 
+              '.config/mpv' '.fvwm' '.gtkrc-2.0' '.vimrc' '.xinitrc' 
+              '.Xresources')
   for x in ${sync_files[@]}; do
     if [ "$(diff -Nurq $HOME/Devel/GitHub/my-config/$x $HOME/$x)" ]; then
       if [ "$1" ] && [ "$1" == "check" ]; then
@@ -121,7 +122,7 @@ copyconfigs() {
           cp "$HOME/$x" "$HOME/Devel/GitHub/my-config/$x"
         else
           rm -rf "$HOME/Devel/GitHub/my-config/$x"
-          cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config"
+          cp -r "$HOME/$x" "$HOME/Devel/GitHub/my-config/$x"
         fi
       fi
     fi
