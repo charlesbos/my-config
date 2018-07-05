@@ -189,7 +189,7 @@ AddToFunc StartFunction
 + I Test (!Init) Break
 + I Exec exec compton > /dev/null 2>&1
 # Run menu generators on startup to avoid a slow firstrun
-+ I Exec exec mwmmenu -t $[infostore.term] > /dev/null 2>&1
++ I Exec exec mwmmenu > /dev/null 2>&1
 + I Exec exec fvwm-recent-files.py -i > /dev/null 2>&1
 # Pause needed otherwise background not set (race condition??)
 + I Exec exec sh -c "sleep 0.3 && nitrogen --restore > /dev/null 2>&1"
