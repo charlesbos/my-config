@@ -128,6 +128,8 @@ copyconfigs() {
 
 backup-tar() {
   dstamp=$(date "+%Y-%m-%d")
+  need_sudo=0
+  top=~
   case $1 in
     mail)
       backup_files=('.thunderbird')
@@ -137,13 +139,24 @@ backup-tar() {
       backup_files=('.ssh' '.local/share/keyrings')
       name='auth'
       ;;
+    netctl)
+      backup_files=('etc/netctl')
+      name='netctl'
+      need_sudo=1
+      top=/
+      ;;
     *)
       ;;
   esac
   if [ ${backup_files} ]; then
-    tar -C ~ -cf ${name}-backup-${dstamp}.tar ${backup_files[@]}
+    if [ ${need_sudo} == 0 ]; then
+      tar -C ${top} -cf ${name}-backup-${dstamp}.tar ${backup_files[@]}
+    else
+      sudo tar -C ${top} -cf ${name}-backup-${dstamp}.tar ${backup_files[@]}
+      sudo chown ${USER}:${USER} ${name}-backup-${dstamp}.tar
+    fi
   fi
-  unset dstamp backup_files name
+  unset dstamp backup_files name need_sudo top
 }
 
 batch_copy() {
