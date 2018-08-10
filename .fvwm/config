@@ -17,7 +17,7 @@ BusyCursor * False
 OpaqueMoveSize unlimited
 
 ##### External files #####
-Read themes/e17/theme
+Read themes/KDE1/theme
 
 ##### Default styles #####
 Style * ColorSet 1, HilightColorSet 0
