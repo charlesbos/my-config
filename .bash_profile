@@ -4,6 +4,9 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
+# Add ~/.local/bin to PATH
+PATH=$PATH:~/.local/bin
+
 # Add my-scripts to PATH
 PATH=$PATH:~/Devel/GitHub/my-scripts
 
