@@ -4,14 +4,8 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# Add ~/.local/bin to PATH
-PATH=$PATH:~/.local/bin
-
-# Add my-scripts to PATH
-PATH=$PATH:~/Devel/GitHub/my-scripts
-
-# Add mwmmenu to PATH
-PATH=$PATH:~/Devel/GitHub/mwmmenu
+# Add ~/.local/bin (plus some symlinked git repos) to PATH
+PATH=$PATH:~/.local/bin:~/.local/bin/my-scripts:~/.local/bin/mwmmenu
 
 # Use GTK2 theme and dialogues in Qt5 apps
 export QT_QPA_PLATFORMTHEME=gtk2
