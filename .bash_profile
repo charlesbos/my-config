@@ -11,6 +11,7 @@ for x in $(ls ~/.local/bin); do
     PATH=$PATH:~/.local/bin/$x
   fi
 done
+unset x
 
 # Use GTK2 theme and dialogues in Qt5 apps
 export QT_QPA_PLATFORMTHEME=gtk2
