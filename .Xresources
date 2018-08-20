@@ -55,7 +55,14 @@ URxvt.tabbed.title:                     false
 !! XScreenSaver resources
 !!
 
-xscreensaver.newLoginCommand:
+XScreenSaver.newLoginCommand:
+XScreenSaver.Dialog.headingFont:        -*-dejavu sans-bold-r-*-*-*-160-*-*-*-*-*-*
+XScreenSaver.Dialog.bodyFont:           -*-dejavu sans-bold-r-*-*-*-120-*-*-*-*-*-*
+XScreenSaver.Dialog.labelFont:          -*-dejavu sans-bold-r-*-*-*-120-*-*-*-*-*-*
+XScreenSaver.Dialog.unameFont:          -*-dejavu sans-bold-r-*-*-*-80-*-*-*-*-*-*
+XScreenSaver.Dialog.buttonFont:         -*-dejavu sans-bold-r-*-*-*-120-*-*-*-*-*-*
+XScreenSaver.Dialog.dateFont:           -*-dejavu sans-medium-r-*-*-*-80-*-*-*-*-*-*
+XScreenSaver.Dialog.passwdFont:         -*-dejavu sans mono-medium-r-*-*-*-85-*-*-*-*-*-*
 
 !!
 !! XClock resources
