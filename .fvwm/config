@@ -64,7 +64,7 @@ Style soffice !UsePPosition, !UseTransientPPosition
 Style Skype !UsePPosition, !UseTransientPPosition
 Style VirtualBox !UseUSPosition, !UseTransientUSPosition, FixedPPosition
 Style "VirtualBox Manager" !UseUSPosition, !UseTransientUSPosition
-Style vlc !UseUSPosition, !UseTransientUSPosition
+Style vlc !UseUSPosition
 
 ##### Key bindings #####
 ### Windowlist, window controls, <Alt>tab dialogue
