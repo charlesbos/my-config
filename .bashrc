@@ -75,32 +75,6 @@ mt() {
   udisksctl mount -b $1
 }
 
-rperms() {
-  if [ ! "$1" ] || [ ! -d "$1" ]; then
-    echo "Invalid directory"
-    return
-  fi
-  perm_level=644
-  if [ "$2" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
-    perm_level="$2"
-  fi
-  find "$1" -type f -exec chmod "$perm_level" {} \;
-  unset perm_level
-}
-
-rdperms() {
-  if [ ! "$1" ] || [ ! -d "$1" ]; then
-    echo "Invalid directory"
-    return
-  fi
-  perm_level=755
-  if [ "$2" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
-    perm_level="$2"
-  fi
-  find "$1" -type d -exec chmod "$perm_level" {} \;
-  unset perm_level
-}
-
 copyconfigs() {
   sync_files=('.bash_profile' '.bashrc' '.compton.conf' 
               '.config/gtk-3.0/gtk.css' '.config/gtk-3.0/settings.ini' 
@@ -212,11 +186,6 @@ nthash() {
   echo -n "$1" | iconv -t utf16le | openssl md4
 }
 
-recwebcam() {
-  ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -f alsa -i default \
-    -c:v libx264 -preset ultrafast -c:a aac webcam-$(date "+%Y-%m-%d-%H%M").mp4
-}
-
-pkglist() {
+qeqlist() {
   pacman -Qeq > pacmanqeq-$(date "+%Y%m%d")
 }
