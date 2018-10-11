@@ -10,6 +10,7 @@ PS1='[\u@\h \W]\$ '
 #My aliases
 alias ls='ls --color=auto -h'
 alias pkgcount='pacman -Q | wc -l'
+alias pkglist='pacman -Qeq > pacmanqeq-$(date "+%Y%m%d")'
 alias reset='reset -Q'
 alias tree='tree -C'
 alias less='less -M'
@@ -184,8 +185,4 @@ nthash() {
     return
   fi
   echo -n "$1" | iconv -t utf16le | openssl md4
-}
-
-qeqlist() {
-  pacman -Qeq > pacmanqeq-$(date "+%Y%m%d")
 }
