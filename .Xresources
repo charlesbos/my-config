@@ -78,5 +78,5 @@ XClock.Clock.strftime:                  %b %d, %R
 !!
 
 xmessage.Form.baseTranslations:#augment\
-    <Key>Return:exit()\n\
-    <Key>Escape:exit()
+    <Key>Return:exit(101)\n\
+    <Key>Escape:exit(102)
