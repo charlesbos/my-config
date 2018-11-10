@@ -45,11 +45,10 @@ URxvt.cursorBlink:                      true
 URxvt.scrollBar:                        false
 URxvt.iso14755:                         false
 URxvt.iso14755_52:                      false
-URxvt.perl-ext-common:                  default,matcher,selection-to-clipboard,tabbedex
-URxvt.url-launcher:                     /usr/bin/xdg-open
-URxvt.matcher.button:                   1
-URxvt.tabbed.autohide:                  true
-URxvt.tabbed.title:                     false
+URxvt.perl-ext-common:                  default,selection-to-clipboard,tabbedex
+URxvt.tabbed.tabbedex-rs-prefix:        %
+URxvt.tabbedex.autohide:                true
+URxvt.tabbedex.title:                   false
 
 !!
 !! XScreenSaver resources
