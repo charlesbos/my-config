@@ -53,7 +53,7 @@ to-mp3() {
 um() {
   if [ ! $1 ] || [ ! -b $1 ]; then
     echo "No device specified"
-    return
+    return 1
   fi
   udisksctl unmount -b $1
 }
@@ -61,7 +61,7 @@ um() {
 umap() {
   if [ ! $1 ] || [ ! -b $1 ]; then
     echo "No device specified"
-    return
+    return 1
   fi
   udisksctl unmount -b $1
   sleep 1
@@ -71,7 +71,7 @@ umap() {
 mt() {
   if [ ! $1 ] || [ ! -b $1 ]; then
     echo "No device specified"
-    return
+    return 1
   fi
   udisksctl mount -b $1
 }
@@ -139,7 +139,7 @@ dircount() {
   else
     if [ "$1" ]; then
       echo Invalid directory: "$1"
-      return
+      return 1
     fi
     target="$PWD"
   fi
@@ -160,7 +160,7 @@ batstatus() {
 
 nthash() {
   if [ ! "$1" ]; then
-    return
+    return 1
   fi
   echo -n "$1" | iconv -t utf16le | openssl md4
 }
