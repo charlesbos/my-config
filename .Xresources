@@ -36,7 +36,7 @@ UXTerm.termName:                        xterm-256color
 !! URxvt resources
 !!
 
-URxvt.geometry:                         80x24
+URxvt.geometry:                         81x24
 URxvt.font:                             xft:DejaVu Sans Mono:size=10:pixelsize=13
 URxvt.letterSpace:                      -1
 URxvt.saveLines:                        2048
