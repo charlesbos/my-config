@@ -16,23 +16,6 @@ XTerm.VT100.showMissingGlyphs:          true
 XTerm.termName:                         xterm-256color
 
 !!
-!! UXTerm resources
-!!
-
-UXTerm.VT100.geometry:                  80x24
-UXTerm.VT100.selectToClipboard:         true
-UXTerm.VT100.faceName:                  DejaVu Sans Mono
-UXTerm.VT100.faceSize:                  10
-UXTerm.VT100.activeIcon:                false
-UXTerm.VT100.saveLines:                 2048
-UXTerm.VT100.jumpScroll:                true
-UXTerm.VT100.fastScroll:                true
-UXTerm.VT100.locale:                    true
-UXTerm.VT100.cursorBlink:               true
-UXTerm.VT100.showMissingGlyphs:         true
-UXTerm.termName:                        xterm-256color
-
-!!
 !! URxvt resources
 !!
 
