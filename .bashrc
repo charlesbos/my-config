@@ -164,3 +164,11 @@ nthash() {
   fi
   echo -n "$1" | iconv -t utf16le | openssl md4
 }
+
+wpahash() {
+  if [ ! "$1" ] || [ ! "$2" ]; then
+    echo "wpahash ESSID PASSWORD"
+    return 1
+  fi
+  wpa_passphrase "$1" "$2" | grep psk | grep -v "^[[:blank:]]#psk=" | tr -d " " | cut -d "=" -f 2
+}
