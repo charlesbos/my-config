@@ -119,6 +119,10 @@ backup-tar() {
       need_sudo=1
       top=/
       ;;
+    web)
+      backup_files=('.mozilla')
+      name='firefox'
+      ;;
     *)
       ;;
   esac
