@@ -120,8 +120,8 @@ backup-tar() {
       top=/
       ;;
     web)
-      backup_files=('.mozilla')
-      name='firefox'
+      backup_files=('.chromium')
+      name='chromium'
       ;;
     *)
       ;;
