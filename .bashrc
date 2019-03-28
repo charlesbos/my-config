@@ -123,6 +123,10 @@ backup-tar() {
       backup_files=('.config/chromium')
       name='chromium'
       ;;
+    wm)
+      backup_files=('.fluxbox')
+      name='fluxbox'
+      ;;
     *)
       ;;
   esac
