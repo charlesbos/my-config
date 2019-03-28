@@ -120,7 +120,7 @@ backup-tar() {
       top=/
       ;;
     web)
-      backup_files=('.chromium')
+      backup_files=('.config/chromium')
       name='chromium'
       ;;
     *)
