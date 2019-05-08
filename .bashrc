@@ -79,7 +79,8 @@ mt() {
 copyconfigs() {
   sync_files=('.bash_profile' '.bashrc' '.compton.conf' 
               '.config/gtk-3.0/gtk.css' '.config/gtk-3.0/settings.ini' 
-              '.config/mpv' '.gtkrc-2.0' '.vimrc' '.xinitrc' '.Xresources')
+              '.config/mpv' '.fvwm' '.gtkrc-2.0' '.vimrc' '.xinitrc' 
+              '.Xresources')
   for x in ${sync_files[@]}; do
     if [ "$(diff -Nurq $HOME/Devel/GitHub/my-config/$x $HOME/$x)" ]; then
       if [ "$1" ] && [ "$1" == "check" ]; then
@@ -122,10 +123,6 @@ backup-tar() {
     web)
       backup_files=('.config/chromium')
       name='chromium'
-      ;;
-    wm)
-      backup_files=('.fluxbox')
-      name='fluxbox'
       ;;
     *)
       ;;
