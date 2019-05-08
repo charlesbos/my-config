@@ -67,16 +67,17 @@ Style "VirtualBox Manager" !UseUSPosition, !UseTransientUSPosition
 Style vlc !UseUSPosition
 
 ##### Key bindings #####
-### Windowlist, window controls, <Alt>tab dialogue
+### Windowlist, root menu, window controls, <Alt>tab dialogue
 Key Escape A C WindowList NoGeometryWithInfo, IconifiedAtEnd, \
     MaxLabelWidth $[infostore.wname_width]
+Key Escape A 1 Menu RootMenu Nop
 Key Tab A M WindowList Root c c CurrentDesk, NoGeometryWithInfo, NoDeskNum, \
     CurrentAtEnd, IconifiedAtEnd, MaxLabelWidth $[infostore.wname_width]
 Key Space A 1 Menu Window-Ops Nop
 
 ### The <Alt>F* bindings, primarily for window controls
-Key F1 A 1 Menu RootMenu Nop
-Key F2 A 1 Exec exec $[infostore.term]
+Key F1 A 1 Exec exec $[infostore.term]
+Key F2 A 1 Exec exec zenity --entry --text "Run command" --title "Run" | sh
 Key F3 A 1 Lower
 Key F4 A 1 Close
 Key F5 A 1 Raise
