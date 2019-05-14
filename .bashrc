@@ -180,3 +180,7 @@ wpahash() {
   fi
   wpa_passphrase "$1" "$2" | grep psk | grep -v "^[[:blank:]]#psk=" | tr -d " " | cut -d "=" -f 2
 }
+
+getkey() {
+  xmodmap -pk | tr -d "\t" | tr -s " " | awk -F " " '{if ($3 != "" && $1 ~ /^[0-9]+$/ ) {print $1" "$3}}' | sed 's@(@@g;s@).*$@@g' | grep "^$1 " | cut -d " " -f 2
+}
