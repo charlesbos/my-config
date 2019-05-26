@@ -32,4 +32,16 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# Set 1366x768 because 1080p on a laptop screen makes everything far too small
+
+sname=$(xrandr | grep "connected primary" | cut -d " " -f 1)
+modeline=$(cvt 1366 768 60 | tail -n 1 | cut -d " " -f 2-)
+mode=$(echo $modeline | cut -d " " -f 1)
+xrandr --newmode $modeline
+xrandr --addmode $sname $mode
+xrandr --output $sname --mode $mode --auto
+unset sname modeline mode
+
+# start wm
+
 exec startfluxbox
