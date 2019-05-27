@@ -62,3 +62,9 @@ XClock.Clock.strftime:                  %b %d, %R
 xmessage.Form.baseTranslations:#augment\
     <Key>Return:exit(101)\n\
     <Key>Escape:exit(102)
+
+!!
+!! Xft resources
+!!
+
+Xft.dpi:                                96
