@@ -38,13 +38,13 @@ URxvt.tabbedex.title:                   false
 !!
 
 XScreenSaver.newLoginCommand:
-XScreenSaver.Dialog.headingFont:        -*-dejavu sans-bold-r-*-*-*-160-*-*-*-*-*-*
-XScreenSaver.Dialog.bodyFont:           -*-dejavu sans-bold-r-*-*-*-120-*-*-*-*-*-*
-XScreenSaver.Dialog.labelFont:          -*-dejavu sans-bold-r-*-*-*-120-*-*-*-*-*-*
-XScreenSaver.Dialog.unameFont:          -*-dejavu sans-bold-r-*-*-*-80-*-*-*-*-*-*
-XScreenSaver.Dialog.buttonFont:         -*-dejavu sans-bold-r-*-*-*-120-*-*-*-*-*-*
-XScreenSaver.Dialog.dateFont:           -*-dejavu sans-medium-r-*-*-*-80-*-*-*-*-*-*
-XScreenSaver.Dialog.passwdFont:         -*-dejavu sans mono-medium-r-*-*-*-85-*-*-*-*-*-*
+XScreenSaver.Dialog.headingFont:        -*-dejavu sans-bold-r-*-*-*-200-*-*-*-*-*-*
+XScreenSaver.Dialog.bodyFont:           -*-dejavu sans-bold-r-*-*-*-160-*-*-*-*-*-*
+XScreenSaver.Dialog.labelFont:          -*-dejavu sans-bold-r-*-*-*-160-*-*-*-*-*-*
+XScreenSaver.Dialog.unameFont:          -*-dejavu sans-bold-r-*-*-*-120-*-*-*-*-*-*
+XScreenSaver.Dialog.buttonFont:         -*-dejavu sans-bold-r-*-*-*-160-*-*-*-*-*-*
+XScreenSaver.Dialog.dateFont:           -*-dejavu sans-medium-r-*-*-*-90-*-*-*-*-*-*
+XScreenSaver.Dialog.passwdFont:         -*-dejavu sans mono-medium-r-*-*-*-125-*-*-*-*-*-*
 
 !!
 !! XClock resources
@@ -59,6 +59,7 @@ XClock.Clock.strftime:                  %b %d, %R
 !! xmessage resources
 !!
 
+xmessage*faceName:			xft:DejaVu Sans Mono:size=10
 xmessage.Form.baseTranslations:#augment\
     <Key>Return:exit(101)\n\
     <Key>Escape:exit(102)
@@ -67,4 +68,4 @@ xmessage.Form.baseTranslations:#augment\
 !! Xft resources
 !!
 
-Xft.dpi:                                96
+Xft.dpi:                                112

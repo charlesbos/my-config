@@ -32,20 +32,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# Set some xrandr settings including lowering the resolution to 1366x768 
-# because 1080p on a laptop screen makes everything far too small
+# start wm
 
-sname=$(xrandr | grep " connected " | cut -d " " -f 1)
-modeline=$(cvt 1366 768 60 | tail -n 1 | cut -d " " -f 2-)
-mode=$(echo $modeline | cut -d " " -f 1)
-xrandr --newmode $modeline
-xrandr --addmode $sname $mode
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-xrandr --dpi 96
-xrandr --output $sname --mode $mode
-unset sname modeline mode
-
-# start wm
+xrandr --dpi 112
 
 exec startfluxbox
