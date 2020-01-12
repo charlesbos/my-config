@@ -26,5 +26,8 @@ set colorcolumn=80
 "Increase max number of tabs
 set tabpagemax=30
 
+"Disable bell sounds
+set belloff=all
+
 "Set tabstop options for new files
 autocmd BufNewFile * :set sw=4 ts=8 sts=0 et noai
