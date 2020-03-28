@@ -34,8 +34,4 @@ fi
 
 # start wm
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-xrandr --dpi 112
-
-exec startfluxbox
+exec mate-session
