@@ -63,9 +63,3 @@ xmessage*faceName:			xft:DejaVu Sans Mono:size=10
 xmessage.Form.baseTranslations:#augment\
     <Key>Return:exit(101)\n\
     <Key>Escape:exit(102)
-
-!!
-!! Xft resources
-!!
-
-Xft.dpi:                                112
