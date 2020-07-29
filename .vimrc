@@ -24,10 +24,12 @@ set display=lastline
 set colorcolumn=80
 
 "Increase max number of tabs
-set tabpagemax=30
+set tabpagemax=50
 
 "Disable bell sounds
-set belloff=all
+if version >= 800
+  set belloff=all
+endif
 
 "Set tabstop options for new files
 autocmd BufNewFile * :set sw=4 ts=8 sts=0 et noai
