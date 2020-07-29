@@ -185,3 +185,22 @@ wpahash() {
 getkey() {
   xmodmap -pk | tr -d "\t" | tr -s " " | awk -F " " '{if ($3 != "" && $1 ~ /^[0-9]+$/ ) {print $1" "$3}}' | sed 's@(@@g;s@).*$@@g' | grep "^$1 " | cut -d " " -f 2
 }
+
+findtext() {
+  if [ "$1" ] && [ -d "$1" ]; then 
+    target="$1"
+  else
+    if [ "$1" ]; then
+      echo Invalid directory: "$1"
+      return 1
+    fi
+    target="$PWD"
+  fi
+  for x in $(find "$target" -type f); do
+    if [ ! "$(file -i "$x" | grep charset=binary)" ]; then
+      echo "$x"
+    fi
+  done
+  unset target
+}
+
