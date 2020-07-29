@@ -100,3 +100,6 @@ findtext() {
   unset target
 }
 
+mygrep() {
+  grep -Rn "$@" --color=always | grep -v "\.svn\|\.git\|\.Po\|Binary file\|.html\|.mod\|.info\|.log\|.xml"
+}
