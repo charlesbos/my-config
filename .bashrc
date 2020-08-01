@@ -103,3 +103,17 @@ findtext() {
 mygrep() {
   grep -Rn "$@" --color=always | grep -v "\.svn\|\.git\|\.Po\|Binary file\|.html\|.mod\|.info\|.log\|.xml"
 }
+
+tbird-backup() {
+  if [ "$(which cmd.exe)" ]; then
+    tbpath="$(echo $(wslpath -a $(cmd.exe /c echo %userprofile% 2>/dev/null)) | sed "s/\r//g")/AppData/Roaming"
+    tbname="Thunderbird"
+  else
+    tbpath="$HOME"
+    tbname=".thunderbird"
+  fi
+  pushd "$tbpath" > /dev/null
+  zip -q -0 -r "$OLDPWD/thunderbird-backup-$(date +%Y%m%d).zip" "$tbname"
+  popd > /dev/null
+  unset tbpath tbname
+}
