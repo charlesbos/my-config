@@ -20,10 +20,8 @@ XTerm.termName:                         xterm-256color
 !! URxvt resources
 !!
 
-URxvt.geometry:                         85x24
-URxvt.font:                             xft:DejaVu Sans Mono:size=10
-URxvt.lineSpace:                        -1
-URxvt.letterpace:                       -1
+URxvt.geometry:                         85x25
+URxvt.font:                             xft:DejaVu Sans Mono:size=10:pixelsize=14
 URxvt.internalBorder:                   0
 URxvt.saveLines:                        2048
 URxvt.jumpScroll:                       true
@@ -31,7 +29,6 @@ URxvt.cursorBlink:                      true
 URxvt.scrollBar:                        false
 URxvt.iso14755:                         false
 URxvt.iso14755_52:                      false
-URxvt.termName:                         rxvt-unicode-256color
 URxvt.perl-ext-common:                  default,selection-to-clipboard,tabbedex
 URxvt.tabbed.tabbedex-rs-prefix:        %
 URxvt.tabbedex.autohide:                true
