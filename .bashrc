@@ -117,3 +117,17 @@ tbird-backup() {
   popd > /dev/null
   unset tbpath tbname
 }
+
+firefox-backup() {
+  if [ "$(which cmd.exe)" ]; then
+    ffpath="$(echo $(wslpath -a $(cmd.exe /c echo %userprofile% 2>/dev/null)) | sed "s/\r//g")/AppData/Roaming"
+    ffname="Mozilla"
+  else
+    ffpath="$HOME"
+    ffname=".mozilla"
+  fi
+  pushd "$ffpath" > /dev/null
+  zip -q -0 -r "$OLDPWD/firefox-backup-$(date +%Y%m%d).zip" "$ffname"
+  popd > /dev/null
+  unset ffpath ffname
+}
