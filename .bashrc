@@ -105,8 +105,8 @@ mygrep() {
 }
 
 tbird-backup() {
-  if [ "$(which cmd.exe)" ]; then
-    tbpath="$(echo $(wslpath -a $(cmd.exe /c echo %userprofile% 2>/dev/null)) | sed "s/\r//g")/AppData/Roaming"
+  if [ -f "/mnt/c/Windows/System32/cmd.exe" ]; then
+    tbpath="$(echo $(wslpath -a $(/mnt/c/Windows/System32/cmd.exe /c echo %userprofile% 2>/dev/null)) | sed "s/\r//g")/AppData/Roaming"
     tbname="Thunderbird"
   else
     tbpath="$HOME"
@@ -119,8 +119,8 @@ tbird-backup() {
 }
 
 firefox-backup() {
-  if [ "$(which cmd.exe)" ]; then
-    ffpath="$(echo $(wslpath -a $(cmd.exe /c echo %userprofile% 2>/dev/null)) | sed "s/\r//g")/AppData/Roaming"
+  if [ -f "/mnt/c/Windows/System32/cmd.exe" ]; then
+    ffpath="$(echo $(wslpath -a $(/mnt/c/Windows/System32/cmd.exe /c echo %userprofile% 2>/dev/null)) | sed "s/\r//g")/AppData/Roaming"
     ffname="Mozilla"
   else
     ffpath="$HOME"
