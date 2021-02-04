@@ -33,3 +33,6 @@ endif
 
 "Set tabstop options for new files
 autocmd BufNewFile * :set sw=4 ts=8 sts=0 et noai
+
+"Enable line numbers
+set number
