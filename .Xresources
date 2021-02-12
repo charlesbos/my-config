@@ -21,7 +21,9 @@ XTerm.termName:                         xterm-256color
 !!
 
 URxvt.geometry:                         85x25
-URxvt.font:                             xft:DejaVu Sans Mono:size=10:pixelsize=14
+URxvt.font:                             xft:DejaVu Sans Mono:size=10:pixelsize=15
+URxvt.letterSpace:                      -1
+URxvt.lineSpace:                        -1
 URxvt.internalBorder:                   0
 URxvt.saveLines:                        2048
 URxvt.jumpScroll:                       true
