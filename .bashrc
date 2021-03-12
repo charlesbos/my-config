@@ -8,15 +8,15 @@
 PS1='[\u@\h \W]\$ '
 
 #My aliases
-alias ls='ls --color=auto -h'
+alias ls='ls --color=auto'
 alias pkgcount='pacman -Q | wc -l'
 alias pkglist='pacman -Qeq > pacmanqeq-$(date "+%Y%m%d")'
 alias reset='reset -Q'
-alias tree='tree -C'
 alias less='less -M'
 alias grep='grep --color=auto'
 alias cp='cp --preserve'
 alias mksrcinfo='makepkg --printsrcinfo > .SRCINFO'
+alias rsync='rsync -a --progress'
 
 #My functions
 psrch() { 
